@@ -259,7 +259,9 @@ static inline void mavlink_msg_heartbeat_send_buf(mavlink_message_t *msgbuf, mav
  */
 static inline uint8_t mavlink_msg_heartbeat_get_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -269,7 +271,9 @@ static inline uint8_t mavlink_msg_heartbeat_get_type(const mavlink_message_t* ms
  */
 static inline uint8_t mavlink_msg_heartbeat_get_autopilot(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -279,7 +283,9 @@ static inline uint8_t mavlink_msg_heartbeat_get_autopilot(const mavlink_message_
  */
 static inline uint8_t mavlink_msg_heartbeat_get_base_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t(msg,  6);
+    return (uint8_t) 0;
 }
 
 /**
@@ -289,7 +295,9 @@ static inline uint8_t mavlink_msg_heartbeat_get_base_mode(const mavlink_message_
  */
 static inline uint32_t mavlink_msg_heartbeat_get_custom_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -299,7 +307,9 @@ static inline uint32_t mavlink_msg_heartbeat_get_custom_mode(const mavlink_messa
  */
 static inline uint8_t mavlink_msg_heartbeat_get_system_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  7);
+    if (msg->len > 7)
+        return _MAV_RETURN_uint8_t(msg,  7);
+    return (uint8_t) 0;
 }
 
 /**
@@ -309,7 +319,9 @@ static inline uint8_t mavlink_msg_heartbeat_get_system_status(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_heartbeat_get_mavlink_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**

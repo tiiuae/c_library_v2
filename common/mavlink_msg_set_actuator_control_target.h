@@ -240,7 +240,9 @@ static inline void mavlink_msg_set_actuator_control_target_send_buf(mavlink_mess
  */
 static inline uint64_t mavlink_msg_set_actuator_control_target_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -250,7 +252,9 @@ static inline uint64_t mavlink_msg_set_actuator_control_target_get_time_usec(con
  */
 static inline uint8_t mavlink_msg_set_actuator_control_target_get_group_mlx(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t(msg,  40);
+    return (uint8_t) 0;
 }
 
 /**
@@ -260,7 +264,9 @@ static inline uint8_t mavlink_msg_set_actuator_control_target_get_group_mlx(cons
  */
 static inline uint8_t mavlink_msg_set_actuator_control_target_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  41);
+    if (msg->len > 41)
+        return _MAV_RETURN_uint8_t(msg,  41);
+    return (uint8_t) 0;
 }
 
 /**
@@ -270,7 +276,9 @@ static inline uint8_t mavlink_msg_set_actuator_control_target_get_target_system(
  */
 static inline uint8_t mavlink_msg_set_actuator_control_target_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  42);
+    if (msg->len > 42)
+        return _MAV_RETURN_uint8_t(msg,  42);
+    return (uint8_t) 0;
 }
 
 /**
@@ -280,7 +288,9 @@ static inline uint8_t mavlink_msg_set_actuator_control_target_get_target_compone
  */
 static inline uint16_t mavlink_msg_set_actuator_control_target_get_controls(const mavlink_message_t* msg, float *controls)
 {
-    return _MAV_RETURN_float_array(msg, controls, 8,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float_array(msg, controls, 8,  8);
+    return (uint16_t) 0;
 }
 
 /**

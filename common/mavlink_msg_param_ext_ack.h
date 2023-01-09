@@ -227,7 +227,9 @@ static inline void mavlink_msg_param_ext_ack_send_buf(mavlink_message_t *msgbuf,
  */
 static inline uint16_t mavlink_msg_param_ext_ack_get_param_id(const mavlink_message_t* msg, char *param_id)
 {
-    return _MAV_RETURN_char_array(msg, param_id, 16,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_char_array(msg, param_id, 16,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -237,7 +239,9 @@ static inline uint16_t mavlink_msg_param_ext_ack_get_param_id(const mavlink_mess
  */
 static inline uint16_t mavlink_msg_param_ext_ack_get_param_value(const mavlink_message_t* msg, char *param_value)
 {
-    return _MAV_RETURN_char_array(msg, param_value, 128,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_char_array(msg, param_value, 128,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -247,7 +251,9 @@ static inline uint16_t mavlink_msg_param_ext_ack_get_param_value(const mavlink_m
  */
 static inline uint8_t mavlink_msg_param_ext_ack_get_param_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  144);
+    if (msg->len > 144)
+        return _MAV_RETURN_uint8_t(msg,  144);
+    return (uint8_t) 0;
 }
 
 /**
@@ -257,7 +263,9 @@ static inline uint8_t mavlink_msg_param_ext_ack_get_param_type(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_param_ext_ack_get_param_result(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  145);
+    if (msg->len > 145)
+        return _MAV_RETURN_uint8_t(msg,  145);
+    return (uint8_t) 0;
 }
 
 /**

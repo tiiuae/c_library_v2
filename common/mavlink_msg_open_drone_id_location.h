@@ -436,7 +436,9 @@ static inline void mavlink_msg_open_drone_id_location_send_buf(mavlink_message_t
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_uint8_t(msg,  30);
+    return (uint8_t) 0;
 }
 
 /**
@@ -446,7 +448,9 @@ static inline uint8_t mavlink_msg_open_drone_id_location_get_target_system(const
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  31);
+    if (msg->len > 31)
+        return _MAV_RETURN_uint8_t(msg,  31);
+    return (uint8_t) 0;
 }
 
 /**
@@ -456,7 +460,9 @@ static inline uint8_t mavlink_msg_open_drone_id_location_get_target_component(co
  */
 static inline uint16_t mavlink_msg_open_drone_id_location_get_id_or_mac(const mavlink_message_t* msg, uint8_t *id_or_mac)
 {
-    return _MAV_RETURN_uint8_t_array(msg, id_or_mac, 20,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_uint8_t_array(msg, id_or_mac, 20,  32);
+    return (uint16_t) 0;
 }
 
 /**
@@ -466,7 +472,9 @@ static inline uint16_t mavlink_msg_open_drone_id_location_get_id_or_mac(const ma
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_uint8_t(msg,  52);
+    return (uint8_t) 0;
 }
 
 /**
@@ -476,7 +484,9 @@ static inline uint8_t mavlink_msg_open_drone_id_location_get_status(const mavlin
  */
 static inline uint16_t mavlink_msg_open_drone_id_location_get_direction(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -486,7 +496,9 @@ static inline uint16_t mavlink_msg_open_drone_id_location_get_direction(const ma
  */
 static inline uint16_t mavlink_msg_open_drone_id_location_get_speed_horizontal(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint16_t(msg,  26);
+    return (uint16_t) 0;
 }
 
 /**
@@ -496,7 +508,9 @@ static inline uint16_t mavlink_msg_open_drone_id_location_get_speed_horizontal(c
  */
 static inline int16_t mavlink_msg_open_drone_id_location_get_speed_vertical(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_int16_t(msg,  28);
+    return (int16_t) 0;
 }
 
 /**
@@ -506,7 +520,9 @@ static inline int16_t mavlink_msg_open_drone_id_location_get_speed_vertical(cons
  */
 static inline int32_t mavlink_msg_open_drone_id_location_get_latitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -516,7 +532,9 @@ static inline int32_t mavlink_msg_open_drone_id_location_get_latitude(const mavl
  */
 static inline int32_t mavlink_msg_open_drone_id_location_get_longitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -526,7 +544,9 @@ static inline int32_t mavlink_msg_open_drone_id_location_get_longitude(const mav
  */
 static inline float mavlink_msg_open_drone_id_location_get_altitude_barometric(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -536,7 +556,9 @@ static inline float mavlink_msg_open_drone_id_location_get_altitude_barometric(c
  */
 static inline float mavlink_msg_open_drone_id_location_get_altitude_geodetic(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -546,7 +568,9 @@ static inline float mavlink_msg_open_drone_id_location_get_altitude_geodetic(con
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_height_reference(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  53);
+    if (msg->len > 53)
+        return _MAV_RETURN_uint8_t(msg,  53);
+    return (uint8_t) 0;
 }
 
 /**
@@ -556,7 +580,9 @@ static inline uint8_t mavlink_msg_open_drone_id_location_get_height_reference(co
  */
 static inline float mavlink_msg_open_drone_id_location_get_height(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -566,7 +592,9 @@ static inline float mavlink_msg_open_drone_id_location_get_height(const mavlink_
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_horizontal_accuracy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  54);
+    if (msg->len > 54)
+        return _MAV_RETURN_uint8_t(msg,  54);
+    return (uint8_t) 0;
 }
 
 /**
@@ -576,7 +604,9 @@ static inline uint8_t mavlink_msg_open_drone_id_location_get_horizontal_accuracy
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_vertical_accuracy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  55);
+    if (msg->len > 55)
+        return _MAV_RETURN_uint8_t(msg,  55);
+    return (uint8_t) 0;
 }
 
 /**
@@ -586,7 +616,9 @@ static inline uint8_t mavlink_msg_open_drone_id_location_get_vertical_accuracy(c
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_barometer_accuracy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  56);
+    if (msg->len > 56)
+        return _MAV_RETURN_uint8_t(msg,  56);
+    return (uint8_t) 0;
 }
 
 /**
@@ -596,7 +628,9 @@ static inline uint8_t mavlink_msg_open_drone_id_location_get_barometer_accuracy(
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_speed_accuracy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  57);
+    if (msg->len > 57)
+        return _MAV_RETURN_uint8_t(msg,  57);
+    return (uint8_t) 0;
 }
 
 /**
@@ -606,7 +640,9 @@ static inline uint8_t mavlink_msg_open_drone_id_location_get_speed_accuracy(cons
  */
 static inline float mavlink_msg_open_drone_id_location_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -616,7 +652,9 @@ static inline float mavlink_msg_open_drone_id_location_get_timestamp(const mavli
  */
 static inline uint8_t mavlink_msg_open_drone_id_location_get_timestamp_accuracy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  58);
+    if (msg->len > 58)
+        return _MAV_RETURN_uint8_t(msg,  58);
+    return (uint8_t) 0;
 }
 
 /**

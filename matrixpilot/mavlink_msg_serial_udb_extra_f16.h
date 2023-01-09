@@ -207,7 +207,9 @@ static inline void mavlink_msg_serial_udb_extra_f16_send_buf(mavlink_message_t *
  */
 static inline uint16_t mavlink_msg_serial_udb_extra_f16_get_sue_ID_LEAD_PILOT(const mavlink_message_t* msg, uint8_t *sue_ID_LEAD_PILOT)
 {
-    return _MAV_RETURN_uint8_t_array(msg, sue_ID_LEAD_PILOT, 40,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t_array(msg, sue_ID_LEAD_PILOT, 40,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -217,7 +219,9 @@ static inline uint16_t mavlink_msg_serial_udb_extra_f16_get_sue_ID_LEAD_PILOT(co
  */
 static inline uint16_t mavlink_msg_serial_udb_extra_f16_get_sue_ID_DIY_DRONES_URL(const mavlink_message_t* msg, uint8_t *sue_ID_DIY_DRONES_URL)
 {
-    return _MAV_RETURN_uint8_t_array(msg, sue_ID_DIY_DRONES_URL, 70,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t_array(msg, sue_ID_DIY_DRONES_URL, 70,  40);
+    return (uint16_t) 0;
 }
 
 /**

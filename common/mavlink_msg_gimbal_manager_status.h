@@ -276,7 +276,9 @@ static inline void mavlink_msg_gimbal_manager_status_send_buf(mavlink_message_t 
  */
 static inline uint32_t mavlink_msg_gimbal_manager_status_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint32_t mavlink_msg_gimbal_manager_status_get_time_boot_ms(const 
  */
 static inline uint32_t mavlink_msg_gimbal_manager_status_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline uint32_t mavlink_msg_gimbal_manager_status_get_flags(const mavlink
  */
 static inline uint8_t mavlink_msg_gimbal_manager_status_get_gimbal_device_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline uint8_t mavlink_msg_gimbal_manager_status_get_gimbal_device_id(con
  */
 static inline uint8_t mavlink_msg_gimbal_manager_status_get_primary_control_sysid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  9);
+    if (msg->len > 9)
+        return _MAV_RETURN_uint8_t(msg,  9);
+    return (uint8_t) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline uint8_t mavlink_msg_gimbal_manager_status_get_primary_control_sysi
  */
 static inline uint8_t mavlink_msg_gimbal_manager_status_get_primary_control_compid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint8_t(msg,  10);
+    return (uint8_t) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline uint8_t mavlink_msg_gimbal_manager_status_get_primary_control_comp
  */
 static inline uint8_t mavlink_msg_gimbal_manager_status_get_secondary_control_sysid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  11);
+    if (msg->len > 11)
+        return _MAV_RETURN_uint8_t(msg,  11);
+    return (uint8_t) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline uint8_t mavlink_msg_gimbal_manager_status_get_secondary_control_sy
  */
 static inline uint8_t mavlink_msg_gimbal_manager_status_get_secondary_control_compid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**

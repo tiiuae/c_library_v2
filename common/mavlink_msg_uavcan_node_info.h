@@ -297,7 +297,9 @@ static inline void mavlink_msg_uavcan_node_info_send_buf(mavlink_message_t *msgb
  */
 static inline uint64_t mavlink_msg_uavcan_node_info_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -307,7 +309,9 @@ static inline uint64_t mavlink_msg_uavcan_node_info_get_time_usec(const mavlink_
  */
 static inline uint32_t mavlink_msg_uavcan_node_info_get_uptime_sec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -317,7 +321,9 @@ static inline uint32_t mavlink_msg_uavcan_node_info_get_uptime_sec(const mavlink
  */
 static inline uint16_t mavlink_msg_uavcan_node_info_get_name(const mavlink_message_t* msg, char *name)
 {
-    return _MAV_RETURN_char_array(msg, name, 80,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_char_array(msg, name, 80,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -327,7 +333,9 @@ static inline uint16_t mavlink_msg_uavcan_node_info_get_name(const mavlink_messa
  */
 static inline uint8_t mavlink_msg_uavcan_node_info_get_hw_version_major(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  96);
+    if (msg->len > 96)
+        return _MAV_RETURN_uint8_t(msg,  96);
+    return (uint8_t) 0;
 }
 
 /**
@@ -337,7 +345,9 @@ static inline uint8_t mavlink_msg_uavcan_node_info_get_hw_version_major(const ma
  */
 static inline uint8_t mavlink_msg_uavcan_node_info_get_hw_version_minor(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  97);
+    if (msg->len > 97)
+        return _MAV_RETURN_uint8_t(msg,  97);
+    return (uint8_t) 0;
 }
 
 /**
@@ -347,7 +357,9 @@ static inline uint8_t mavlink_msg_uavcan_node_info_get_hw_version_minor(const ma
  */
 static inline uint16_t mavlink_msg_uavcan_node_info_get_hw_unique_id(const mavlink_message_t* msg, uint8_t *hw_unique_id)
 {
-    return _MAV_RETURN_uint8_t_array(msg, hw_unique_id, 16,  98);
+    if (msg->len > 98)
+        return _MAV_RETURN_uint8_t_array(msg, hw_unique_id, 16,  98);
+    return (uint16_t) 0;
 }
 
 /**
@@ -357,7 +369,9 @@ static inline uint16_t mavlink_msg_uavcan_node_info_get_hw_unique_id(const mavli
  */
 static inline uint8_t mavlink_msg_uavcan_node_info_get_sw_version_major(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  114);
+    if (msg->len > 114)
+        return _MAV_RETURN_uint8_t(msg,  114);
+    return (uint8_t) 0;
 }
 
 /**
@@ -367,7 +381,9 @@ static inline uint8_t mavlink_msg_uavcan_node_info_get_sw_version_major(const ma
  */
 static inline uint8_t mavlink_msg_uavcan_node_info_get_sw_version_minor(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  115);
+    if (msg->len > 115)
+        return _MAV_RETURN_uint8_t(msg,  115);
+    return (uint8_t) 0;
 }
 
 /**
@@ -377,7 +393,9 @@ static inline uint8_t mavlink_msg_uavcan_node_info_get_sw_version_minor(const ma
  */
 static inline uint32_t mavlink_msg_uavcan_node_info_get_sw_vcs_commit(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint32_t(msg,  12);
+    return (uint32_t) 0;
 }
 
 /**

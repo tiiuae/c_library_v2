@@ -338,7 +338,9 @@ static inline void mavlink_msg_autopilot_state_for_gimbal_device_send_buf(mavlin
  */
 static inline uint8_t mavlink_msg_autopilot_state_for_gimbal_device_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  50);
+    if (msg->len > 50)
+        return _MAV_RETURN_uint8_t(msg,  50);
+    return (uint8_t) 0;
 }
 
 /**
@@ -348,7 +350,9 @@ static inline uint8_t mavlink_msg_autopilot_state_for_gimbal_device_get_target_s
  */
 static inline uint8_t mavlink_msg_autopilot_state_for_gimbal_device_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  51);
+    if (msg->len > 51)
+        return _MAV_RETURN_uint8_t(msg,  51);
+    return (uint8_t) 0;
 }
 
 /**
@@ -358,7 +362,9 @@ static inline uint8_t mavlink_msg_autopilot_state_for_gimbal_device_get_target_c
  */
 static inline uint64_t mavlink_msg_autopilot_state_for_gimbal_device_get_time_boot_us(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -368,7 +374,9 @@ static inline uint64_t mavlink_msg_autopilot_state_for_gimbal_device_get_time_bo
  */
 static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_get_q(const mavlink_message_t* msg, float *q)
 {
-    return _MAV_RETURN_float_array(msg, q, 4,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float_array(msg, q, 4,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -378,7 +386,9 @@ static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_get_q(const
  */
 static inline uint32_t mavlink_msg_autopilot_state_for_gimbal_device_get_q_estimated_delay_us(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint32_t(msg,  24);
+    return (uint32_t) 0;
 }
 
 /**
@@ -388,7 +398,9 @@ static inline uint32_t mavlink_msg_autopilot_state_for_gimbal_device_get_q_estim
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vx(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -398,7 +410,9 @@ static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vx(const m
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -408,7 +422,9 @@ static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vy(const m
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vz(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float(msg,  36);
+    return (float) 0;
 }
 
 /**
@@ -418,7 +434,9 @@ static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vz(const m
  */
 static inline uint32_t mavlink_msg_autopilot_state_for_gimbal_device_get_v_estimated_delay_us(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint32_t(msg,  40);
+    return (uint32_t) 0;
 }
 
 /**
@@ -428,7 +446,9 @@ static inline uint32_t mavlink_msg_autopilot_state_for_gimbal_device_get_v_estim
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_feed_forward_angular_velocity_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_float(msg,  44);
+    return (float) 0;
 }
 
 /**
@@ -438,7 +458,9 @@ static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_feed_forwa
  */
 static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_get_estimator_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_uint16_t(msg,  48);
+    return (uint16_t) 0;
 }
 
 /**
@@ -448,7 +470,9 @@ static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_get_estimat
  */
 static inline uint8_t mavlink_msg_autopilot_state_for_gimbal_device_get_landed_state(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_uint8_t(msg,  52);
+    return (uint8_t) 0;
 }
 
 /**

@@ -290,7 +290,9 @@ static inline void mavlink_msg_sensorpod_status_send_buf(mavlink_message_t *msgb
  */
 static inline uint64_t mavlink_msg_sensorpod_status_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -300,7 +302,9 @@ static inline uint64_t mavlink_msg_sensorpod_status_get_timestamp(const mavlink_
  */
 static inline uint8_t mavlink_msg_sensorpod_status_get_visensor_rate_1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint8_t(msg,  10);
+    return (uint8_t) 0;
 }
 
 /**
@@ -310,7 +314,9 @@ static inline uint8_t mavlink_msg_sensorpod_status_get_visensor_rate_1(const mav
  */
 static inline uint8_t mavlink_msg_sensorpod_status_get_visensor_rate_2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  11);
+    if (msg->len > 11)
+        return _MAV_RETURN_uint8_t(msg,  11);
+    return (uint8_t) 0;
 }
 
 /**
@@ -320,7 +326,9 @@ static inline uint8_t mavlink_msg_sensorpod_status_get_visensor_rate_2(const mav
  */
 static inline uint8_t mavlink_msg_sensorpod_status_get_visensor_rate_3(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -330,7 +338,9 @@ static inline uint8_t mavlink_msg_sensorpod_status_get_visensor_rate_3(const mav
  */
 static inline uint8_t mavlink_msg_sensorpod_status_get_visensor_rate_4(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  13);
+    if (msg->len > 13)
+        return _MAV_RETURN_uint8_t(msg,  13);
+    return (uint8_t) 0;
 }
 
 /**
@@ -340,7 +350,9 @@ static inline uint8_t mavlink_msg_sensorpod_status_get_visensor_rate_4(const mav
  */
 static inline uint8_t mavlink_msg_sensorpod_status_get_recording_nodes_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint8_t(msg,  14);
+    return (uint8_t) 0;
 }
 
 /**
@@ -350,7 +362,9 @@ static inline uint8_t mavlink_msg_sensorpod_status_get_recording_nodes_count(con
  */
 static inline uint8_t mavlink_msg_sensorpod_status_get_cpu_temp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  15);
+    if (msg->len > 15)
+        return _MAV_RETURN_uint8_t(msg,  15);
+    return (uint8_t) 0;
 }
 
 /**
@@ -360,7 +374,9 @@ static inline uint8_t mavlink_msg_sensorpod_status_get_cpu_temp(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sensorpod_status_get_free_space(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**

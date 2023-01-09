@@ -227,7 +227,9 @@ static inline void mavlink_msg_debug_float_array_send_buf(mavlink_message_t *msg
  */
 static inline uint64_t mavlink_msg_debug_float_array_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -237,7 +239,9 @@ static inline uint64_t mavlink_msg_debug_float_array_get_time_usec(const mavlink
  */
 static inline uint16_t mavlink_msg_debug_float_array_get_name(const mavlink_message_t* msg, char *name)
 {
-    return _MAV_RETURN_char_array(msg, name, 10,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_char_array(msg, name, 10,  10);
+    return (uint16_t) 0;
 }
 
 /**
@@ -247,7 +251,9 @@ static inline uint16_t mavlink_msg_debug_float_array_get_name(const mavlink_mess
  */
 static inline uint16_t mavlink_msg_debug_float_array_get_array_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -257,7 +263,9 @@ static inline uint16_t mavlink_msg_debug_float_array_get_array_id(const mavlink_
  */
 static inline uint16_t mavlink_msg_debug_float_array_get_data(const mavlink_message_t* msg, float *data)
 {
-    return _MAV_RETURN_float_array(msg, data, 58,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float_array(msg, data, 58,  20);
+    return (uint16_t) 0;
 }
 
 /**

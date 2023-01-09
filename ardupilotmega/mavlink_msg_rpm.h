@@ -206,7 +206,9 @@ static inline void mavlink_msg_rpm_send_buf(mavlink_message_t *msgbuf, mavlink_c
  */
 static inline float mavlink_msg_rpm_get_rpm1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline float mavlink_msg_rpm_get_rpm1(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_rpm_get_rpm2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**

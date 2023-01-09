@@ -206,7 +206,9 @@ static inline void mavlink_msg_current_event_sequence_send_buf(mavlink_message_t
  */
 static inline uint16_t mavlink_msg_current_event_sequence_get_sequence(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline uint16_t mavlink_msg_current_event_sequence_get_sequence(const mav
  */
 static inline uint8_t mavlink_msg_current_event_sequence_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint8_t(msg,  2);
+    return (uint8_t) 0;
 }
 
 /**

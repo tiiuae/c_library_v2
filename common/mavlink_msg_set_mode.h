@@ -220,7 +220,9 @@ static inline void mavlink_msg_set_mode_send_buf(mavlink_message_t *msgbuf, mavl
  */
 static inline uint8_t mavlink_msg_set_mode_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -230,7 +232,9 @@ static inline uint8_t mavlink_msg_set_mode_get_target_system(const mavlink_messa
  */
 static inline uint8_t mavlink_msg_set_mode_get_base_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -240,7 +244,9 @@ static inline uint8_t mavlink_msg_set_mode_get_base_mode(const mavlink_message_t
  */
 static inline uint32_t mavlink_msg_set_mode_get_custom_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**

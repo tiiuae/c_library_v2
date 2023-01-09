@@ -240,7 +240,9 @@ static inline void mavlink_msg_wifi_network_info_send_buf(mavlink_message_t *msg
  */
 static inline uint16_t mavlink_msg_wifi_network_info_get_ssid(const mavlink_message_t* msg, char *ssid)
 {
-    return _MAV_RETURN_char_array(msg, ssid, 32,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_char_array(msg, ssid, 32,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -250,7 +252,9 @@ static inline uint16_t mavlink_msg_wifi_network_info_get_ssid(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_wifi_network_info_get_channel_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint8_t(msg,  34);
+    return (uint8_t) 0;
 }
 
 /**
@@ -260,7 +264,9 @@ static inline uint8_t mavlink_msg_wifi_network_info_get_channel_id(const mavlink
  */
 static inline uint8_t mavlink_msg_wifi_network_info_get_signal_quality(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  35);
+    if (msg->len > 35)
+        return _MAV_RETURN_uint8_t(msg,  35);
+    return (uint8_t) 0;
 }
 
 /**
@@ -270,7 +276,9 @@ static inline uint8_t mavlink_msg_wifi_network_info_get_signal_quality(const mav
  */
 static inline uint16_t mavlink_msg_wifi_network_info_get_data_rate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -280,7 +288,9 @@ static inline uint16_t mavlink_msg_wifi_network_info_get_data_rate(const mavlink
  */
 static inline uint8_t mavlink_msg_wifi_network_info_get_security(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint8_t(msg,  36);
+    return (uint8_t) 0;
 }
 
 /**

@@ -276,7 +276,9 @@ static inline void mavlink_msg_gsm_link_status_send_buf(mavlink_message_t *msgbu
  */
 static inline uint64_t mavlink_msg_gsm_link_status_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint64_t mavlink_msg_gsm_link_status_get_timestamp(const mavlink_m
  */
 static inline uint8_t mavlink_msg_gsm_link_status_get_gsm_modem_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline uint8_t mavlink_msg_gsm_link_status_get_gsm_modem_type(const mavli
  */
 static inline uint8_t mavlink_msg_gsm_link_status_get_gsm_link_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  9);
+    if (msg->len > 9)
+        return _MAV_RETURN_uint8_t(msg,  9);
+    return (uint8_t) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline uint8_t mavlink_msg_gsm_link_status_get_gsm_link_type(const mavlin
  */
 static inline uint8_t mavlink_msg_gsm_link_status_get_rssi(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint8_t(msg,  10);
+    return (uint8_t) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline uint8_t mavlink_msg_gsm_link_status_get_rssi(const mavlink_message
  */
 static inline uint8_t mavlink_msg_gsm_link_status_get_rsrp_rscp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  11);
+    if (msg->len > 11)
+        return _MAV_RETURN_uint8_t(msg,  11);
+    return (uint8_t) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline uint8_t mavlink_msg_gsm_link_status_get_rsrp_rscp(const mavlink_me
  */
 static inline uint8_t mavlink_msg_gsm_link_status_get_sinr_ecio(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline uint8_t mavlink_msg_gsm_link_status_get_sinr_ecio(const mavlink_me
  */
 static inline uint8_t mavlink_msg_gsm_link_status_get_rsrq(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  13);
+    if (msg->len > 13)
+        return _MAV_RETURN_uint8_t(msg,  13);
+    return (uint8_t) 0;
 }
 
 /**

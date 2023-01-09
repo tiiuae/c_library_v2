@@ -360,7 +360,9 @@ static inline void mavlink_msg_gps_rtk_send_buf(mavlink_message_t *msgbuf, mavli
  */
 static inline uint32_t mavlink_msg_gps_rtk_get_time_last_baseline_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -370,7 +372,9 @@ static inline uint32_t mavlink_msg_gps_rtk_get_time_last_baseline_ms(const mavli
  */
 static inline uint8_t mavlink_msg_gps_rtk_get_rtk_receiver_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_uint8_t(msg,  30);
+    return (uint8_t) 0;
 }
 
 /**
@@ -380,7 +384,9 @@ static inline uint8_t mavlink_msg_gps_rtk_get_rtk_receiver_id(const mavlink_mess
  */
 static inline uint16_t mavlink_msg_gps_rtk_get_wn(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint16_t(msg,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -390,7 +396,9 @@ static inline uint16_t mavlink_msg_gps_rtk_get_wn(const mavlink_message_t* msg)
  */
 static inline uint32_t mavlink_msg_gps_rtk_get_tow(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -400,7 +408,9 @@ static inline uint32_t mavlink_msg_gps_rtk_get_tow(const mavlink_message_t* msg)
  */
 static inline uint8_t mavlink_msg_gps_rtk_get_rtk_health(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  31);
+    if (msg->len > 31)
+        return _MAV_RETURN_uint8_t(msg,  31);
+    return (uint8_t) 0;
 }
 
 /**
@@ -410,7 +420,9 @@ static inline uint8_t mavlink_msg_gps_rtk_get_rtk_health(const mavlink_message_t
  */
 static inline uint8_t mavlink_msg_gps_rtk_get_rtk_rate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_uint8_t(msg,  32);
+    return (uint8_t) 0;
 }
 
 /**
@@ -420,7 +432,9 @@ static inline uint8_t mavlink_msg_gps_rtk_get_rtk_rate(const mavlink_message_t* 
  */
 static inline uint8_t mavlink_msg_gps_rtk_get_nsats(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  33);
+    if (msg->len > 33)
+        return _MAV_RETURN_uint8_t(msg,  33);
+    return (uint8_t) 0;
 }
 
 /**
@@ -430,7 +444,9 @@ static inline uint8_t mavlink_msg_gps_rtk_get_nsats(const mavlink_message_t* msg
  */
 static inline uint8_t mavlink_msg_gps_rtk_get_baseline_coords_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint8_t(msg,  34);
+    return (uint8_t) 0;
 }
 
 /**
@@ -440,7 +456,9 @@ static inline uint8_t mavlink_msg_gps_rtk_get_baseline_coords_type(const mavlink
  */
 static inline int32_t mavlink_msg_gps_rtk_get_baseline_a_mm(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -450,7 +468,9 @@ static inline int32_t mavlink_msg_gps_rtk_get_baseline_a_mm(const mavlink_messag
  */
 static inline int32_t mavlink_msg_gps_rtk_get_baseline_b_mm(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -460,7 +480,9 @@ static inline int32_t mavlink_msg_gps_rtk_get_baseline_b_mm(const mavlink_messag
  */
 static inline int32_t mavlink_msg_gps_rtk_get_baseline_c_mm(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
@@ -470,7 +492,9 @@ static inline int32_t mavlink_msg_gps_rtk_get_baseline_c_mm(const mavlink_messag
  */
 static inline uint32_t mavlink_msg_gps_rtk_get_accuracy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint32_t(msg,  20);
+    return (uint32_t) 0;
 }
 
 /**
@@ -480,7 +504,9 @@ static inline uint32_t mavlink_msg_gps_rtk_get_accuracy(const mavlink_message_t*
  */
 static inline int32_t mavlink_msg_gps_rtk_get_iar_num_hypotheses(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_int32_t(msg,  24);
+    return (int32_t) 0;
 }
 
 /**

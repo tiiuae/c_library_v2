@@ -234,7 +234,9 @@ static inline void mavlink_msg_camera_settings_send_buf(mavlink_message_t *msgbu
  */
 static inline uint32_t mavlink_msg_camera_settings_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline uint32_t mavlink_msg_camera_settings_get_time_boot_ms(const mavlin
  */
 static inline uint8_t mavlink_msg_camera_settings_get_mode_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline uint8_t mavlink_msg_camera_settings_get_mode_id(const mavlink_mess
  */
 static inline float mavlink_msg_camera_settings_get_zoomLevel(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_float(msg,  5);
+    return (float) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline float mavlink_msg_camera_settings_get_zoomLevel(const mavlink_mess
  */
 static inline float mavlink_msg_camera_settings_get_focusLevel(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  9);
+    if (msg->len > 9)
+        return _MAV_RETURN_float(msg,  9);
+    return (float) 0;
 }
 
 /**

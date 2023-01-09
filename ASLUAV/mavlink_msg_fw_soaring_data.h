@@ -528,7 +528,9 @@ static inline void mavlink_msg_fw_soaring_data_send_buf(mavlink_message_t *msgbu
  */
 static inline uint64_t mavlink_msg_fw_soaring_data_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -538,7 +540,9 @@ static inline uint64_t mavlink_msg_fw_soaring_data_get_timestamp(const mavlink_m
  */
 static inline uint64_t mavlink_msg_fw_soaring_data_get_timestampModeChanged(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint64_t(msg,  8);
+    return (uint64_t) 0;
 }
 
 /**
@@ -548,7 +552,9 @@ static inline uint64_t mavlink_msg_fw_soaring_data_get_timestampModeChanged(cons
  */
 static inline float mavlink_msg_fw_soaring_data_get_xW(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -558,7 +564,9 @@ static inline float mavlink_msg_fw_soaring_data_get_xW(const mavlink_message_t* 
  */
 static inline float mavlink_msg_fw_soaring_data_get_xR(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -568,7 +576,9 @@ static inline float mavlink_msg_fw_soaring_data_get_xR(const mavlink_message_t* 
  */
 static inline float mavlink_msg_fw_soaring_data_get_xLat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -578,7 +588,9 @@ static inline float mavlink_msg_fw_soaring_data_get_xLat(const mavlink_message_t
  */
 static inline float mavlink_msg_fw_soaring_data_get_xLon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -588,7 +600,9 @@ static inline float mavlink_msg_fw_soaring_data_get_xLon(const mavlink_message_t
  */
 static inline float mavlink_msg_fw_soaring_data_get_VarW(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -598,7 +612,9 @@ static inline float mavlink_msg_fw_soaring_data_get_VarW(const mavlink_message_t
  */
 static inline float mavlink_msg_fw_soaring_data_get_VarR(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float(msg,  36);
+    return (float) 0;
 }
 
 /**
@@ -608,7 +624,9 @@ static inline float mavlink_msg_fw_soaring_data_get_VarR(const mavlink_message_t
  */
 static inline float mavlink_msg_fw_soaring_data_get_VarLat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_float(msg,  40);
+    return (float) 0;
 }
 
 /**
@@ -618,7 +636,9 @@ static inline float mavlink_msg_fw_soaring_data_get_VarLat(const mavlink_message
  */
 static inline float mavlink_msg_fw_soaring_data_get_VarLon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_float(msg,  44);
+    return (float) 0;
 }
 
 /**
@@ -628,7 +648,9 @@ static inline float mavlink_msg_fw_soaring_data_get_VarLon(const mavlink_message
  */
 static inline float mavlink_msg_fw_soaring_data_get_LoiterRadius(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_float(msg,  48);
+    return (float) 0;
 }
 
 /**
@@ -638,7 +660,9 @@ static inline float mavlink_msg_fw_soaring_data_get_LoiterRadius(const mavlink_m
  */
 static inline float mavlink_msg_fw_soaring_data_get_LoiterDirection(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_float(msg,  52);
+    return (float) 0;
 }
 
 /**
@@ -648,7 +672,9 @@ static inline float mavlink_msg_fw_soaring_data_get_LoiterDirection(const mavlin
  */
 static inline float mavlink_msg_fw_soaring_data_get_DistToSoarPoint(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  56);
+    if (msg->len > 56)
+        return _MAV_RETURN_float(msg,  56);
+    return (float) 0;
 }
 
 /**
@@ -658,7 +684,9 @@ static inline float mavlink_msg_fw_soaring_data_get_DistToSoarPoint(const mavlin
  */
 static inline float mavlink_msg_fw_soaring_data_get_vSinkExp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  60);
+    if (msg->len > 60)
+        return _MAV_RETURN_float(msg,  60);
+    return (float) 0;
 }
 
 /**
@@ -668,7 +696,9 @@ static inline float mavlink_msg_fw_soaring_data_get_vSinkExp(const mavlink_messa
  */
 static inline float mavlink_msg_fw_soaring_data_get_z1_LocalUpdraftSpeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  64);
+    if (msg->len > 64)
+        return _MAV_RETURN_float(msg,  64);
+    return (float) 0;
 }
 
 /**
@@ -678,7 +708,9 @@ static inline float mavlink_msg_fw_soaring_data_get_z1_LocalUpdraftSpeed(const m
  */
 static inline float mavlink_msg_fw_soaring_data_get_z2_DeltaRoll(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  68);
+    if (msg->len > 68)
+        return _MAV_RETURN_float(msg,  68);
+    return (float) 0;
 }
 
 /**
@@ -688,7 +720,9 @@ static inline float mavlink_msg_fw_soaring_data_get_z2_DeltaRoll(const mavlink_m
  */
 static inline float mavlink_msg_fw_soaring_data_get_z1_exp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  72);
+    if (msg->len > 72)
+        return _MAV_RETURN_float(msg,  72);
+    return (float) 0;
 }
 
 /**
@@ -698,7 +732,9 @@ static inline float mavlink_msg_fw_soaring_data_get_z1_exp(const mavlink_message
  */
 static inline float mavlink_msg_fw_soaring_data_get_z2_exp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  76);
+    if (msg->len > 76)
+        return _MAV_RETURN_float(msg,  76);
+    return (float) 0;
 }
 
 /**
@@ -708,7 +744,9 @@ static inline float mavlink_msg_fw_soaring_data_get_z2_exp(const mavlink_message
  */
 static inline float mavlink_msg_fw_soaring_data_get_ThermalGSNorth(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  80);
+    if (msg->len > 80)
+        return _MAV_RETURN_float(msg,  80);
+    return (float) 0;
 }
 
 /**
@@ -718,7 +756,9 @@ static inline float mavlink_msg_fw_soaring_data_get_ThermalGSNorth(const mavlink
  */
 static inline float mavlink_msg_fw_soaring_data_get_ThermalGSEast(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  84);
+    if (msg->len > 84)
+        return _MAV_RETURN_float(msg,  84);
+    return (float) 0;
 }
 
 /**
@@ -728,7 +768,9 @@ static inline float mavlink_msg_fw_soaring_data_get_ThermalGSEast(const mavlink_
  */
 static inline float mavlink_msg_fw_soaring_data_get_TSE_dot(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  88);
+    if (msg->len > 88)
+        return _MAV_RETURN_float(msg,  88);
+    return (float) 0;
 }
 
 /**
@@ -738,7 +780,9 @@ static inline float mavlink_msg_fw_soaring_data_get_TSE_dot(const mavlink_messag
  */
 static inline float mavlink_msg_fw_soaring_data_get_DebugVar1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  92);
+    if (msg->len > 92)
+        return _MAV_RETURN_float(msg,  92);
+    return (float) 0;
 }
 
 /**
@@ -748,7 +792,9 @@ static inline float mavlink_msg_fw_soaring_data_get_DebugVar1(const mavlink_mess
  */
 static inline float mavlink_msg_fw_soaring_data_get_DebugVar2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  96);
+    if (msg->len > 96)
+        return _MAV_RETURN_float(msg,  96);
+    return (float) 0;
 }
 
 /**
@@ -758,7 +804,9 @@ static inline float mavlink_msg_fw_soaring_data_get_DebugVar2(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_fw_soaring_data_get_ControlMode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  100);
+    if (msg->len > 100)
+        return _MAV_RETURN_uint8_t(msg,  100);
+    return (uint8_t) 0;
 }
 
 /**
@@ -768,7 +816,9 @@ static inline uint8_t mavlink_msg_fw_soaring_data_get_ControlMode(const mavlink_
  */
 static inline uint8_t mavlink_msg_fw_soaring_data_get_valid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  101);
+    if (msg->len > 101)
+        return _MAV_RETURN_uint8_t(msg,  101);
+    return (uint8_t) 0;
 }
 
 /**

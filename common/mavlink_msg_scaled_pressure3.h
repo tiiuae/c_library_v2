@@ -248,7 +248,9 @@ static inline void mavlink_msg_scaled_pressure3_send_buf(mavlink_message_t *msgb
  */
 static inline uint32_t mavlink_msg_scaled_pressure3_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline uint32_t mavlink_msg_scaled_pressure3_get_time_boot_ms(const mavli
  */
 static inline float mavlink_msg_scaled_pressure3_get_press_abs(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline float mavlink_msg_scaled_pressure3_get_press_abs(const mavlink_mes
  */
 static inline float mavlink_msg_scaled_pressure3_get_press_diff(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline float mavlink_msg_scaled_pressure3_get_press_diff(const mavlink_me
  */
 static inline int16_t mavlink_msg_scaled_pressure3_get_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int16_t(msg,  12);
+    return (int16_t) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline int16_t mavlink_msg_scaled_pressure3_get_temperature(const mavlink
  */
 static inline int16_t mavlink_msg_scaled_pressure3_get_temperature_press_diff(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_int16_t(msg,  14);
+    return (int16_t) 0;
 }
 
 /**

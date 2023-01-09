@@ -234,7 +234,9 @@ static inline void mavlink_msg_mission_request_send_buf(mavlink_message_t *msgbu
  */
 static inline uint8_t mavlink_msg_mission_request_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint8_t(msg,  2);
+    return (uint8_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline uint8_t mavlink_msg_mission_request_get_target_system(const mavlin
  */
 static inline uint8_t mavlink_msg_mission_request_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  3);
+    if (msg->len > 3)
+        return _MAV_RETURN_uint8_t(msg,  3);
+    return (uint8_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline uint8_t mavlink_msg_mission_request_get_target_component(const mav
  */
 static inline uint16_t mavlink_msg_mission_request_get_seq(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline uint16_t mavlink_msg_mission_request_get_seq(const mavlink_message
  */
 static inline uint8_t mavlink_msg_mission_request_get_mission_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**

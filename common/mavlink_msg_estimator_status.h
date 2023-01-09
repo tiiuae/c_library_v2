@@ -318,7 +318,9 @@ static inline void mavlink_msg_estimator_status_send_buf(mavlink_message_t *msgb
  */
 static inline uint64_t mavlink_msg_estimator_status_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -328,7 +330,9 @@ static inline uint64_t mavlink_msg_estimator_status_get_time_usec(const mavlink_
  */
 static inline uint16_t mavlink_msg_estimator_status_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint16_t(msg,  40);
+    return (uint16_t) 0;
 }
 
 /**
@@ -338,7 +342,9 @@ static inline uint16_t mavlink_msg_estimator_status_get_flags(const mavlink_mess
  */
 static inline float mavlink_msg_estimator_status_get_vel_ratio(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -348,7 +354,9 @@ static inline float mavlink_msg_estimator_status_get_vel_ratio(const mavlink_mes
  */
 static inline float mavlink_msg_estimator_status_get_pos_horiz_ratio(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -358,7 +366,9 @@ static inline float mavlink_msg_estimator_status_get_pos_horiz_ratio(const mavli
  */
 static inline float mavlink_msg_estimator_status_get_pos_vert_ratio(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -368,7 +378,9 @@ static inline float mavlink_msg_estimator_status_get_pos_vert_ratio(const mavlin
  */
 static inline float mavlink_msg_estimator_status_get_mag_ratio(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -378,7 +390,9 @@ static inline float mavlink_msg_estimator_status_get_mag_ratio(const mavlink_mes
  */
 static inline float mavlink_msg_estimator_status_get_hagl_ratio(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -388,7 +402,9 @@ static inline float mavlink_msg_estimator_status_get_hagl_ratio(const mavlink_me
  */
 static inline float mavlink_msg_estimator_status_get_tas_ratio(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -398,7 +414,9 @@ static inline float mavlink_msg_estimator_status_get_tas_ratio(const mavlink_mes
  */
 static inline float mavlink_msg_estimator_status_get_pos_horiz_accuracy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -408,7 +426,9 @@ static inline float mavlink_msg_estimator_status_get_pos_horiz_accuracy(const ma
  */
 static inline float mavlink_msg_estimator_status_get_pos_vert_accuracy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float(msg,  36);
+    return (float) 0;
 }
 
 /**

@@ -207,7 +207,9 @@ static inline void mavlink_msg_serial_udb_extra_f15_send_buf(mavlink_message_t *
  */
 static inline uint16_t mavlink_msg_serial_udb_extra_f15_get_sue_ID_VEHICLE_MODEL_NAME(const mavlink_message_t* msg, uint8_t *sue_ID_VEHICLE_MODEL_NAME)
 {
-    return _MAV_RETURN_uint8_t_array(msg, sue_ID_VEHICLE_MODEL_NAME, 40,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t_array(msg, sue_ID_VEHICLE_MODEL_NAME, 40,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -217,7 +219,9 @@ static inline uint16_t mavlink_msg_serial_udb_extra_f15_get_sue_ID_VEHICLE_MODEL
  */
 static inline uint16_t mavlink_msg_serial_udb_extra_f15_get_sue_ID_VEHICLE_REGISTRATION(const mavlink_message_t* msg, uint8_t *sue_ID_VEHICLE_REGISTRATION)
 {
-    return _MAV_RETURN_uint8_t_array(msg, sue_ID_VEHICLE_REGISTRATION, 20,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t_array(msg, sue_ID_VEHICLE_REGISTRATION, 20,  40);
+    return (uint16_t) 0;
 }
 
 /**

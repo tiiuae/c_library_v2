@@ -234,7 +234,9 @@ static inline void mavlink_msg_flight_information_send_buf(mavlink_message_t *ms
  */
 static inline uint32_t mavlink_msg_flight_information_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint32_t(msg,  24);
+    return (uint32_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline uint32_t mavlink_msg_flight_information_get_time_boot_ms(const mav
  */
 static inline uint64_t mavlink_msg_flight_information_get_arming_time_utc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline uint64_t mavlink_msg_flight_information_get_arming_time_utc(const 
  */
 static inline uint64_t mavlink_msg_flight_information_get_takeoff_time_utc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint64_t(msg,  8);
+    return (uint64_t) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline uint64_t mavlink_msg_flight_information_get_takeoff_time_utc(const
  */
 static inline uint64_t mavlink_msg_flight_information_get_flight_uuid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint64_t(msg,  16);
+    return (uint64_t) 0;
 }
 
 /**

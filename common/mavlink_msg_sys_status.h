@@ -402,7 +402,9 @@ static inline void mavlink_msg_sys_status_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_present(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -412,7 +414,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_presen
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_enabled(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -422,7 +426,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_enable
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_health(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -432,7 +438,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_health
  */
 static inline uint16_t mavlink_msg_sys_status_get_load(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint16_t(msg,  12);
+    return (uint16_t) 0;
 }
 
 /**
@@ -442,7 +450,9 @@ static inline uint16_t mavlink_msg_sys_status_get_load(const mavlink_message_t* 
  */
 static inline uint16_t mavlink_msg_sys_status_get_voltage_battery(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint16_t(msg,  14);
+    return (uint16_t) 0;
 }
 
 /**
@@ -452,7 +462,9 @@ static inline uint16_t mavlink_msg_sys_status_get_voltage_battery(const mavlink_
  */
 static inline int16_t mavlink_msg_sys_status_get_current_battery(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int16_t(msg,  16);
+    return (int16_t) 0;
 }
 
 /**
@@ -462,7 +474,9 @@ static inline int16_t mavlink_msg_sys_status_get_current_battery(const mavlink_m
  */
 static inline int8_t mavlink_msg_sys_status_get_battery_remaining(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_int8_t(msg,  30);
+    return (int8_t) 0;
 }
 
 /**
@@ -472,7 +486,9 @@ static inline int8_t mavlink_msg_sys_status_get_battery_remaining(const mavlink_
  */
 static inline uint16_t mavlink_msg_sys_status_get_drop_rate_comm(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint16_t(msg,  18);
+    return (uint16_t) 0;
 }
 
 /**
@@ -482,7 +498,9 @@ static inline uint16_t mavlink_msg_sys_status_get_drop_rate_comm(const mavlink_m
  */
 static inline uint16_t mavlink_msg_sys_status_get_errors_comm(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint16_t(msg,  20);
+    return (uint16_t) 0;
 }
 
 /**
@@ -492,7 +510,9 @@ static inline uint16_t mavlink_msg_sys_status_get_errors_comm(const mavlink_mess
  */
 static inline uint16_t mavlink_msg_sys_status_get_errors_count1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_uint16_t(msg,  22);
+    return (uint16_t) 0;
 }
 
 /**
@@ -502,7 +522,9 @@ static inline uint16_t mavlink_msg_sys_status_get_errors_count1(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sys_status_get_errors_count2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -512,7 +534,9 @@ static inline uint16_t mavlink_msg_sys_status_get_errors_count2(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sys_status_get_errors_count3(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint16_t(msg,  26);
+    return (uint16_t) 0;
 }
 
 /**
@@ -522,7 +546,9 @@ static inline uint16_t mavlink_msg_sys_status_get_errors_count3(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sys_status_get_errors_count4(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint16_t(msg,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -532,7 +558,9 @@ static inline uint16_t mavlink_msg_sys_status_get_errors_count4(const mavlink_me
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_present_extended(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  31);
+    if (msg->len > 31)
+        return _MAV_RETURN_uint32_t(msg,  31);
+    return (uint32_t) 0;
 }
 
 /**
@@ -542,7 +570,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_presen
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_enabled_extended(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  35);
+    if (msg->len > 35)
+        return _MAV_RETURN_uint32_t(msg,  35);
+    return (uint32_t) 0;
 }
 
 /**
@@ -552,7 +582,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_enable
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_health_extended(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  39);
+    if (msg->len > 39)
+        return _MAV_RETURN_uint32_t(msg,  39);
+    return (uint32_t) 0;
 }
 
 /**

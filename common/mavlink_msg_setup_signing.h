@@ -226,7 +226,9 @@ static inline void mavlink_msg_setup_signing_send_buf(mavlink_message_t *msgbuf,
  */
 static inline uint8_t mavlink_msg_setup_signing_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**
@@ -236,7 +238,9 @@ static inline uint8_t mavlink_msg_setup_signing_get_target_system(const mavlink_
  */
 static inline uint8_t mavlink_msg_setup_signing_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  9);
+    if (msg->len > 9)
+        return _MAV_RETURN_uint8_t(msg,  9);
+    return (uint8_t) 0;
 }
 
 /**
@@ -246,7 +250,9 @@ static inline uint8_t mavlink_msg_setup_signing_get_target_component(const mavli
  */
 static inline uint16_t mavlink_msg_setup_signing_get_secret_key(const mavlink_message_t* msg, uint8_t *secret_key)
 {
-    return _MAV_RETURN_uint8_t_array(msg, secret_key, 32,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint8_t_array(msg, secret_key, 32,  10);
+    return (uint16_t) 0;
 }
 
 /**
@@ -256,7 +262,9 @@ static inline uint16_t mavlink_msg_setup_signing_get_secret_key(const mavlink_me
  */
 static inline uint64_t mavlink_msg_setup_signing_get_initial_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**

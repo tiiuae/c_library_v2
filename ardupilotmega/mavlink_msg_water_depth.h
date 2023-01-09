@@ -332,7 +332,9 @@ static inline void mavlink_msg_water_depth_send_buf(mavlink_message_t *msgbuf, m
  */
 static inline uint32_t mavlink_msg_water_depth_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -342,7 +344,9 @@ static inline uint32_t mavlink_msg_water_depth_get_time_boot_ms(const mavlink_me
  */
 static inline uint8_t mavlink_msg_water_depth_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint8_t(msg,  36);
+    return (uint8_t) 0;
 }
 
 /**
@@ -352,7 +356,9 @@ static inline uint8_t mavlink_msg_water_depth_get_id(const mavlink_message_t* ms
  */
 static inline uint8_t mavlink_msg_water_depth_get_healthy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  37);
+    if (msg->len > 37)
+        return _MAV_RETURN_uint8_t(msg,  37);
+    return (uint8_t) 0;
 }
 
 /**
@@ -362,7 +368,9 @@ static inline uint8_t mavlink_msg_water_depth_get_healthy(const mavlink_message_
  */
 static inline int32_t mavlink_msg_water_depth_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -372,7 +380,9 @@ static inline int32_t mavlink_msg_water_depth_get_lat(const mavlink_message_t* m
  */
 static inline int32_t mavlink_msg_water_depth_get_lng(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -382,7 +392,9 @@ static inline int32_t mavlink_msg_water_depth_get_lng(const mavlink_message_t* m
  */
 static inline float mavlink_msg_water_depth_get_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -392,7 +404,9 @@ static inline float mavlink_msg_water_depth_get_alt(const mavlink_message_t* msg
  */
 static inline float mavlink_msg_water_depth_get_roll(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -402,7 +416,9 @@ static inline float mavlink_msg_water_depth_get_roll(const mavlink_message_t* ms
  */
 static inline float mavlink_msg_water_depth_get_pitch(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -412,7 +428,9 @@ static inline float mavlink_msg_water_depth_get_pitch(const mavlink_message_t* m
  */
 static inline float mavlink_msg_water_depth_get_yaw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -422,7 +440,9 @@ static inline float mavlink_msg_water_depth_get_yaw(const mavlink_message_t* msg
  */
 static inline float mavlink_msg_water_depth_get_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -432,7 +452,9 @@ static inline float mavlink_msg_water_depth_get_distance(const mavlink_message_t
  */
 static inline float mavlink_msg_water_depth_get_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**

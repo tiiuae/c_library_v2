@@ -430,7 +430,9 @@ static inline void mavlink_msg_servo_output_raw_send_buf(mavlink_message_t *msgb
  */
 static inline uint32_t mavlink_msg_servo_output_raw_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -440,7 +442,9 @@ static inline uint32_t mavlink_msg_servo_output_raw_get_time_usec(const mavlink_
  */
 static inline uint8_t mavlink_msg_servo_output_raw_get_port(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint8_t(msg,  20);
+    return (uint8_t) 0;
 }
 
 /**
@@ -450,7 +454,9 @@ static inline uint8_t mavlink_msg_servo_output_raw_get_port(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo1_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -460,7 +466,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo1_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo2_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint16_t(msg,  6);
+    return (uint16_t) 0;
 }
 
 /**
@@ -470,7 +478,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo2_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo3_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -480,7 +490,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo3_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo4_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint16_t(msg,  10);
+    return (uint16_t) 0;
 }
 
 /**
@@ -490,7 +502,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo4_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo5_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint16_t(msg,  12);
+    return (uint16_t) 0;
 }
 
 /**
@@ -500,7 +514,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo5_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo6_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint16_t(msg,  14);
+    return (uint16_t) 0;
 }
 
 /**
@@ -510,7 +526,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo6_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo7_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -520,7 +538,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo7_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo8_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint16_t(msg,  18);
+    return (uint16_t) 0;
 }
 
 /**
@@ -530,7 +550,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo8_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo9_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  21);
+    if (msg->len > 21)
+        return _MAV_RETURN_uint16_t(msg,  21);
+    return (uint16_t) 0;
 }
 
 /**
@@ -540,7 +562,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo9_raw(const mavlink
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo10_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  23);
+    if (msg->len > 23)
+        return _MAV_RETURN_uint16_t(msg,  23);
+    return (uint16_t) 0;
 }
 
 /**
@@ -550,7 +574,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo10_raw(const mavlin
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo11_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  25);
+    if (msg->len > 25)
+        return _MAV_RETURN_uint16_t(msg,  25);
+    return (uint16_t) 0;
 }
 
 /**
@@ -560,7 +586,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo11_raw(const mavlin
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo12_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  27);
+    if (msg->len > 27)
+        return _MAV_RETURN_uint16_t(msg,  27);
+    return (uint16_t) 0;
 }
 
 /**
@@ -570,7 +598,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo12_raw(const mavlin
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo13_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  29);
+    if (msg->len > 29)
+        return _MAV_RETURN_uint16_t(msg,  29);
+    return (uint16_t) 0;
 }
 
 /**
@@ -580,7 +610,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo13_raw(const mavlin
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo14_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  31);
+    if (msg->len > 31)
+        return _MAV_RETURN_uint16_t(msg,  31);
+    return (uint16_t) 0;
 }
 
 /**
@@ -590,7 +622,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo14_raw(const mavlin
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo15_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  33);
+    if (msg->len > 33)
+        return _MAV_RETURN_uint16_t(msg,  33);
+    return (uint16_t) 0;
 }
 
 /**
@@ -600,7 +634,9 @@ static inline uint16_t mavlink_msg_servo_output_raw_get_servo15_raw(const mavlin
  */
 static inline uint16_t mavlink_msg_servo_output_raw_get_servo16_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  35);
+    if (msg->len > 35)
+        return _MAV_RETURN_uint16_t(msg,  35);
+    return (uint16_t) 0;
 }
 
 /**

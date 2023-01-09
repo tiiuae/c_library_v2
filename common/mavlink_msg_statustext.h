@@ -226,7 +226,9 @@ static inline void mavlink_msg_statustext_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline uint8_t mavlink_msg_statustext_get_severity(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -236,7 +238,9 @@ static inline uint8_t mavlink_msg_statustext_get_severity(const mavlink_message_
  */
 static inline uint16_t mavlink_msg_statustext_get_text(const mavlink_message_t* msg, char *text)
 {
-    return _MAV_RETURN_char_array(msg, text, 50,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_char_array(msg, text, 50,  1);
+    return (uint16_t) 0;
 }
 
 /**
@@ -246,7 +250,9 @@ static inline uint16_t mavlink_msg_statustext_get_text(const mavlink_message_t* 
  */
 static inline uint16_t mavlink_msg_statustext_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  51);
+    if (msg->len > 51)
+        return _MAV_RETURN_uint16_t(msg,  51);
+    return (uint16_t) 0;
 }
 
 /**
@@ -256,7 +262,9 @@ static inline uint16_t mavlink_msg_statustext_get_id(const mavlink_message_t* ms
  */
 static inline uint8_t mavlink_msg_statustext_get_chunk_seq(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  53);
+    if (msg->len > 53)
+        return _MAV_RETURN_uint8_t(msg,  53);
+    return (uint8_t) 0;
 }
 
 /**

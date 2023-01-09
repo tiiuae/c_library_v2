@@ -220,7 +220,9 @@ static inline void mavlink_msg_change_operator_control_ack_send_buf(mavlink_mess
  */
 static inline uint8_t mavlink_msg_change_operator_control_ack_get_gcs_system_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -230,7 +232,9 @@ static inline uint8_t mavlink_msg_change_operator_control_ack_get_gcs_system_id(
  */
 static inline uint8_t mavlink_msg_change_operator_control_ack_get_control_request(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**
@@ -240,7 +244,9 @@ static inline uint8_t mavlink_msg_change_operator_control_ack_get_control_reques
  */
 static inline uint8_t mavlink_msg_change_operator_control_ack_get_ack(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint8_t(msg,  2);
+    return (uint8_t) 0;
 }
 
 /**

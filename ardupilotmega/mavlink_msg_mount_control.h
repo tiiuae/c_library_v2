@@ -262,7 +262,9 @@ static inline void mavlink_msg_mount_control_send_buf(mavlink_message_t *msgbuf,
  */
 static inline uint8_t mavlink_msg_mount_control_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -272,7 +274,9 @@ static inline uint8_t mavlink_msg_mount_control_get_target_system(const mavlink_
  */
 static inline uint8_t mavlink_msg_mount_control_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  13);
+    if (msg->len > 13)
+        return _MAV_RETURN_uint8_t(msg,  13);
+    return (uint8_t) 0;
 }
 
 /**
@@ -282,7 +286,9 @@ static inline uint8_t mavlink_msg_mount_control_get_target_component(const mavli
  */
 static inline int32_t mavlink_msg_mount_control_get_input_a(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -292,7 +298,9 @@ static inline int32_t mavlink_msg_mount_control_get_input_a(const mavlink_messag
  */
 static inline int32_t mavlink_msg_mount_control_get_input_b(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -302,7 +310,9 @@ static inline int32_t mavlink_msg_mount_control_get_input_b(const mavlink_messag
  */
 static inline int32_t mavlink_msg_mount_control_get_input_c(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -312,7 +322,9 @@ static inline int32_t mavlink_msg_mount_control_get_input_c(const mavlink_messag
  */
 static inline uint8_t mavlink_msg_mount_control_get_save_position(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint8_t(msg,  14);
+    return (uint8_t) 0;
 }
 
 /**

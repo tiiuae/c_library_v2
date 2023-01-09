@@ -206,7 +206,9 @@ static inline void mavlink_msg_message_interval_send_buf(mavlink_message_t *msgb
  */
 static inline uint16_t mavlink_msg_message_interval_get_message_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline uint16_t mavlink_msg_message_interval_get_message_id(const mavlink
  */
 static inline int32_t mavlink_msg_message_interval_get_interval_us(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**

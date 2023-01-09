@@ -220,7 +220,9 @@ static inline void mavlink_msg_power_status_send_buf(mavlink_message_t *msgbuf, 
  */
 static inline uint16_t mavlink_msg_power_status_get_Vcc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -230,7 +232,9 @@ static inline uint16_t mavlink_msg_power_status_get_Vcc(const mavlink_message_t*
  */
 static inline uint16_t mavlink_msg_power_status_get_Vservo(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint16_t(msg,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -240,7 +244,9 @@ static inline uint16_t mavlink_msg_power_status_get_Vservo(const mavlink_message
  */
 static inline uint16_t mavlink_msg_power_status_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**

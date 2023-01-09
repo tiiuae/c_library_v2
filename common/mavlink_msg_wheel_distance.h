@@ -212,7 +212,9 @@ static inline void mavlink_msg_wheel_distance_send_buf(mavlink_message_t *msgbuf
  */
 static inline uint64_t mavlink_msg_wheel_distance_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -222,7 +224,9 @@ static inline uint64_t mavlink_msg_wheel_distance_get_time_usec(const mavlink_me
  */
 static inline uint8_t mavlink_msg_wheel_distance_get_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  136);
+    if (msg->len > 136)
+        return _MAV_RETURN_uint8_t(msg,  136);
+    return (uint8_t) 0;
 }
 
 /**
@@ -232,7 +236,9 @@ static inline uint8_t mavlink_msg_wheel_distance_get_count(const mavlink_message
  */
 static inline uint16_t mavlink_msg_wheel_distance_get_distance(const mavlink_message_t* msg, double *distance)
 {
-    return _MAV_RETURN_double_array(msg, distance, 16,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_double_array(msg, distance, 16,  8);
+    return (uint16_t) 0;
 }
 
 /**

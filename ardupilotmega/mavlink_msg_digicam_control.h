@@ -318,7 +318,9 @@ static inline void mavlink_msg_digicam_control_send_buf(mavlink_message_t *msgbu
  */
 static inline uint8_t mavlink_msg_digicam_control_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -328,7 +330,9 @@ static inline uint8_t mavlink_msg_digicam_control_get_target_system(const mavlin
  */
 static inline uint8_t mavlink_msg_digicam_control_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -338,7 +342,9 @@ static inline uint8_t mavlink_msg_digicam_control_get_target_component(const mav
  */
 static inline uint8_t mavlink_msg_digicam_control_get_session(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t(msg,  6);
+    return (uint8_t) 0;
 }
 
 /**
@@ -348,7 +354,9 @@ static inline uint8_t mavlink_msg_digicam_control_get_session(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_digicam_control_get_zoom_pos(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  7);
+    if (msg->len > 7)
+        return _MAV_RETURN_uint8_t(msg,  7);
+    return (uint8_t) 0;
 }
 
 /**
@@ -358,7 +366,9 @@ static inline uint8_t mavlink_msg_digicam_control_get_zoom_pos(const mavlink_mes
  */
 static inline int8_t mavlink_msg_digicam_control_get_zoom_step(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int8_t(msg,  8);
+    return (int8_t) 0;
 }
 
 /**
@@ -368,7 +378,9 @@ static inline int8_t mavlink_msg_digicam_control_get_zoom_step(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_digicam_control_get_focus_lock(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  9);
+    if (msg->len > 9)
+        return _MAV_RETURN_uint8_t(msg,  9);
+    return (uint8_t) 0;
 }
 
 /**
@@ -378,7 +390,9 @@ static inline uint8_t mavlink_msg_digicam_control_get_focus_lock(const mavlink_m
  */
 static inline uint8_t mavlink_msg_digicam_control_get_shot(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint8_t(msg,  10);
+    return (uint8_t) 0;
 }
 
 /**
@@ -388,7 +402,9 @@ static inline uint8_t mavlink_msg_digicam_control_get_shot(const mavlink_message
  */
 static inline uint8_t mavlink_msg_digicam_control_get_command_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  11);
+    if (msg->len > 11)
+        return _MAV_RETURN_uint8_t(msg,  11);
+    return (uint8_t) 0;
 }
 
 /**
@@ -398,7 +414,9 @@ static inline uint8_t mavlink_msg_digicam_control_get_command_id(const mavlink_m
  */
 static inline uint8_t mavlink_msg_digicam_control_get_extra_param(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -408,7 +426,9 @@ static inline uint8_t mavlink_msg_digicam_control_get_extra_param(const mavlink_
  */
 static inline float mavlink_msg_digicam_control_get_extra_value(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**

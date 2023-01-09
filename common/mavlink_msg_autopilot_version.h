@@ -341,7 +341,9 @@ static inline void mavlink_msg_autopilot_version_send_buf(mavlink_message_t *msg
  */
 static inline uint64_t mavlink_msg_autopilot_version_get_capabilities(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -351,7 +353,9 @@ static inline uint64_t mavlink_msg_autopilot_version_get_capabilities(const mavl
  */
 static inline uint32_t mavlink_msg_autopilot_version_get_flight_sw_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint32_t(msg,  16);
+    return (uint32_t) 0;
 }
 
 /**
@@ -361,7 +365,9 @@ static inline uint32_t mavlink_msg_autopilot_version_get_flight_sw_version(const
  */
 static inline uint32_t mavlink_msg_autopilot_version_get_middleware_sw_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint32_t(msg,  20);
+    return (uint32_t) 0;
 }
 
 /**
@@ -371,7 +377,9 @@ static inline uint32_t mavlink_msg_autopilot_version_get_middleware_sw_version(c
  */
 static inline uint32_t mavlink_msg_autopilot_version_get_os_sw_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint32_t(msg,  24);
+    return (uint32_t) 0;
 }
 
 /**
@@ -381,7 +389,9 @@ static inline uint32_t mavlink_msg_autopilot_version_get_os_sw_version(const mav
  */
 static inline uint32_t mavlink_msg_autopilot_version_get_board_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint32_t(msg,  28);
+    return (uint32_t) 0;
 }
 
 /**
@@ -391,7 +401,9 @@ static inline uint32_t mavlink_msg_autopilot_version_get_board_version(const mav
  */
 static inline uint16_t mavlink_msg_autopilot_version_get_flight_custom_version(const mavlink_message_t* msg, uint8_t *flight_custom_version)
 {
-    return _MAV_RETURN_uint8_t_array(msg, flight_custom_version, 8,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint8_t_array(msg, flight_custom_version, 8,  36);
+    return (uint16_t) 0;
 }
 
 /**
@@ -401,7 +413,9 @@ static inline uint16_t mavlink_msg_autopilot_version_get_flight_custom_version(c
  */
 static inline uint16_t mavlink_msg_autopilot_version_get_middleware_custom_version(const mavlink_message_t* msg, uint8_t *middleware_custom_version)
 {
-    return _MAV_RETURN_uint8_t_array(msg, middleware_custom_version, 8,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_uint8_t_array(msg, middleware_custom_version, 8,  44);
+    return (uint16_t) 0;
 }
 
 /**
@@ -411,7 +425,9 @@ static inline uint16_t mavlink_msg_autopilot_version_get_middleware_custom_versi
  */
 static inline uint16_t mavlink_msg_autopilot_version_get_os_custom_version(const mavlink_message_t* msg, uint8_t *os_custom_version)
 {
-    return _MAV_RETURN_uint8_t_array(msg, os_custom_version, 8,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_uint8_t_array(msg, os_custom_version, 8,  52);
+    return (uint16_t) 0;
 }
 
 /**
@@ -421,7 +437,9 @@ static inline uint16_t mavlink_msg_autopilot_version_get_os_custom_version(const
  */
 static inline uint16_t mavlink_msg_autopilot_version_get_vendor_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_uint16_t(msg,  32);
+    return (uint16_t) 0;
 }
 
 /**
@@ -431,7 +449,9 @@ static inline uint16_t mavlink_msg_autopilot_version_get_vendor_id(const mavlink
  */
 static inline uint16_t mavlink_msg_autopilot_version_get_product_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint16_t(msg,  34);
+    return (uint16_t) 0;
 }
 
 /**
@@ -441,7 +461,9 @@ static inline uint16_t mavlink_msg_autopilot_version_get_product_id(const mavlin
  */
 static inline uint64_t mavlink_msg_autopilot_version_get_uid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint64_t(msg,  8);
+    return (uint64_t) 0;
 }
 
 /**
@@ -451,7 +473,9 @@ static inline uint64_t mavlink_msg_autopilot_version_get_uid(const mavlink_messa
  */
 static inline uint16_t mavlink_msg_autopilot_version_get_uid2(const mavlink_message_t* msg, uint8_t *uid2)
 {
-    return _MAV_RETURN_uint8_t_array(msg, uid2, 18,  60);
+    if (msg->len > 60)
+        return _MAV_RETURN_uint8_t_array(msg, uid2, 18,  60);
+    return (uint16_t) 0;
 }
 
 /**

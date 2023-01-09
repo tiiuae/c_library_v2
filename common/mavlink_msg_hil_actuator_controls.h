@@ -226,7 +226,9 @@ static inline void mavlink_msg_hil_actuator_controls_send_buf(mavlink_message_t 
  */
 static inline uint64_t mavlink_msg_hil_actuator_controls_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -236,7 +238,9 @@ static inline uint64_t mavlink_msg_hil_actuator_controls_get_time_usec(const mav
  */
 static inline uint16_t mavlink_msg_hil_actuator_controls_get_controls(const mavlink_message_t* msg, float *controls)
 {
-    return _MAV_RETURN_float_array(msg, controls, 16,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float_array(msg, controls, 16,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -246,7 +250,9 @@ static inline uint16_t mavlink_msg_hil_actuator_controls_get_controls(const mavl
  */
 static inline uint8_t mavlink_msg_hil_actuator_controls_get_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  80);
+    if (msg->len > 80)
+        return _MAV_RETURN_uint8_t(msg,  80);
+    return (uint8_t) 0;
 }
 
 /**
@@ -256,7 +262,9 @@ static inline uint8_t mavlink_msg_hil_actuator_controls_get_mode(const mavlink_m
  */
 static inline uint64_t mavlink_msg_hil_actuator_controls_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint64_t(msg,  8);
+    return (uint64_t) 0;
 }
 
 /**

@@ -298,7 +298,9 @@ static inline void mavlink_msg_esc_info_send_buf(mavlink_message_t *msgbuf, mavl
  */
 static inline uint8_t mavlink_msg_esc_info_get_index(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  42);
+    if (msg->len > 42)
+        return _MAV_RETURN_uint8_t(msg,  42);
+    return (uint8_t) 0;
 }
 
 /**
@@ -308,7 +310,9 @@ static inline uint8_t mavlink_msg_esc_info_get_index(const mavlink_message_t* ms
  */
 static inline uint64_t mavlink_msg_esc_info_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -318,7 +322,9 @@ static inline uint64_t mavlink_msg_esc_info_get_time_usec(const mavlink_message_
  */
 static inline uint16_t mavlink_msg_esc_info_get_counter(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -328,7 +334,9 @@ static inline uint16_t mavlink_msg_esc_info_get_counter(const mavlink_message_t*
  */
 static inline uint8_t mavlink_msg_esc_info_get_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  43);
+    if (msg->len > 43)
+        return _MAV_RETURN_uint8_t(msg,  43);
+    return (uint8_t) 0;
 }
 
 /**
@@ -338,7 +346,9 @@ static inline uint8_t mavlink_msg_esc_info_get_count(const mavlink_message_t* ms
  */
 static inline uint8_t mavlink_msg_esc_info_get_connection_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_uint8_t(msg,  44);
+    return (uint8_t) 0;
 }
 
 /**
@@ -348,7 +358,9 @@ static inline uint8_t mavlink_msg_esc_info_get_connection_type(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_esc_info_get_info(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  45);
+    if (msg->len > 45)
+        return _MAV_RETURN_uint8_t(msg,  45);
+    return (uint8_t) 0;
 }
 
 /**
@@ -358,7 +370,9 @@ static inline uint8_t mavlink_msg_esc_info_get_info(const mavlink_message_t* msg
  */
 static inline uint16_t mavlink_msg_esc_info_get_failure_flags(const mavlink_message_t* msg, uint16_t *failure_flags)
 {
-    return _MAV_RETURN_uint16_t_array(msg, failure_flags, 4,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint16_t_array(msg, failure_flags, 4,  26);
+    return (uint16_t) 0;
 }
 
 /**
@@ -368,7 +382,9 @@ static inline uint16_t mavlink_msg_esc_info_get_failure_flags(const mavlink_mess
  */
 static inline uint16_t mavlink_msg_esc_info_get_error_count(const mavlink_message_t* msg, uint32_t *error_count)
 {
-    return _MAV_RETURN_uint32_t_array(msg, error_count, 4,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t_array(msg, error_count, 4,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -378,7 +394,9 @@ static inline uint16_t mavlink_msg_esc_info_get_error_count(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_esc_info_get_temperature(const mavlink_message_t* msg, int16_t *temperature)
 {
-    return _MAV_RETURN_int16_t_array(msg, temperature, 4,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_int16_t_array(msg, temperature, 4,  34);
+    return (uint16_t) 0;
 }
 
 /**

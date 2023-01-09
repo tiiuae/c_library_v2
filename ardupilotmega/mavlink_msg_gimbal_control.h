@@ -248,7 +248,9 @@ static inline void mavlink_msg_gimbal_control_send_buf(mavlink_message_t *msgbuf
  */
 static inline uint8_t mavlink_msg_gimbal_control_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline uint8_t mavlink_msg_gimbal_control_get_target_system(const mavlink
  */
 static inline uint8_t mavlink_msg_gimbal_control_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  13);
+    if (msg->len > 13)
+        return _MAV_RETURN_uint8_t(msg,  13);
+    return (uint8_t) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline uint8_t mavlink_msg_gimbal_control_get_target_component(const mavl
  */
 static inline float mavlink_msg_gimbal_control_get_demanded_rate_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline float mavlink_msg_gimbal_control_get_demanded_rate_x(const mavlink
  */
 static inline float mavlink_msg_gimbal_control_get_demanded_rate_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline float mavlink_msg_gimbal_control_get_demanded_rate_y(const mavlink
  */
 static inline float mavlink_msg_gimbal_control_get_demanded_rate_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**

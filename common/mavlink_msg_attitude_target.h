@@ -268,7 +268,9 @@ static inline void mavlink_msg_attitude_target_send_buf(mavlink_message_t *msgbu
  */
 static inline uint32_t mavlink_msg_attitude_target_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -278,7 +280,9 @@ static inline uint32_t mavlink_msg_attitude_target_get_time_boot_ms(const mavlin
  */
 static inline uint8_t mavlink_msg_attitude_target_get_type_mask(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint8_t(msg,  36);
+    return (uint8_t) 0;
 }
 
 /**
@@ -288,7 +292,9 @@ static inline uint8_t mavlink_msg_attitude_target_get_type_mask(const mavlink_me
  */
 static inline uint16_t mavlink_msg_attitude_target_get_q(const mavlink_message_t* msg, float *q)
 {
-    return _MAV_RETURN_float_array(msg, q, 4,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float_array(msg, q, 4,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -298,7 +304,9 @@ static inline uint16_t mavlink_msg_attitude_target_get_q(const mavlink_message_t
  */
 static inline float mavlink_msg_attitude_target_get_body_roll_rate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -308,7 +316,9 @@ static inline float mavlink_msg_attitude_target_get_body_roll_rate(const mavlink
  */
 static inline float mavlink_msg_attitude_target_get_body_pitch_rate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -318,7 +328,9 @@ static inline float mavlink_msg_attitude_target_get_body_pitch_rate(const mavlin
  */
 static inline float mavlink_msg_attitude_target_get_body_yaw_rate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -328,7 +340,9 @@ static inline float mavlink_msg_attitude_target_get_body_yaw_rate(const mavlink_
  */
 static inline float mavlink_msg_attitude_target_get_thrust(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**

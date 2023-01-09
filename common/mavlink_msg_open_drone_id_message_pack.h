@@ -255,7 +255,9 @@ static inline void mavlink_msg_open_drone_id_message_pack_send_buf(mavlink_messa
  */
 static inline uint8_t mavlink_msg_open_drone_id_message_pack_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -265,7 +267,9 @@ static inline uint8_t mavlink_msg_open_drone_id_message_pack_get_target_system(c
  */
 static inline uint8_t mavlink_msg_open_drone_id_message_pack_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**
@@ -275,7 +279,9 @@ static inline uint8_t mavlink_msg_open_drone_id_message_pack_get_target_componen
  */
 static inline uint16_t mavlink_msg_open_drone_id_message_pack_get_id_or_mac(const mavlink_message_t* msg, uint8_t *id_or_mac)
 {
-    return _MAV_RETURN_uint8_t_array(msg, id_or_mac, 20,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint8_t_array(msg, id_or_mac, 20,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -285,7 +291,9 @@ static inline uint16_t mavlink_msg_open_drone_id_message_pack_get_id_or_mac(cons
  */
 static inline uint8_t mavlink_msg_open_drone_id_message_pack_get_single_message_size(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_uint8_t(msg,  22);
+    return (uint8_t) 0;
 }
 
 /**
@@ -295,7 +303,9 @@ static inline uint8_t mavlink_msg_open_drone_id_message_pack_get_single_message_
  */
 static inline uint8_t mavlink_msg_open_drone_id_message_pack_get_msg_pack_size(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  23);
+    if (msg->len > 23)
+        return _MAV_RETURN_uint8_t(msg,  23);
+    return (uint8_t) 0;
 }
 
 /**
@@ -305,7 +315,9 @@ static inline uint8_t mavlink_msg_open_drone_id_message_pack_get_msg_pack_size(c
  */
 static inline uint16_t mavlink_msg_open_drone_id_message_pack_get_messages(const mavlink_message_t* msg, uint8_t *messages)
 {
-    return _MAV_RETURN_uint8_t_array(msg, messages, 225,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint8_t_array(msg, messages, 225,  24);
+    return (uint16_t) 0;
 }
 
 /**

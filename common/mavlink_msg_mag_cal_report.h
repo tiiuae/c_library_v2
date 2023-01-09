@@ -430,7 +430,9 @@ static inline void mavlink_msg_mag_cal_report_send_buf(mavlink_message_t *msgbuf
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_compass_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t(msg,  40);
+    return (uint8_t) 0;
 }
 
 /**
@@ -440,7 +442,9 @@ static inline uint8_t mavlink_msg_mag_cal_report_get_compass_id(const mavlink_me
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_cal_mask(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  41);
+    if (msg->len > 41)
+        return _MAV_RETURN_uint8_t(msg,  41);
+    return (uint8_t) 0;
 }
 
 /**
@@ -450,7 +454,9 @@ static inline uint8_t mavlink_msg_mag_cal_report_get_cal_mask(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_cal_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  42);
+    if (msg->len > 42)
+        return _MAV_RETURN_uint8_t(msg,  42);
+    return (uint8_t) 0;
 }
 
 /**
@@ -460,7 +466,9 @@ static inline uint8_t mavlink_msg_mag_cal_report_get_cal_status(const mavlink_me
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_autosaved(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  43);
+    if (msg->len > 43)
+        return _MAV_RETURN_uint8_t(msg,  43);
+    return (uint8_t) 0;
 }
 
 /**
@@ -470,7 +478,9 @@ static inline uint8_t mavlink_msg_mag_cal_report_get_autosaved(const mavlink_mes
  */
 static inline float mavlink_msg_mag_cal_report_get_fitness(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -480,7 +490,9 @@ static inline float mavlink_msg_mag_cal_report_get_fitness(const mavlink_message
  */
 static inline float mavlink_msg_mag_cal_report_get_ofs_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -490,7 +502,9 @@ static inline float mavlink_msg_mag_cal_report_get_ofs_x(const mavlink_message_t
  */
 static inline float mavlink_msg_mag_cal_report_get_ofs_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -500,7 +514,9 @@ static inline float mavlink_msg_mag_cal_report_get_ofs_y(const mavlink_message_t
  */
 static inline float mavlink_msg_mag_cal_report_get_ofs_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -510,7 +526,9 @@ static inline float mavlink_msg_mag_cal_report_get_ofs_z(const mavlink_message_t
  */
 static inline float mavlink_msg_mag_cal_report_get_diag_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -520,7 +538,9 @@ static inline float mavlink_msg_mag_cal_report_get_diag_x(const mavlink_message_
  */
 static inline float mavlink_msg_mag_cal_report_get_diag_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -530,7 +550,9 @@ static inline float mavlink_msg_mag_cal_report_get_diag_y(const mavlink_message_
  */
 static inline float mavlink_msg_mag_cal_report_get_diag_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -540,7 +562,9 @@ static inline float mavlink_msg_mag_cal_report_get_diag_z(const mavlink_message_
  */
 static inline float mavlink_msg_mag_cal_report_get_offdiag_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -550,7 +574,9 @@ static inline float mavlink_msg_mag_cal_report_get_offdiag_x(const mavlink_messa
  */
 static inline float mavlink_msg_mag_cal_report_get_offdiag_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -560,7 +586,9 @@ static inline float mavlink_msg_mag_cal_report_get_offdiag_y(const mavlink_messa
  */
 static inline float mavlink_msg_mag_cal_report_get_offdiag_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float(msg,  36);
+    return (float) 0;
 }
 
 /**
@@ -570,7 +598,9 @@ static inline float mavlink_msg_mag_cal_report_get_offdiag_z(const mavlink_messa
  */
 static inline float mavlink_msg_mag_cal_report_get_orientation_confidence(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_float(msg,  44);
+    return (float) 0;
 }
 
 /**
@@ -580,7 +610,9 @@ static inline float mavlink_msg_mag_cal_report_get_orientation_confidence(const 
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_old_orientation(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_uint8_t(msg,  48);
+    return (uint8_t) 0;
 }
 
 /**
@@ -590,7 +622,9 @@ static inline uint8_t mavlink_msg_mag_cal_report_get_old_orientation(const mavli
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_new_orientation(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  49);
+    if (msg->len > 49)
+        return _MAV_RETURN_uint8_t(msg,  49);
+    return (uint8_t) 0;
 }
 
 /**
@@ -600,7 +634,9 @@ static inline uint8_t mavlink_msg_mag_cal_report_get_new_orientation(const mavli
  */
 static inline float mavlink_msg_mag_cal_report_get_scale_factor(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  50);
+    if (msg->len > 50)
+        return _MAV_RETURN_float(msg,  50);
+    return (float) 0;
 }
 
 /**

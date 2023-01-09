@@ -255,7 +255,9 @@ static inline void mavlink_msg_attitude_quaternion_cov_send_buf(mavlink_message_
  */
 static inline uint64_t mavlink_msg_attitude_quaternion_cov_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -265,7 +267,9 @@ static inline uint64_t mavlink_msg_attitude_quaternion_cov_get_time_usec(const m
  */
 static inline uint16_t mavlink_msg_attitude_quaternion_cov_get_q(const mavlink_message_t* msg, float *q)
 {
-    return _MAV_RETURN_float_array(msg, q, 4,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float_array(msg, q, 4,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -275,7 +279,9 @@ static inline uint16_t mavlink_msg_attitude_quaternion_cov_get_q(const mavlink_m
  */
 static inline float mavlink_msg_attitude_quaternion_cov_get_rollspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -285,7 +291,9 @@ static inline float mavlink_msg_attitude_quaternion_cov_get_rollspeed(const mavl
  */
 static inline float mavlink_msg_attitude_quaternion_cov_get_pitchspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -295,7 +303,9 @@ static inline float mavlink_msg_attitude_quaternion_cov_get_pitchspeed(const mav
  */
 static inline float mavlink_msg_attitude_quaternion_cov_get_yawspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -305,7 +315,9 @@ static inline float mavlink_msg_attitude_quaternion_cov_get_yawspeed(const mavli
  */
 static inline uint16_t mavlink_msg_attitude_quaternion_cov_get_covariance(const mavlink_message_t* msg, float *covariance)
 {
-    return _MAV_RETURN_float_array(msg, covariance, 9,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float_array(msg, covariance, 9,  36);
+    return (uint16_t) 0;
 }
 
 /**

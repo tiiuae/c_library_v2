@@ -262,7 +262,9 @@ static inline void mavlink_msg_serial_udb_extra_f21_send_buf(mavlink_message_t *
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_accel_x_offset(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int16_t(msg,  0);
+    return (int16_t) 0;
 }
 
 /**
@@ -272,7 +274,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_accel_x_offset(co
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_accel_y_offset(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_int16_t(msg,  2);
+    return (int16_t) 0;
 }
 
 /**
@@ -282,7 +286,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_accel_y_offset(co
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_accel_z_offset(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int16_t(msg,  4);
+    return (int16_t) 0;
 }
 
 /**
@@ -292,7 +298,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_accel_z_offset(co
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_gyro_x_offset(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_int16_t(msg,  6);
+    return (int16_t) 0;
 }
 
 /**
@@ -302,7 +310,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_gyro_x_offset(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_gyro_y_offset(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int16_t(msg,  8);
+    return (int16_t) 0;
 }
 
 /**
@@ -312,7 +322,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_gyro_y_offset(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f21_get_sue_gyro_z_offset(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_int16_t(msg,  10);
+    return (int16_t) 0;
 }
 
 /**

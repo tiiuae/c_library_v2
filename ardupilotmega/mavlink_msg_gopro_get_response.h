@@ -212,7 +212,9 @@ static inline void mavlink_msg_gopro_get_response_send_buf(mavlink_message_t *ms
  */
 static inline uint8_t mavlink_msg_gopro_get_response_get_cmd_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -222,7 +224,9 @@ static inline uint8_t mavlink_msg_gopro_get_response_get_cmd_id(const mavlink_me
  */
 static inline uint8_t mavlink_msg_gopro_get_response_get_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**
@@ -232,7 +236,9 @@ static inline uint8_t mavlink_msg_gopro_get_response_get_status(const mavlink_me
  */
 static inline uint16_t mavlink_msg_gopro_get_response_get_value(const mavlink_message_t* msg, uint8_t *value)
 {
-    return _MAV_RETURN_uint8_t_array(msg, value, 4,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint8_t_array(msg, value, 4,  2);
+    return (uint16_t) 0;
 }
 
 /**

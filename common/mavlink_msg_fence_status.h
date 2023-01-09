@@ -248,7 +248,9 @@ static inline void mavlink_msg_fence_status_send_buf(mavlink_message_t *msgbuf, 
  */
 static inline uint8_t mavlink_msg_fence_status_get_breach_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t(msg,  6);
+    return (uint8_t) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline uint8_t mavlink_msg_fence_status_get_breach_status(const mavlink_m
  */
 static inline uint16_t mavlink_msg_fence_status_get_breach_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline uint16_t mavlink_msg_fence_status_get_breach_count(const mavlink_m
  */
 static inline uint8_t mavlink_msg_fence_status_get_breach_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  7);
+    if (msg->len > 7)
+        return _MAV_RETURN_uint8_t(msg,  7);
+    return (uint8_t) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline uint8_t mavlink_msg_fence_status_get_breach_type(const mavlink_mes
  */
 static inline uint32_t mavlink_msg_fence_status_get_breach_time(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline uint32_t mavlink_msg_fence_status_get_breach_time(const mavlink_me
  */
 static inline uint8_t mavlink_msg_fence_status_get_breach_mitigation(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**

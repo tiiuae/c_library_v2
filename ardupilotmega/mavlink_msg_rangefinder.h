@@ -206,7 +206,9 @@ static inline void mavlink_msg_rangefinder_send_buf(mavlink_message_t *msgbuf, m
  */
 static inline float mavlink_msg_rangefinder_get_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline float mavlink_msg_rangefinder_get_distance(const mavlink_message_t
  */
 static inline float mavlink_msg_rangefinder_get_voltage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**

@@ -285,7 +285,9 @@ static inline void mavlink_msg_cellular_config_send_buf(mavlink_message_t *msgbu
  */
 static inline uint8_t mavlink_msg_cellular_config_get_enable_lte(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -295,7 +297,9 @@ static inline uint8_t mavlink_msg_cellular_config_get_enable_lte(const mavlink_m
  */
 static inline uint8_t mavlink_msg_cellular_config_get_enable_pin(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**
@@ -305,7 +309,9 @@ static inline uint8_t mavlink_msg_cellular_config_get_enable_pin(const mavlink_m
  */
 static inline uint16_t mavlink_msg_cellular_config_get_pin(const mavlink_message_t* msg, char *pin)
 {
-    return _MAV_RETURN_char_array(msg, pin, 16,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_char_array(msg, pin, 16,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -315,7 +321,9 @@ static inline uint16_t mavlink_msg_cellular_config_get_pin(const mavlink_message
  */
 static inline uint16_t mavlink_msg_cellular_config_get_new_pin(const mavlink_message_t* msg, char *new_pin)
 {
-    return _MAV_RETURN_char_array(msg, new_pin, 16,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_char_array(msg, new_pin, 16,  18);
+    return (uint16_t) 0;
 }
 
 /**
@@ -325,7 +333,9 @@ static inline uint16_t mavlink_msg_cellular_config_get_new_pin(const mavlink_mes
  */
 static inline uint16_t mavlink_msg_cellular_config_get_apn(const mavlink_message_t* msg, char *apn)
 {
-    return _MAV_RETURN_char_array(msg, apn, 32,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_char_array(msg, apn, 32,  34);
+    return (uint16_t) 0;
 }
 
 /**
@@ -335,7 +345,9 @@ static inline uint16_t mavlink_msg_cellular_config_get_apn(const mavlink_message
  */
 static inline uint16_t mavlink_msg_cellular_config_get_puk(const mavlink_message_t* msg, char *puk)
 {
-    return _MAV_RETURN_char_array(msg, puk, 16,  66);
+    if (msg->len > 66)
+        return _MAV_RETURN_char_array(msg, puk, 16,  66);
+    return (uint16_t) 0;
 }
 
 /**
@@ -345,7 +357,9 @@ static inline uint16_t mavlink_msg_cellular_config_get_puk(const mavlink_message
  */
 static inline uint8_t mavlink_msg_cellular_config_get_roaming(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  82);
+    if (msg->len > 82)
+        return _MAV_RETURN_uint8_t(msg,  82);
+    return (uint8_t) 0;
 }
 
 /**
@@ -355,7 +369,9 @@ static inline uint8_t mavlink_msg_cellular_config_get_roaming(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_cellular_config_get_response(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  83);
+    if (msg->len > 83)
+        return _MAV_RETURN_uint8_t(msg,  83);
+    return (uint8_t) 0;
 }
 
 /**

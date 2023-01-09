@@ -276,7 +276,9 @@ static inline void mavlink_msg_local_position_ned_system_global_offset_send_buf(
  */
 static inline uint32_t mavlink_msg_local_position_ned_system_global_offset_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint32_t mavlink_msg_local_position_ned_system_global_offset_get_t
  */
 static inline float mavlink_msg_local_position_ned_system_global_offset_get_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline float mavlink_msg_local_position_ned_system_global_offset_get_x(co
  */
 static inline float mavlink_msg_local_position_ned_system_global_offset_get_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline float mavlink_msg_local_position_ned_system_global_offset_get_y(co
  */
 static inline float mavlink_msg_local_position_ned_system_global_offset_get_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline float mavlink_msg_local_position_ned_system_global_offset_get_z(co
  */
 static inline float mavlink_msg_local_position_ned_system_global_offset_get_roll(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline float mavlink_msg_local_position_ned_system_global_offset_get_roll
  */
 static inline float mavlink_msg_local_position_ned_system_global_offset_get_pitch(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline float mavlink_msg_local_position_ned_system_global_offset_get_pitc
  */
 static inline float mavlink_msg_local_position_ned_system_global_offset_get_yaw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**

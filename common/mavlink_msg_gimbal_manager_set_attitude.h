@@ -282,7 +282,9 @@ static inline void mavlink_msg_gimbal_manager_set_attitude_send_buf(mavlink_mess
  */
 static inline uint8_t mavlink_msg_gimbal_manager_set_attitude_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_uint8_t(msg,  32);
+    return (uint8_t) 0;
 }
 
 /**
@@ -292,7 +294,9 @@ static inline uint8_t mavlink_msg_gimbal_manager_set_attitude_get_target_system(
  */
 static inline uint8_t mavlink_msg_gimbal_manager_set_attitude_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  33);
+    if (msg->len > 33)
+        return _MAV_RETURN_uint8_t(msg,  33);
+    return (uint8_t) 0;
 }
 
 /**
@@ -302,7 +306,9 @@ static inline uint8_t mavlink_msg_gimbal_manager_set_attitude_get_target_compone
  */
 static inline uint32_t mavlink_msg_gimbal_manager_set_attitude_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -312,7 +318,9 @@ static inline uint32_t mavlink_msg_gimbal_manager_set_attitude_get_flags(const m
  */
 static inline uint8_t mavlink_msg_gimbal_manager_set_attitude_get_gimbal_device_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint8_t(msg,  34);
+    return (uint8_t) 0;
 }
 
 /**
@@ -322,7 +330,9 @@ static inline uint8_t mavlink_msg_gimbal_manager_set_attitude_get_gimbal_device_
  */
 static inline uint16_t mavlink_msg_gimbal_manager_set_attitude_get_q(const mavlink_message_t* msg, float *q)
 {
-    return _MAV_RETURN_float_array(msg, q, 4,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float_array(msg, q, 4,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -332,7 +342,9 @@ static inline uint16_t mavlink_msg_gimbal_manager_set_attitude_get_q(const mavli
  */
 static inline float mavlink_msg_gimbal_manager_set_attitude_get_angular_velocity_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -342,7 +354,9 @@ static inline float mavlink_msg_gimbal_manager_set_attitude_get_angular_velocity
  */
 static inline float mavlink_msg_gimbal_manager_set_attitude_get_angular_velocity_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -352,7 +366,9 @@ static inline float mavlink_msg_gimbal_manager_set_attitude_get_angular_velocity
  */
 static inline float mavlink_msg_gimbal_manager_set_attitude_get_angular_velocity_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**

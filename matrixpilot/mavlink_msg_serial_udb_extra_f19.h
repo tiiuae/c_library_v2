@@ -290,7 +290,9 @@ static inline void mavlink_msg_serial_udb_extra_f19_send_buf(mavlink_message_t *
  */
 static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_aileron_output_channel(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -300,7 +302,9 @@ static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_aileron_output_ch
  */
 static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_aileron_reversed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**
@@ -310,7 +314,9 @@ static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_aileron_reversed(
  */
 static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_elevator_output_channel(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint8_t(msg,  2);
+    return (uint8_t) 0;
 }
 
 /**
@@ -320,7 +326,9 @@ static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_elevator_output_c
  */
 static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_elevator_reversed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  3);
+    if (msg->len > 3)
+        return _MAV_RETURN_uint8_t(msg,  3);
+    return (uint8_t) 0;
 }
 
 /**
@@ -330,7 +338,9 @@ static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_elevator_reversed
  */
 static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_throttle_output_channel(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -340,7 +350,9 @@ static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_throttle_output_c
  */
 static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_throttle_reversed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -350,7 +362,9 @@ static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_throttle_reversed
  */
 static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_rudder_output_channel(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t(msg,  6);
+    return (uint8_t) 0;
 }
 
 /**
@@ -360,7 +374,9 @@ static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_rudder_output_cha
  */
 static inline uint8_t mavlink_msg_serial_udb_extra_f19_get_sue_rudder_reversed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  7);
+    if (msg->len > 7)
+        return _MAV_RETURN_uint8_t(msg,  7);
+    return (uint8_t) 0;
 }
 
 /**

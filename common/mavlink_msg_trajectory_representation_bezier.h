@@ -272,7 +272,9 @@ static inline void mavlink_msg_trajectory_representation_bezier_send_buf(mavlink
  */
 static inline uint64_t mavlink_msg_trajectory_representation_bezier_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -282,7 +284,9 @@ static inline uint64_t mavlink_msg_trajectory_representation_bezier_get_time_use
  */
 static inline uint8_t mavlink_msg_trajectory_representation_bezier_get_valid_points(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  108);
+    if (msg->len > 108)
+        return _MAV_RETURN_uint8_t(msg,  108);
+    return (uint8_t) 0;
 }
 
 /**
@@ -292,7 +296,9 @@ static inline uint8_t mavlink_msg_trajectory_representation_bezier_get_valid_poi
  */
 static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_pos_x(const mavlink_message_t* msg, float *pos_x)
 {
-    return _MAV_RETURN_float_array(msg, pos_x, 5,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float_array(msg, pos_x, 5,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -302,7 +308,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_pos_x(co
  */
 static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_pos_y(const mavlink_message_t* msg, float *pos_y)
 {
-    return _MAV_RETURN_float_array(msg, pos_y, 5,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float_array(msg, pos_y, 5,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -312,7 +320,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_pos_y(co
  */
 static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_pos_z(const mavlink_message_t* msg, float *pos_z)
 {
-    return _MAV_RETURN_float_array(msg, pos_z, 5,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_float_array(msg, pos_z, 5,  48);
+    return (uint16_t) 0;
 }
 
 /**
@@ -322,7 +332,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_pos_z(co
  */
 static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_delta(const mavlink_message_t* msg, float *delta)
 {
-    return _MAV_RETURN_float_array(msg, delta, 5,  68);
+    if (msg->len > 68)
+        return _MAV_RETURN_float_array(msg, delta, 5,  68);
+    return (uint16_t) 0;
 }
 
 /**
@@ -332,7 +344,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_delta(co
  */
 static inline uint16_t mavlink_msg_trajectory_representation_bezier_get_pos_yaw(const mavlink_message_t* msg, float *pos_yaw)
 {
-    return _MAV_RETURN_float_array(msg, pos_yaw, 5,  88);
+    if (msg->len > 88)
+        return _MAV_RETURN_float_array(msg, pos_yaw, 5,  88);
+    return (uint16_t) 0;
 }
 
 /**

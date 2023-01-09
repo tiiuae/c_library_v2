@@ -276,7 +276,9 @@ static inline void mavlink_msg_altitudes_send_buf(mavlink_message_t *msgbuf, mav
  */
 static inline uint32_t mavlink_msg_altitudes_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint32_t mavlink_msg_altitudes_get_time_boot_ms(const mavlink_mess
  */
 static inline int32_t mavlink_msg_altitudes_get_alt_gps(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline int32_t mavlink_msg_altitudes_get_alt_gps(const mavlink_message_t*
  */
 static inline int32_t mavlink_msg_altitudes_get_alt_imu(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline int32_t mavlink_msg_altitudes_get_alt_imu(const mavlink_message_t*
  */
 static inline int32_t mavlink_msg_altitudes_get_alt_barometric(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline int32_t mavlink_msg_altitudes_get_alt_barometric(const mavlink_mes
  */
 static inline int32_t mavlink_msg_altitudes_get_alt_optical_flow(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline int32_t mavlink_msg_altitudes_get_alt_optical_flow(const mavlink_m
  */
 static inline int32_t mavlink_msg_altitudes_get_alt_range_finder(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_int32_t(msg,  20);
+    return (int32_t) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline int32_t mavlink_msg_altitudes_get_alt_range_finder(const mavlink_m
  */
 static inline int32_t mavlink_msg_altitudes_get_alt_extra(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_int32_t(msg,  24);
+    return (int32_t) 0;
 }
 
 /**

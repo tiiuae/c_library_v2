@@ -220,7 +220,9 @@ static inline void mavlink_msg_hygrometer_sensor_send_buf(mavlink_message_t *msg
  */
 static inline uint8_t mavlink_msg_hygrometer_sensor_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -230,7 +232,9 @@ static inline uint8_t mavlink_msg_hygrometer_sensor_get_id(const mavlink_message
  */
 static inline int16_t mavlink_msg_hygrometer_sensor_get_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int16_t(msg,  0);
+    return (int16_t) 0;
 }
 
 /**
@@ -240,7 +244,9 @@ static inline int16_t mavlink_msg_hygrometer_sensor_get_temperature(const mavlin
  */
 static inline uint16_t mavlink_msg_hygrometer_sensor_get_humidity(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint16_t(msg,  2);
+    return (uint16_t) 0;
 }
 
 /**

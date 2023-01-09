@@ -276,7 +276,9 @@ static inline void mavlink_msg_airspeed_send_buf(mavlink_message_t *msgbuf, mavl
  */
 static inline uint8_t mavlink_msg_airspeed_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint8_t(msg,  18);
+    return (uint8_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint8_t mavlink_msg_airspeed_get_id(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_airspeed_get_airspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline float mavlink_msg_airspeed_get_airspeed(const mavlink_message_t* m
  */
 static inline int16_t mavlink_msg_airspeed_get_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int16_t(msg,  16);
+    return (int16_t) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline int16_t mavlink_msg_airspeed_get_temperature(const mavlink_message
  */
 static inline float mavlink_msg_airspeed_get_press_diff(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline float mavlink_msg_airspeed_get_press_diff(const mavlink_message_t*
  */
 static inline float mavlink_msg_airspeed_get_press_static(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline float mavlink_msg_airspeed_get_press_static(const mavlink_message_
  */
 static inline float mavlink_msg_airspeed_get_error(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline float mavlink_msg_airspeed_get_error(const mavlink_message_t* msg)
  */
 static inline uint8_t mavlink_msg_airspeed_get_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  19);
+    if (msg->len > 19)
+        return _MAV_RETURN_uint8_t(msg,  19);
+    return (uint8_t) 0;
 }
 
 /**

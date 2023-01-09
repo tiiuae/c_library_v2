@@ -325,7 +325,9 @@ static inline void mavlink_msg_camera_image_captured_send_buf(mavlink_message_t 
  */
 static inline uint32_t mavlink_msg_camera_image_captured_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -335,7 +337,9 @@ static inline uint32_t mavlink_msg_camera_image_captured_get_time_boot_ms(const 
  */
 static inline uint64_t mavlink_msg_camera_image_captured_get_time_utc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -345,7 +349,9 @@ static inline uint64_t mavlink_msg_camera_image_captured_get_time_utc(const mavl
  */
 static inline uint8_t mavlink_msg_camera_image_captured_get_camera_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_uint8_t(msg,  48);
+    return (uint8_t) 0;
 }
 
 /**
@@ -355,7 +361,9 @@ static inline uint8_t mavlink_msg_camera_image_captured_get_camera_id(const mavl
  */
 static inline int32_t mavlink_msg_camera_image_captured_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -365,7 +373,9 @@ static inline int32_t mavlink_msg_camera_image_captured_get_lat(const mavlink_me
  */
 static inline int32_t mavlink_msg_camera_image_captured_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
@@ -375,7 +385,9 @@ static inline int32_t mavlink_msg_camera_image_captured_get_lon(const mavlink_me
  */
 static inline int32_t mavlink_msg_camera_image_captured_get_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_int32_t(msg,  20);
+    return (int32_t) 0;
 }
 
 /**
@@ -385,7 +397,9 @@ static inline int32_t mavlink_msg_camera_image_captured_get_alt(const mavlink_me
  */
 static inline int32_t mavlink_msg_camera_image_captured_get_relative_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_int32_t(msg,  24);
+    return (int32_t) 0;
 }
 
 /**
@@ -395,7 +409,9 @@ static inline int32_t mavlink_msg_camera_image_captured_get_relative_alt(const m
  */
 static inline uint16_t mavlink_msg_camera_image_captured_get_q(const mavlink_message_t* msg, float *q)
 {
-    return _MAV_RETURN_float_array(msg, q, 4,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float_array(msg, q, 4,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -405,7 +421,9 @@ static inline uint16_t mavlink_msg_camera_image_captured_get_q(const mavlink_mes
  */
 static inline int32_t mavlink_msg_camera_image_captured_get_image_index(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_int32_t(msg,  44);
+    return (int32_t) 0;
 }
 
 /**
@@ -415,7 +433,9 @@ static inline int32_t mavlink_msg_camera_image_captured_get_image_index(const ma
  */
 static inline int8_t mavlink_msg_camera_image_captured_get_capture_result(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  49);
+    if (msg->len > 49)
+        return _MAV_RETURN_int8_t(msg,  49);
+    return (int8_t) 0;
 }
 
 /**
@@ -425,7 +445,9 @@ static inline int8_t mavlink_msg_camera_image_captured_get_capture_result(const 
  */
 static inline uint16_t mavlink_msg_camera_image_captured_get_file_url(const mavlink_message_t* msg, char *file_url)
 {
-    return _MAV_RETURN_char_array(msg, file_url, 205,  50);
+    if (msg->len > 50)
+        return _MAV_RETURN_char_array(msg, file_url, 205,  50);
+    return (uint16_t) 0;
 }
 
 /**

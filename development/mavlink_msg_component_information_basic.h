@@ -257,7 +257,9 @@ static inline void mavlink_msg_component_information_basic_send_buf(mavlink_mess
  */
 static inline uint32_t mavlink_msg_component_information_basic_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -267,7 +269,9 @@ static inline uint32_t mavlink_msg_component_information_basic_get_time_boot_ms(
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_vendor_name(const mavlink_message_t* msg, uint8_t *vendor_name)
 {
-    return _MAV_RETURN_uint8_t_array(msg, vendor_name, 32,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t_array(msg, vendor_name, 32,  12);
+    return (uint16_t) 0;
 }
 
 /**
@@ -277,7 +281,9 @@ static inline uint16_t mavlink_msg_component_information_basic_get_vendor_name(c
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_model_name(const mavlink_message_t* msg, uint8_t *model_name)
 {
-    return _MAV_RETURN_uint8_t_array(msg, model_name, 32,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_uint8_t_array(msg, model_name, 32,  44);
+    return (uint16_t) 0;
 }
 
 /**
@@ -287,7 +293,9 @@ static inline uint16_t mavlink_msg_component_information_basic_get_model_name(co
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_software_version(const mavlink_message_t* msg, char *software_version)
 {
-    return _MAV_RETURN_char_array(msg, software_version, 24,  76);
+    if (msg->len > 76)
+        return _MAV_RETURN_char_array(msg, software_version, 24,  76);
+    return (uint16_t) 0;
 }
 
 /**
@@ -297,7 +305,9 @@ static inline uint16_t mavlink_msg_component_information_basic_get_software_vers
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_hardware_version(const mavlink_message_t* msg, char *hardware_version)
 {
-    return _MAV_RETURN_char_array(msg, hardware_version, 24,  100);
+    if (msg->len > 100)
+        return _MAV_RETURN_char_array(msg, hardware_version, 24,  100);
+    return (uint16_t) 0;
 }
 
 /**
@@ -307,7 +317,9 @@ static inline uint16_t mavlink_msg_component_information_basic_get_hardware_vers
  */
 static inline uint64_t mavlink_msg_component_information_basic_get_component_cap_flags1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**

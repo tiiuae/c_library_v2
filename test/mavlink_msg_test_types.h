@@ -488,7 +488,9 @@ static inline void mavlink_msg_test_types_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline char mavlink_msg_test_types_get_c(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_char(msg,  160);
+    if (msg->len > 160)
+        return _MAV_RETURN_char(msg,  160);
+    return (char) 0;
 }
 
 /**
@@ -498,7 +500,9 @@ static inline char mavlink_msg_test_types_get_c(const mavlink_message_t* msg)
  */
 static inline uint16_t mavlink_msg_test_types_get_s(const mavlink_message_t* msg, char *s)
 {
-    return _MAV_RETURN_char_array(msg, s, 10,  161);
+    if (msg->len > 161)
+        return _MAV_RETURN_char_array(msg, s, 10,  161);
+    return (uint16_t) 0;
 }
 
 /**
@@ -508,7 +512,9 @@ static inline uint16_t mavlink_msg_test_types_get_s(const mavlink_message_t* msg
  */
 static inline uint8_t mavlink_msg_test_types_get_u8(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  171);
+    if (msg->len > 171)
+        return _MAV_RETURN_uint8_t(msg,  171);
+    return (uint8_t) 0;
 }
 
 /**
@@ -518,7 +524,9 @@ static inline uint8_t mavlink_msg_test_types_get_u8(const mavlink_message_t* msg
  */
 static inline uint16_t mavlink_msg_test_types_get_u16(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  144);
+    if (msg->len > 144)
+        return _MAV_RETURN_uint16_t(msg,  144);
+    return (uint16_t) 0;
 }
 
 /**
@@ -528,7 +536,9 @@ static inline uint16_t mavlink_msg_test_types_get_u16(const mavlink_message_t* m
  */
 static inline uint32_t mavlink_msg_test_types_get_u32(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  96);
+    if (msg->len > 96)
+        return _MAV_RETURN_uint32_t(msg,  96);
+    return (uint32_t) 0;
 }
 
 /**
@@ -538,7 +548,9 @@ static inline uint32_t mavlink_msg_test_types_get_u32(const mavlink_message_t* m
  */
 static inline uint64_t mavlink_msg_test_types_get_u64(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -548,7 +560,9 @@ static inline uint64_t mavlink_msg_test_types_get_u64(const mavlink_message_t* m
  */
 static inline int8_t mavlink_msg_test_types_get_s8(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  172);
+    if (msg->len > 172)
+        return _MAV_RETURN_int8_t(msg,  172);
+    return (int8_t) 0;
 }
 
 /**
@@ -558,7 +572,9 @@ static inline int8_t mavlink_msg_test_types_get_s8(const mavlink_message_t* msg)
  */
 static inline int16_t mavlink_msg_test_types_get_s16(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  146);
+    if (msg->len > 146)
+        return _MAV_RETURN_int16_t(msg,  146);
+    return (int16_t) 0;
 }
 
 /**
@@ -568,7 +584,9 @@ static inline int16_t mavlink_msg_test_types_get_s16(const mavlink_message_t* ms
  */
 static inline int32_t mavlink_msg_test_types_get_s32(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  100);
+    if (msg->len > 100)
+        return _MAV_RETURN_int32_t(msg,  100);
+    return (int32_t) 0;
 }
 
 /**
@@ -578,7 +596,9 @@ static inline int32_t mavlink_msg_test_types_get_s32(const mavlink_message_t* ms
  */
 static inline int64_t mavlink_msg_test_types_get_s64(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int64_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int64_t(msg,  8);
+    return (int64_t) 0;
 }
 
 /**
@@ -588,7 +608,9 @@ static inline int64_t mavlink_msg_test_types_get_s64(const mavlink_message_t* ms
  */
 static inline float mavlink_msg_test_types_get_f(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  104);
+    if (msg->len > 104)
+        return _MAV_RETURN_float(msg,  104);
+    return (float) 0;
 }
 
 /**
@@ -598,7 +620,9 @@ static inline float mavlink_msg_test_types_get_f(const mavlink_message_t* msg)
  */
 static inline double mavlink_msg_test_types_get_d(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_double(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_double(msg,  16);
+    return (double) 0;
 }
 
 /**
@@ -608,7 +632,9 @@ static inline double mavlink_msg_test_types_get_d(const mavlink_message_t* msg)
  */
 static inline uint16_t mavlink_msg_test_types_get_u8_array(const mavlink_message_t* msg, uint8_t *u8_array)
 {
-    return _MAV_RETURN_uint8_t_array(msg, u8_array, 3,  173);
+    if (msg->len > 173)
+        return _MAV_RETURN_uint8_t_array(msg, u8_array, 3,  173);
+    return (uint16_t) 0;
 }
 
 /**
@@ -618,7 +644,9 @@ static inline uint16_t mavlink_msg_test_types_get_u8_array(const mavlink_message
  */
 static inline uint16_t mavlink_msg_test_types_get_u16_array(const mavlink_message_t* msg, uint16_t *u16_array)
 {
-    return _MAV_RETURN_uint16_t_array(msg, u16_array, 3,  148);
+    if (msg->len > 148)
+        return _MAV_RETURN_uint16_t_array(msg, u16_array, 3,  148);
+    return (uint16_t) 0;
 }
 
 /**
@@ -628,7 +656,9 @@ static inline uint16_t mavlink_msg_test_types_get_u16_array(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_test_types_get_u32_array(const mavlink_message_t* msg, uint32_t *u32_array)
 {
-    return _MAV_RETURN_uint32_t_array(msg, u32_array, 3,  108);
+    if (msg->len > 108)
+        return _MAV_RETURN_uint32_t_array(msg, u32_array, 3,  108);
+    return (uint16_t) 0;
 }
 
 /**
@@ -638,7 +668,9 @@ static inline uint16_t mavlink_msg_test_types_get_u32_array(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_test_types_get_u64_array(const mavlink_message_t* msg, uint64_t *u64_array)
 {
-    return _MAV_RETURN_uint64_t_array(msg, u64_array, 3,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint64_t_array(msg, u64_array, 3,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -648,7 +680,9 @@ static inline uint16_t mavlink_msg_test_types_get_u64_array(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_test_types_get_s8_array(const mavlink_message_t* msg, int8_t *s8_array)
 {
-    return _MAV_RETURN_int8_t_array(msg, s8_array, 3,  176);
+    if (msg->len > 176)
+        return _MAV_RETURN_int8_t_array(msg, s8_array, 3,  176);
+    return (uint16_t) 0;
 }
 
 /**
@@ -658,7 +692,9 @@ static inline uint16_t mavlink_msg_test_types_get_s8_array(const mavlink_message
  */
 static inline uint16_t mavlink_msg_test_types_get_s16_array(const mavlink_message_t* msg, int16_t *s16_array)
 {
-    return _MAV_RETURN_int16_t_array(msg, s16_array, 3,  154);
+    if (msg->len > 154)
+        return _MAV_RETURN_int16_t_array(msg, s16_array, 3,  154);
+    return (uint16_t) 0;
 }
 
 /**
@@ -668,7 +704,9 @@ static inline uint16_t mavlink_msg_test_types_get_s16_array(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_test_types_get_s32_array(const mavlink_message_t* msg, int32_t *s32_array)
 {
-    return _MAV_RETURN_int32_t_array(msg, s32_array, 3,  120);
+    if (msg->len > 120)
+        return _MAV_RETURN_int32_t_array(msg, s32_array, 3,  120);
+    return (uint16_t) 0;
 }
 
 /**
@@ -678,7 +716,9 @@ static inline uint16_t mavlink_msg_test_types_get_s32_array(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_test_types_get_s64_array(const mavlink_message_t* msg, int64_t *s64_array)
 {
-    return _MAV_RETURN_int64_t_array(msg, s64_array, 3,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_int64_t_array(msg, s64_array, 3,  48);
+    return (uint16_t) 0;
 }
 
 /**
@@ -688,7 +728,9 @@ static inline uint16_t mavlink_msg_test_types_get_s64_array(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_test_types_get_f_array(const mavlink_message_t* msg, float *f_array)
 {
-    return _MAV_RETURN_float_array(msg, f_array, 3,  132);
+    if (msg->len > 132)
+        return _MAV_RETURN_float_array(msg, f_array, 3,  132);
+    return (uint16_t) 0;
 }
 
 /**
@@ -698,7 +740,9 @@ static inline uint16_t mavlink_msg_test_types_get_f_array(const mavlink_message_
  */
 static inline uint16_t mavlink_msg_test_types_get_d_array(const mavlink_message_t* msg, double *d_array)
 {
-    return _MAV_RETURN_double_array(msg, d_array, 3,  72);
+    if (msg->len > 72)
+        return _MAV_RETURN_double_array(msg, d_array, 3,  72);
+    return (uint16_t) 0;
 }
 
 /**

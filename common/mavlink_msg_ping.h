@@ -234,7 +234,9 @@ static inline void mavlink_msg_ping_send_buf(mavlink_message_t *msgbuf, mavlink_
  */
 static inline uint64_t mavlink_msg_ping_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline uint64_t mavlink_msg_ping_get_time_usec(const mavlink_message_t* m
  */
 static inline uint32_t mavlink_msg_ping_get_seq(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline uint32_t mavlink_msg_ping_get_seq(const mavlink_message_t* msg)
  */
 static inline uint8_t mavlink_msg_ping_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline uint8_t mavlink_msg_ping_get_target_system(const mavlink_message_t
  */
 static inline uint8_t mavlink_msg_ping_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  13);
+    if (msg->len > 13)
+        return _MAV_RETURN_uint8_t(msg,  13);
+    return (uint8_t) 0;
 }
 
 /**

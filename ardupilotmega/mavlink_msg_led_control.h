@@ -254,7 +254,9 @@ static inline void mavlink_msg_led_control_send_buf(mavlink_message_t *msgbuf, m
  */
 static inline uint8_t mavlink_msg_led_control_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -264,7 +266,9 @@ static inline uint8_t mavlink_msg_led_control_get_target_system(const mavlink_me
  */
 static inline uint8_t mavlink_msg_led_control_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**
@@ -274,7 +278,9 @@ static inline uint8_t mavlink_msg_led_control_get_target_component(const mavlink
  */
 static inline uint8_t mavlink_msg_led_control_get_instance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint8_t(msg,  2);
+    return (uint8_t) 0;
 }
 
 /**
@@ -284,7 +290,9 @@ static inline uint8_t mavlink_msg_led_control_get_instance(const mavlink_message
  */
 static inline uint8_t mavlink_msg_led_control_get_pattern(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  3);
+    if (msg->len > 3)
+        return _MAV_RETURN_uint8_t(msg,  3);
+    return (uint8_t) 0;
 }
 
 /**
@@ -294,7 +302,9 @@ static inline uint8_t mavlink_msg_led_control_get_pattern(const mavlink_message_
  */
 static inline uint8_t mavlink_msg_led_control_get_custom_len(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -304,7 +314,9 @@ static inline uint8_t mavlink_msg_led_control_get_custom_len(const mavlink_messa
  */
 static inline uint16_t mavlink_msg_led_control_get_custom_bytes(const mavlink_message_t* msg, uint8_t *custom_bytes)
 {
-    return _MAV_RETURN_uint8_t_array(msg, custom_bytes, 24,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t_array(msg, custom_bytes, 24,  5);
+    return (uint16_t) 0;
 }
 
 /**

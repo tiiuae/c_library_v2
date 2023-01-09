@@ -267,7 +267,9 @@ static inline void mavlink_msg_esc_telemetry_5_to_8_send_buf(mavlink_message_t *
  */
 static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_temperature(const mavlink_message_t* msg, uint8_t *temperature)
 {
-    return _MAV_RETURN_uint8_t_array(msg, temperature, 4,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t_array(msg, temperature, 4,  40);
+    return (uint16_t) 0;
 }
 
 /**
@@ -277,7 +279,9 @@ static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_temperature(const ma
  */
 static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_voltage(const mavlink_message_t* msg, uint16_t *voltage)
 {
-    return _MAV_RETURN_uint16_t_array(msg, voltage, 4,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t_array(msg, voltage, 4,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -287,7 +291,9 @@ static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_voltage(const mavlin
  */
 static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_current(const mavlink_message_t* msg, uint16_t *current)
 {
-    return _MAV_RETURN_uint16_t_array(msg, current, 4,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t_array(msg, current, 4,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -297,7 +303,9 @@ static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_current(const mavlin
  */
 static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_totalcurrent(const mavlink_message_t* msg, uint16_t *totalcurrent)
 {
-    return _MAV_RETURN_uint16_t_array(msg, totalcurrent, 4,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t_array(msg, totalcurrent, 4,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -307,7 +315,9 @@ static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_totalcurrent(const m
  */
 static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_rpm(const mavlink_message_t* msg, uint16_t *rpm)
 {
-    return _MAV_RETURN_uint16_t_array(msg, rpm, 4,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t_array(msg, rpm, 4,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -317,7 +327,9 @@ static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_rpm(const mavlink_me
  */
 static inline uint16_t mavlink_msg_esc_telemetry_5_to_8_get_count(const mavlink_message_t* msg, uint16_t *count)
 {
-    return _MAV_RETURN_uint16_t_array(msg, count, 4,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_uint16_t_array(msg, count, 4,  32);
+    return (uint16_t) 0;
 }
 
 /**

@@ -227,7 +227,9 @@ static inline void mavlink_msg_wifi_config_ap_send_buf(mavlink_message_t *msgbuf
  */
 static inline uint16_t mavlink_msg_wifi_config_ap_get_ssid(const mavlink_message_t* msg, char *ssid)
 {
-    return _MAV_RETURN_char_array(msg, ssid, 32,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_char_array(msg, ssid, 32,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -237,7 +239,9 @@ static inline uint16_t mavlink_msg_wifi_config_ap_get_ssid(const mavlink_message
  */
 static inline uint16_t mavlink_msg_wifi_config_ap_get_password(const mavlink_message_t* msg, char *password)
 {
-    return _MAV_RETURN_char_array(msg, password, 64,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_char_array(msg, password, 64,  32);
+    return (uint16_t) 0;
 }
 
 /**
@@ -247,7 +251,9 @@ static inline uint16_t mavlink_msg_wifi_config_ap_get_password(const mavlink_mes
  */
 static inline int8_t mavlink_msg_wifi_config_ap_get_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  96);
+    if (msg->len > 96)
+        return _MAV_RETURN_int8_t(msg,  96);
+    return (int8_t) 0;
 }
 
 /**
@@ -257,7 +263,9 @@ static inline int8_t mavlink_msg_wifi_config_ap_get_mode(const mavlink_message_t
  */
 static inline int8_t mavlink_msg_wifi_config_ap_get_response(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  97);
+    if (msg->len > 97)
+        return _MAV_RETURN_int8_t(msg,  97);
+    return (int8_t) 0;
 }
 
 /**

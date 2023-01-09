@@ -192,7 +192,9 @@ static inline void mavlink_msg_mission_item_reached_send_buf(mavlink_message_t *
  */
 static inline uint16_t mavlink_msg_mission_item_reached_get_seq(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**

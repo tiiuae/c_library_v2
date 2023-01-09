@@ -297,7 +297,9 @@ static inline void mavlink_msg_open_drone_id_authentication_send_buf(mavlink_mes
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -307,7 +309,9 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_target_system
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -317,7 +321,9 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_target_compon
  */
 static inline uint16_t mavlink_msg_open_drone_id_authentication_get_id_or_mac(const mavlink_message_t* msg, uint8_t *id_or_mac)
 {
-    return _MAV_RETURN_uint8_t_array(msg, id_or_mac, 20,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t_array(msg, id_or_mac, 20,  6);
+    return (uint16_t) 0;
 }
 
 /**
@@ -327,7 +333,9 @@ static inline uint16_t mavlink_msg_open_drone_id_authentication_get_id_or_mac(co
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_authentication_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint8_t(msg,  26);
+    return (uint8_t) 0;
 }
 
 /**
@@ -337,7 +345,9 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_authenticatio
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_data_page(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  27);
+    if (msg->len > 27)
+        return _MAV_RETURN_uint8_t(msg,  27);
+    return (uint8_t) 0;
 }
 
 /**
@@ -347,7 +357,9 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_data_page(con
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_last_page_index(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint8_t(msg,  28);
+    return (uint8_t) 0;
 }
 
 /**
@@ -357,7 +369,9 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_last_page_ind
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_length(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  29);
+    if (msg->len > 29)
+        return _MAV_RETURN_uint8_t(msg,  29);
+    return (uint8_t) 0;
 }
 
 /**
@@ -367,7 +381,9 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_length(const 
  */
 static inline uint32_t mavlink_msg_open_drone_id_authentication_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -377,7 +393,9 @@ static inline uint32_t mavlink_msg_open_drone_id_authentication_get_timestamp(co
  */
 static inline uint16_t mavlink_msg_open_drone_id_authentication_get_authentication_data(const mavlink_message_t* msg, uint8_t *authentication_data)
 {
-    return _MAV_RETURN_uint8_t_array(msg, authentication_data, 23,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_uint8_t_array(msg, authentication_data, 23,  30);
+    return (uint16_t) 0;
 }
 
 /**

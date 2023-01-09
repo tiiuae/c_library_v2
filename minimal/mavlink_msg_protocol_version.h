@@ -241,7 +241,9 @@ static inline void mavlink_msg_protocol_version_send_buf(mavlink_message_t *msgb
  */
 static inline uint16_t mavlink_msg_protocol_version_get_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -251,7 +253,9 @@ static inline uint16_t mavlink_msg_protocol_version_get_version(const mavlink_me
  */
 static inline uint16_t mavlink_msg_protocol_version_get_min_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint16_t(msg,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -261,7 +265,9 @@ static inline uint16_t mavlink_msg_protocol_version_get_min_version(const mavlin
  */
 static inline uint16_t mavlink_msg_protocol_version_get_max_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -271,7 +277,9 @@ static inline uint16_t mavlink_msg_protocol_version_get_max_version(const mavlin
  */
 static inline uint16_t mavlink_msg_protocol_version_get_spec_version_hash(const mavlink_message_t* msg, uint8_t *spec_version_hash)
 {
-    return _MAV_RETURN_uint8_t_array(msg, spec_version_hash, 8,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t_array(msg, spec_version_hash, 8,  6);
+    return (uint16_t) 0;
 }
 
 /**
@@ -281,7 +289,9 @@ static inline uint16_t mavlink_msg_protocol_version_get_spec_version_hash(const 
  */
 static inline uint16_t mavlink_msg_protocol_version_get_library_version_hash(const mavlink_message_t* msg, uint8_t *library_version_hash)
 {
-    return _MAV_RETURN_uint8_t_array(msg, library_version_hash, 8,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint8_t_array(msg, library_version_hash, 8,  14);
+    return (uint16_t) 0;
 }
 
 /**

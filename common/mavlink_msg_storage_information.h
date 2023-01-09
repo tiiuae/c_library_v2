@@ -350,7 +350,9 @@ static inline void mavlink_msg_storage_information_send_buf(mavlink_message_t *m
  */
 static inline uint32_t mavlink_msg_storage_information_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -360,7 +362,9 @@ static inline uint32_t mavlink_msg_storage_information_get_time_boot_ms(const ma
  */
 static inline uint8_t mavlink_msg_storage_information_get_storage_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint8_t(msg,  24);
+    return (uint8_t) 0;
 }
 
 /**
@@ -370,7 +374,9 @@ static inline uint8_t mavlink_msg_storage_information_get_storage_id(const mavli
  */
 static inline uint8_t mavlink_msg_storage_information_get_storage_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  25);
+    if (msg->len > 25)
+        return _MAV_RETURN_uint8_t(msg,  25);
+    return (uint8_t) 0;
 }
 
 /**
@@ -380,7 +386,9 @@ static inline uint8_t mavlink_msg_storage_information_get_storage_count(const ma
  */
 static inline uint8_t mavlink_msg_storage_information_get_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint8_t(msg,  26);
+    return (uint8_t) 0;
 }
 
 /**
@@ -390,7 +398,9 @@ static inline uint8_t mavlink_msg_storage_information_get_status(const mavlink_m
  */
 static inline float mavlink_msg_storage_information_get_total_capacity(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -400,7 +410,9 @@ static inline float mavlink_msg_storage_information_get_total_capacity(const mav
  */
 static inline float mavlink_msg_storage_information_get_used_capacity(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -410,7 +422,9 @@ static inline float mavlink_msg_storage_information_get_used_capacity(const mavl
  */
 static inline float mavlink_msg_storage_information_get_available_capacity(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -420,7 +434,9 @@ static inline float mavlink_msg_storage_information_get_available_capacity(const
  */
 static inline float mavlink_msg_storage_information_get_read_speed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -430,7 +446,9 @@ static inline float mavlink_msg_storage_information_get_read_speed(const mavlink
  */
 static inline float mavlink_msg_storage_information_get_write_speed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -440,7 +458,9 @@ static inline float mavlink_msg_storage_information_get_write_speed(const mavlin
  */
 static inline uint8_t mavlink_msg_storage_information_get_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  27);
+    if (msg->len > 27)
+        return _MAV_RETURN_uint8_t(msg,  27);
+    return (uint8_t) 0;
 }
 
 /**
@@ -450,7 +470,9 @@ static inline uint8_t mavlink_msg_storage_information_get_type(const mavlink_mes
  */
 static inline uint16_t mavlink_msg_storage_information_get_name(const mavlink_message_t* msg, char *name)
 {
-    return _MAV_RETURN_char_array(msg, name, 32,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_char_array(msg, name, 32,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -463,7 +485,9 @@ static inline uint16_t mavlink_msg_storage_information_get_name(const mavlink_me
  */
 static inline uint8_t mavlink_msg_storage_information_get_storage_usage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  60);
+    if (msg->len > 60)
+        return _MAV_RETURN_uint8_t(msg,  60);
+    return (uint8_t) 0;
 }
 
 /**

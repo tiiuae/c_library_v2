@@ -318,7 +318,9 @@ static inline void mavlink_msg_deepstall_send_buf(mavlink_message_t *msgbuf, mav
  */
 static inline int32_t mavlink_msg_deepstall_get_landing_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -328,7 +330,9 @@ static inline int32_t mavlink_msg_deepstall_get_landing_lat(const mavlink_messag
  */
 static inline int32_t mavlink_msg_deepstall_get_landing_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -338,7 +342,9 @@ static inline int32_t mavlink_msg_deepstall_get_landing_lon(const mavlink_messag
  */
 static inline int32_t mavlink_msg_deepstall_get_path_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -348,7 +354,9 @@ static inline int32_t mavlink_msg_deepstall_get_path_lat(const mavlink_message_t
  */
 static inline int32_t mavlink_msg_deepstall_get_path_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -358,7 +366,9 @@ static inline int32_t mavlink_msg_deepstall_get_path_lon(const mavlink_message_t
  */
 static inline int32_t mavlink_msg_deepstall_get_arc_entry_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
@@ -368,7 +378,9 @@ static inline int32_t mavlink_msg_deepstall_get_arc_entry_lat(const mavlink_mess
  */
 static inline int32_t mavlink_msg_deepstall_get_arc_entry_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_int32_t(msg,  20);
+    return (int32_t) 0;
 }
 
 /**
@@ -378,7 +390,9 @@ static inline int32_t mavlink_msg_deepstall_get_arc_entry_lon(const mavlink_mess
  */
 static inline float mavlink_msg_deepstall_get_altitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -388,7 +402,9 @@ static inline float mavlink_msg_deepstall_get_altitude(const mavlink_message_t* 
  */
 static inline float mavlink_msg_deepstall_get_expected_travel_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -398,7 +414,9 @@ static inline float mavlink_msg_deepstall_get_expected_travel_distance(const mav
  */
 static inline float mavlink_msg_deepstall_get_cross_track_error(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -408,7 +426,9 @@ static inline float mavlink_msg_deepstall_get_cross_track_error(const mavlink_me
  */
 static inline uint8_t mavlink_msg_deepstall_get_stage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint8_t(msg,  36);
+    return (uint8_t) 0;
 }
 
 /**

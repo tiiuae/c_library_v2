@@ -234,7 +234,9 @@ static inline void mavlink_msg_serial_udb_extra_f5_send_buf(mavlink_message_t *m
  */
 static inline float mavlink_msg_serial_udb_extra_f5_get_sue_YAWKP_AILERON(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline float mavlink_msg_serial_udb_extra_f5_get_sue_YAWKP_AILERON(const 
  */
 static inline float mavlink_msg_serial_udb_extra_f5_get_sue_YAWKD_AILERON(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline float mavlink_msg_serial_udb_extra_f5_get_sue_YAWKD_AILERON(const 
  */
 static inline float mavlink_msg_serial_udb_extra_f5_get_sue_ROLLKP(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline float mavlink_msg_serial_udb_extra_f5_get_sue_ROLLKP(const mavlink
  */
 static inline float mavlink_msg_serial_udb_extra_f5_get_sue_ROLLKD(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**

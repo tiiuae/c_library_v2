@@ -367,7 +367,9 @@ static inline void mavlink_msg_battery_status_send_buf(mavlink_message_t *msgbuf
  */
 static inline uint8_t mavlink_msg_battery_status_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_uint8_t(msg,  32);
+    return (uint8_t) 0;
 }
 
 /**
@@ -377,7 +379,9 @@ static inline uint8_t mavlink_msg_battery_status_get_id(const mavlink_message_t*
  */
 static inline uint8_t mavlink_msg_battery_status_get_battery_function(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  33);
+    if (msg->len > 33)
+        return _MAV_RETURN_uint8_t(msg,  33);
+    return (uint8_t) 0;
 }
 
 /**
@@ -387,7 +391,9 @@ static inline uint8_t mavlink_msg_battery_status_get_battery_function(const mavl
  */
 static inline uint8_t mavlink_msg_battery_status_get_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint8_t(msg,  34);
+    return (uint8_t) 0;
 }
 
 /**
@@ -397,7 +403,9 @@ static inline uint8_t mavlink_msg_battery_status_get_type(const mavlink_message_
  */
 static inline int16_t mavlink_msg_battery_status_get_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int16_t(msg,  8);
+    return (int16_t) 0;
 }
 
 /**
@@ -407,7 +415,9 @@ static inline int16_t mavlink_msg_battery_status_get_temperature(const mavlink_m
  */
 static inline uint16_t mavlink_msg_battery_status_get_voltages(const mavlink_message_t* msg, uint16_t *voltages)
 {
-    return _MAV_RETURN_uint16_t_array(msg, voltages, 10,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint16_t_array(msg, voltages, 10,  10);
+    return (uint16_t) 0;
 }
 
 /**
@@ -417,7 +427,9 @@ static inline uint16_t mavlink_msg_battery_status_get_voltages(const mavlink_mes
  */
 static inline int16_t mavlink_msg_battery_status_get_current_battery(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_int16_t(msg,  30);
+    return (int16_t) 0;
 }
 
 /**
@@ -427,7 +439,9 @@ static inline int16_t mavlink_msg_battery_status_get_current_battery(const mavli
  */
 static inline int32_t mavlink_msg_battery_status_get_current_consumed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -437,7 +451,9 @@ static inline int32_t mavlink_msg_battery_status_get_current_consumed(const mavl
  */
 static inline int32_t mavlink_msg_battery_status_get_energy_consumed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -447,7 +463,9 @@ static inline int32_t mavlink_msg_battery_status_get_energy_consumed(const mavli
  */
 static inline int8_t mavlink_msg_battery_status_get_battery_remaining(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  35);
+    if (msg->len > 35)
+        return _MAV_RETURN_int8_t(msg,  35);
+    return (int8_t) 0;
 }
 
 /**
@@ -457,7 +475,9 @@ static inline int8_t mavlink_msg_battery_status_get_battery_remaining(const mavl
  */
 static inline int32_t mavlink_msg_battery_status_get_time_remaining(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_int32_t(msg,  36);
+    return (int32_t) 0;
 }
 
 /**
@@ -467,7 +487,9 @@ static inline int32_t mavlink_msg_battery_status_get_time_remaining(const mavlin
  */
 static inline uint8_t mavlink_msg_battery_status_get_charge_state(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t(msg,  40);
+    return (uint8_t) 0;
 }
 
 /**
@@ -477,7 +499,9 @@ static inline uint8_t mavlink_msg_battery_status_get_charge_state(const mavlink_
  */
 static inline uint16_t mavlink_msg_battery_status_get_voltages_ext(const mavlink_message_t* msg, uint16_t *voltages_ext)
 {
-    return _MAV_RETURN_uint16_t_array(msg, voltages_ext, 4,  41);
+    if (msg->len > 41)
+        return _MAV_RETURN_uint16_t_array(msg, voltages_ext, 4,  41);
+    return (uint16_t) 0;
 }
 
 /**
@@ -487,7 +511,9 @@ static inline uint16_t mavlink_msg_battery_status_get_voltages_ext(const mavlink
  */
 static inline uint8_t mavlink_msg_battery_status_get_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  49);
+    if (msg->len > 49)
+        return _MAV_RETURN_uint8_t(msg,  49);
+    return (uint8_t) 0;
 }
 
 /**
@@ -497,7 +523,9 @@ static inline uint8_t mavlink_msg_battery_status_get_mode(const mavlink_message_
  */
 static inline uint32_t mavlink_msg_battery_status_get_fault_bitmask(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  50);
+    if (msg->len > 50)
+        return _MAV_RETURN_uint32_t(msg,  50);
+    return (uint32_t) 0;
 }
 
 /**

@@ -282,7 +282,9 @@ static inline void mavlink_msg_serial_control_send_buf(mavlink_message_t *msgbuf
  */
 static inline uint8_t mavlink_msg_serial_control_get_device(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t(msg,  6);
+    return (uint8_t) 0;
 }
 
 /**
@@ -292,7 +294,9 @@ static inline uint8_t mavlink_msg_serial_control_get_device(const mavlink_messag
  */
 static inline uint8_t mavlink_msg_serial_control_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  7);
+    if (msg->len > 7)
+        return _MAV_RETURN_uint8_t(msg,  7);
+    return (uint8_t) 0;
 }
 
 /**
@@ -302,7 +306,9 @@ static inline uint8_t mavlink_msg_serial_control_get_flags(const mavlink_message
  */
 static inline uint16_t mavlink_msg_serial_control_get_timeout(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -312,7 +318,9 @@ static inline uint16_t mavlink_msg_serial_control_get_timeout(const mavlink_mess
  */
 static inline uint32_t mavlink_msg_serial_control_get_baudrate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -322,7 +330,9 @@ static inline uint32_t mavlink_msg_serial_control_get_baudrate(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_serial_control_get_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**
@@ -332,7 +342,9 @@ static inline uint8_t mavlink_msg_serial_control_get_count(const mavlink_message
  */
 static inline uint16_t mavlink_msg_serial_control_get_data(const mavlink_message_t* msg, uint8_t *data)
 {
-    return _MAV_RETURN_uint8_t_array(msg, data, 70,  9);
+    if (msg->len > 9)
+        return _MAV_RETURN_uint8_t_array(msg, data, 70,  9);
+    return (uint16_t) 0;
 }
 
 /**
@@ -342,7 +354,9 @@ static inline uint16_t mavlink_msg_serial_control_get_data(const mavlink_message
  */
 static inline uint8_t mavlink_msg_serial_control_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  79);
+    if (msg->len > 79)
+        return _MAV_RETURN_uint8_t(msg,  79);
+    return (uint8_t) 0;
 }
 
 /**
@@ -352,7 +366,9 @@ static inline uint8_t mavlink_msg_serial_control_get_target_system(const mavlink
  */
 static inline uint8_t mavlink_msg_serial_control_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  80);
+    if (msg->len > 80)
+        return _MAV_RETURN_uint8_t(msg,  80);
+    return (uint8_t) 0;
 }
 
 /**

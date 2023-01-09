@@ -248,7 +248,9 @@ static inline void mavlink_msg_mcu_status_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline uint8_t mavlink_msg_mcu_status_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline uint8_t mavlink_msg_mcu_status_get_id(const mavlink_message_t* msg
  */
 static inline int16_t mavlink_msg_mcu_status_get_MCU_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int16_t(msg,  0);
+    return (int16_t) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline int16_t mavlink_msg_mcu_status_get_MCU_temperature(const mavlink_m
  */
 static inline uint16_t mavlink_msg_mcu_status_get_MCU_voltage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint16_t(msg,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline uint16_t mavlink_msg_mcu_status_get_MCU_voltage(const mavlink_mess
  */
 static inline uint16_t mavlink_msg_mcu_status_get_MCU_voltage_min(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline uint16_t mavlink_msg_mcu_status_get_MCU_voltage_min(const mavlink_
  */
 static inline uint16_t mavlink_msg_mcu_status_get_MCU_voltage_max(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint16_t(msg,  6);
+    return (uint16_t) 0;
 }
 
 /**

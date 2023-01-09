@@ -276,7 +276,9 @@ static inline void mavlink_msg_airspeeds_send_buf(mavlink_message_t *msgbuf, mav
  */
 static inline uint32_t mavlink_msg_airspeeds_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint32_t mavlink_msg_airspeeds_get_time_boot_ms(const mavlink_mess
  */
 static inline int16_t mavlink_msg_airspeeds_get_airspeed_imu(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int16_t(msg,  4);
+    return (int16_t) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline int16_t mavlink_msg_airspeeds_get_airspeed_imu(const mavlink_messa
  */
 static inline int16_t mavlink_msg_airspeeds_get_airspeed_pitot(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_int16_t(msg,  6);
+    return (int16_t) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline int16_t mavlink_msg_airspeeds_get_airspeed_pitot(const mavlink_mes
  */
 static inline int16_t mavlink_msg_airspeeds_get_airspeed_hot_wire(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int16_t(msg,  8);
+    return (int16_t) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline int16_t mavlink_msg_airspeeds_get_airspeed_hot_wire(const mavlink_
  */
 static inline int16_t mavlink_msg_airspeeds_get_airspeed_ultrasonic(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_int16_t(msg,  10);
+    return (int16_t) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline int16_t mavlink_msg_airspeeds_get_airspeed_ultrasonic(const mavlin
  */
 static inline int16_t mavlink_msg_airspeeds_get_aoa(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int16_t(msg,  12);
+    return (int16_t) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline int16_t mavlink_msg_airspeeds_get_aoa(const mavlink_message_t* msg
  */
 static inline int16_t mavlink_msg_airspeeds_get_aoy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_int16_t(msg,  14);
+    return (int16_t) 0;
 }
 
 /**

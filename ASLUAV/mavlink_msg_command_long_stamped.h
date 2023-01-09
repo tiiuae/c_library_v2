@@ -360,7 +360,9 @@ static inline void mavlink_msg_command_long_stamped_send_buf(mavlink_message_t *
  */
 static inline uint32_t mavlink_msg_command_long_stamped_get_utc_time(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -370,7 +372,9 @@ static inline uint32_t mavlink_msg_command_long_stamped_get_utc_time(const mavli
  */
 static inline uint64_t mavlink_msg_command_long_stamped_get_vehicle_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -380,7 +384,9 @@ static inline uint64_t mavlink_msg_command_long_stamped_get_vehicle_timestamp(co
  */
 static inline uint8_t mavlink_msg_command_long_stamped_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  42);
+    if (msg->len > 42)
+        return _MAV_RETURN_uint8_t(msg,  42);
+    return (uint8_t) 0;
 }
 
 /**
@@ -390,7 +396,9 @@ static inline uint8_t mavlink_msg_command_long_stamped_get_target_system(const m
  */
 static inline uint8_t mavlink_msg_command_long_stamped_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  43);
+    if (msg->len > 43)
+        return _MAV_RETURN_uint8_t(msg,  43);
+    return (uint8_t) 0;
 }
 
 /**
@@ -400,7 +408,9 @@ static inline uint8_t mavlink_msg_command_long_stamped_get_target_component(cons
  */
 static inline uint16_t mavlink_msg_command_long_stamped_get_command(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint16_t(msg,  40);
+    return (uint16_t) 0;
 }
 
 /**
@@ -410,7 +420,9 @@ static inline uint16_t mavlink_msg_command_long_stamped_get_command(const mavlin
  */
 static inline uint8_t mavlink_msg_command_long_stamped_get_confirmation(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_uint8_t(msg,  44);
+    return (uint8_t) 0;
 }
 
 /**
@@ -420,7 +432,9 @@ static inline uint8_t mavlink_msg_command_long_stamped_get_confirmation(const ma
  */
 static inline float mavlink_msg_command_long_stamped_get_param1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -430,7 +444,9 @@ static inline float mavlink_msg_command_long_stamped_get_param1(const mavlink_me
  */
 static inline float mavlink_msg_command_long_stamped_get_param2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -440,7 +456,9 @@ static inline float mavlink_msg_command_long_stamped_get_param2(const mavlink_me
  */
 static inline float mavlink_msg_command_long_stamped_get_param3(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -450,7 +468,9 @@ static inline float mavlink_msg_command_long_stamped_get_param3(const mavlink_me
  */
 static inline float mavlink_msg_command_long_stamped_get_param4(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -460,7 +480,9 @@ static inline float mavlink_msg_command_long_stamped_get_param4(const mavlink_me
  */
 static inline float mavlink_msg_command_long_stamped_get_param5(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -470,7 +492,9 @@ static inline float mavlink_msg_command_long_stamped_get_param5(const mavlink_me
  */
 static inline float mavlink_msg_command_long_stamped_get_param6(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -480,7 +504,9 @@ static inline float mavlink_msg_command_long_stamped_get_param6(const mavlink_me
  */
 static inline float mavlink_msg_command_long_stamped_get_param7(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float(msg,  36);
+    return (float) 0;
 }
 
 /**

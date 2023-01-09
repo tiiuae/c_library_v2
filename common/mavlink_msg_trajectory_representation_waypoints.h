@@ -377,7 +377,9 @@ static inline void mavlink_msg_trajectory_representation_waypoints_send_buf(mavl
  */
 static inline uint64_t mavlink_msg_trajectory_representation_waypoints_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -387,7 +389,9 @@ static inline uint64_t mavlink_msg_trajectory_representation_waypoints_get_time_
  */
 static inline uint8_t mavlink_msg_trajectory_representation_waypoints_get_valid_points(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  238);
+    if (msg->len > 238)
+        return _MAV_RETURN_uint8_t(msg,  238);
+    return (uint8_t) 0;
 }
 
 /**
@@ -397,7 +401,9 @@ static inline uint8_t mavlink_msg_trajectory_representation_waypoints_get_valid_
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_pos_x(const mavlink_message_t* msg, float *pos_x)
 {
-    return _MAV_RETURN_float_array(msg, pos_x, 5,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float_array(msg, pos_x, 5,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -407,7 +413,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_pos_x
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_pos_y(const mavlink_message_t* msg, float *pos_y)
 {
-    return _MAV_RETURN_float_array(msg, pos_y, 5,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float_array(msg, pos_y, 5,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -417,7 +425,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_pos_y
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_pos_z(const mavlink_message_t* msg, float *pos_z)
 {
-    return _MAV_RETURN_float_array(msg, pos_z, 5,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_float_array(msg, pos_z, 5,  48);
+    return (uint16_t) 0;
 }
 
 /**
@@ -427,7 +437,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_pos_z
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_vel_x(const mavlink_message_t* msg, float *vel_x)
 {
-    return _MAV_RETURN_float_array(msg, vel_x, 5,  68);
+    if (msg->len > 68)
+        return _MAV_RETURN_float_array(msg, vel_x, 5,  68);
+    return (uint16_t) 0;
 }
 
 /**
@@ -437,7 +449,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_vel_x
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_vel_y(const mavlink_message_t* msg, float *vel_y)
 {
-    return _MAV_RETURN_float_array(msg, vel_y, 5,  88);
+    if (msg->len > 88)
+        return _MAV_RETURN_float_array(msg, vel_y, 5,  88);
+    return (uint16_t) 0;
 }
 
 /**
@@ -447,7 +461,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_vel_y
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_vel_z(const mavlink_message_t* msg, float *vel_z)
 {
-    return _MAV_RETURN_float_array(msg, vel_z, 5,  108);
+    if (msg->len > 108)
+        return _MAV_RETURN_float_array(msg, vel_z, 5,  108);
+    return (uint16_t) 0;
 }
 
 /**
@@ -457,7 +473,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_vel_z
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_acc_x(const mavlink_message_t* msg, float *acc_x)
 {
-    return _MAV_RETURN_float_array(msg, acc_x, 5,  128);
+    if (msg->len > 128)
+        return _MAV_RETURN_float_array(msg, acc_x, 5,  128);
+    return (uint16_t) 0;
 }
 
 /**
@@ -467,7 +485,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_acc_x
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_acc_y(const mavlink_message_t* msg, float *acc_y)
 {
-    return _MAV_RETURN_float_array(msg, acc_y, 5,  148);
+    if (msg->len > 148)
+        return _MAV_RETURN_float_array(msg, acc_y, 5,  148);
+    return (uint16_t) 0;
 }
 
 /**
@@ -477,7 +497,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_acc_y
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_acc_z(const mavlink_message_t* msg, float *acc_z)
 {
-    return _MAV_RETURN_float_array(msg, acc_z, 5,  168);
+    if (msg->len > 168)
+        return _MAV_RETURN_float_array(msg, acc_z, 5,  168);
+    return (uint16_t) 0;
 }
 
 /**
@@ -487,7 +509,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_acc_z
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_pos_yaw(const mavlink_message_t* msg, float *pos_yaw)
 {
-    return _MAV_RETURN_float_array(msg, pos_yaw, 5,  188);
+    if (msg->len > 188)
+        return _MAV_RETURN_float_array(msg, pos_yaw, 5,  188);
+    return (uint16_t) 0;
 }
 
 /**
@@ -497,7 +521,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_pos_y
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_vel_yaw(const mavlink_message_t* msg, float *vel_yaw)
 {
-    return _MAV_RETURN_float_array(msg, vel_yaw, 5,  208);
+    if (msg->len > 208)
+        return _MAV_RETURN_float_array(msg, vel_yaw, 5,  208);
+    return (uint16_t) 0;
 }
 
 /**
@@ -507,7 +533,9 @@ static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_vel_y
  */
 static inline uint16_t mavlink_msg_trajectory_representation_waypoints_get_command(const mavlink_message_t* msg, uint16_t *command)
 {
-    return _MAV_RETURN_uint16_t_array(msg, command, 5,  228);
+    if (msg->len > 228)
+        return _MAV_RETURN_uint16_t_array(msg, command, 5,  228);
+    return (uint16_t) 0;
 }
 
 /**

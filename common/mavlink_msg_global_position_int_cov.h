@@ -310,7 +310,9 @@ static inline void mavlink_msg_global_position_int_cov_send_buf(mavlink_message_
  */
 static inline uint64_t mavlink_msg_global_position_int_cov_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -320,7 +322,9 @@ static inline uint64_t mavlink_msg_global_position_int_cov_get_time_usec(const m
  */
 static inline uint8_t mavlink_msg_global_position_int_cov_get_estimator_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  180);
+    if (msg->len > 180)
+        return _MAV_RETURN_uint8_t(msg,  180);
+    return (uint8_t) 0;
 }
 
 /**
@@ -330,7 +334,9 @@ static inline uint8_t mavlink_msg_global_position_int_cov_get_estimator_type(con
  */
 static inline int32_t mavlink_msg_global_position_int_cov_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -340,7 +346,9 @@ static inline int32_t mavlink_msg_global_position_int_cov_get_lat(const mavlink_
  */
 static inline int32_t mavlink_msg_global_position_int_cov_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -350,7 +358,9 @@ static inline int32_t mavlink_msg_global_position_int_cov_get_lon(const mavlink_
  */
 static inline int32_t mavlink_msg_global_position_int_cov_get_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
@@ -360,7 +370,9 @@ static inline int32_t mavlink_msg_global_position_int_cov_get_alt(const mavlink_
  */
 static inline int32_t mavlink_msg_global_position_int_cov_get_relative_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_int32_t(msg,  20);
+    return (int32_t) 0;
 }
 
 /**
@@ -370,7 +382,9 @@ static inline int32_t mavlink_msg_global_position_int_cov_get_relative_alt(const
  */
 static inline float mavlink_msg_global_position_int_cov_get_vx(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -380,7 +394,9 @@ static inline float mavlink_msg_global_position_int_cov_get_vx(const mavlink_mes
  */
 static inline float mavlink_msg_global_position_int_cov_get_vy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -390,7 +406,9 @@ static inline float mavlink_msg_global_position_int_cov_get_vy(const mavlink_mes
  */
 static inline float mavlink_msg_global_position_int_cov_get_vz(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -400,7 +418,9 @@ static inline float mavlink_msg_global_position_int_cov_get_vz(const mavlink_mes
  */
 static inline uint16_t mavlink_msg_global_position_int_cov_get_covariance(const mavlink_message_t* msg, float *covariance)
 {
-    return _MAV_RETURN_float_array(msg, covariance, 36,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float_array(msg, covariance, 36,  36);
+    return (uint16_t) 0;
 }
 
 /**

@@ -254,7 +254,9 @@ static inline void mavlink_msg_vision_speed_estimate_send_buf(mavlink_message_t 
  */
 static inline uint64_t mavlink_msg_vision_speed_estimate_get_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -264,7 +266,9 @@ static inline uint64_t mavlink_msg_vision_speed_estimate_get_usec(const mavlink_
  */
 static inline float mavlink_msg_vision_speed_estimate_get_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -274,7 +278,9 @@ static inline float mavlink_msg_vision_speed_estimate_get_x(const mavlink_messag
  */
 static inline float mavlink_msg_vision_speed_estimate_get_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -284,7 +290,9 @@ static inline float mavlink_msg_vision_speed_estimate_get_y(const mavlink_messag
  */
 static inline float mavlink_msg_vision_speed_estimate_get_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -294,7 +302,9 @@ static inline float mavlink_msg_vision_speed_estimate_get_z(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_vision_speed_estimate_get_covariance(const mavlink_message_t* msg, float *covariance)
 {
-    return _MAV_RETURN_float_array(msg, covariance, 9,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float_array(msg, covariance, 9,  20);
+    return (uint16_t) 0;
 }
 
 /**
@@ -304,7 +314,9 @@ static inline uint16_t mavlink_msg_vision_speed_estimate_get_covariance(const ma
  */
 static inline uint8_t mavlink_msg_vision_speed_estimate_get_reset_counter(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  56);
+    if (msg->len > 56)
+        return _MAV_RETURN_uint8_t(msg,  56);
+    return (uint8_t) 0;
 }
 
 /**
