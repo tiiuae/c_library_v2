@@ -354,7 +354,9 @@ static inline void mavlink_msg_camera_information_send_buf(mavlink_message_t *ms
  */
 static inline uint32_t mavlink_msg_camera_information_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -364,7 +366,9 @@ static inline uint32_t mavlink_msg_camera_information_get_time_boot_ms(const mav
  */
 static inline uint16_t mavlink_msg_camera_information_get_vendor_name(const mavlink_message_t* msg, uint8_t *vendor_name)
 {
-    return _MAV_RETURN_uint8_t_array(msg, vendor_name, 32,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_uint8_t_array(msg, vendor_name, 32,  30);
+    return (uint16_t) 0;
 }
 
 /**
@@ -374,7 +378,9 @@ static inline uint16_t mavlink_msg_camera_information_get_vendor_name(const mavl
  */
 static inline uint16_t mavlink_msg_camera_information_get_model_name(const mavlink_message_t* msg, uint8_t *model_name)
 {
-    return _MAV_RETURN_uint8_t_array(msg, model_name, 32,  62);
+    if (msg->len > 62)
+        return _MAV_RETURN_uint8_t_array(msg, model_name, 32,  62);
+    return (uint16_t) 0;
 }
 
 /**
@@ -384,7 +390,9 @@ static inline uint16_t mavlink_msg_camera_information_get_model_name(const mavli
  */
 static inline uint32_t mavlink_msg_camera_information_get_firmware_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -394,7 +402,9 @@ static inline uint32_t mavlink_msg_camera_information_get_firmware_version(const
  */
 static inline float mavlink_msg_camera_information_get_focal_length(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -404,7 +414,9 @@ static inline float mavlink_msg_camera_information_get_focal_length(const mavlin
  */
 static inline float mavlink_msg_camera_information_get_sensor_size_h(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -414,7 +426,9 @@ static inline float mavlink_msg_camera_information_get_sensor_size_h(const mavli
  */
 static inline float mavlink_msg_camera_information_get_sensor_size_v(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -424,7 +438,9 @@ static inline float mavlink_msg_camera_information_get_sensor_size_v(const mavli
  */
 static inline uint16_t mavlink_msg_camera_information_get_resolution_h(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -434,7 +450,9 @@ static inline uint16_t mavlink_msg_camera_information_get_resolution_h(const mav
  */
 static inline uint16_t mavlink_msg_camera_information_get_resolution_v(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint16_t(msg,  26);
+    return (uint16_t) 0;
 }
 
 /**
@@ -444,7 +462,9 @@ static inline uint16_t mavlink_msg_camera_information_get_resolution_v(const mav
  */
 static inline uint8_t mavlink_msg_camera_information_get_lens_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  94);
+    if (msg->len > 94)
+        return _MAV_RETURN_uint8_t(msg,  94);
+    return (uint8_t) 0;
 }
 
 /**
@@ -454,7 +474,9 @@ static inline uint8_t mavlink_msg_camera_information_get_lens_id(const mavlink_m
  */
 static inline uint32_t mavlink_msg_camera_information_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint32_t(msg,  20);
+    return (uint32_t) 0;
 }
 
 /**
@@ -464,7 +486,9 @@ static inline uint32_t mavlink_msg_camera_information_get_flags(const mavlink_me
  */
 static inline uint16_t mavlink_msg_camera_information_get_cam_definition_version(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint16_t(msg,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -474,7 +498,9 @@ static inline uint16_t mavlink_msg_camera_information_get_cam_definition_version
  */
 static inline uint16_t mavlink_msg_camera_information_get_cam_definition_uri(const mavlink_message_t* msg, char *cam_definition_uri)
 {
-    return _MAV_RETURN_char_array(msg, cam_definition_uri, 140,  95);
+    if (msg->len > 95)
+        return _MAV_RETURN_char_array(msg, cam_definition_uri, 140,  95);
+    return (uint16_t) 0;
 }
 
 /**

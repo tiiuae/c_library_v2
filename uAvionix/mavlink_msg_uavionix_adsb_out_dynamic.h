@@ -402,7 +402,9 @@ static inline void mavlink_msg_uavionix_adsb_out_dynamic_send_buf(mavlink_messag
  */
 static inline uint32_t mavlink_msg_uavionix_adsb_out_dynamic_get_utcTime(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -412,7 +414,9 @@ static inline uint32_t mavlink_msg_uavionix_adsb_out_dynamic_get_utcTime(const m
  */
 static inline int32_t mavlink_msg_uavionix_adsb_out_dynamic_get_gpsLat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -422,7 +426,9 @@ static inline int32_t mavlink_msg_uavionix_adsb_out_dynamic_get_gpsLat(const mav
  */
 static inline int32_t mavlink_msg_uavionix_adsb_out_dynamic_get_gpsLon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -432,7 +438,9 @@ static inline int32_t mavlink_msg_uavionix_adsb_out_dynamic_get_gpsLon(const mav
  */
 static inline int32_t mavlink_msg_uavionix_adsb_out_dynamic_get_gpsAlt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -442,7 +450,9 @@ static inline int32_t mavlink_msg_uavionix_adsb_out_dynamic_get_gpsAlt(const mav
  */
 static inline uint8_t mavlink_msg_uavionix_adsb_out_dynamic_get_gpsFix(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  38);
+    if (msg->len > 38)
+        return _MAV_RETURN_uint8_t(msg,  38);
+    return (uint8_t) 0;
 }
 
 /**
@@ -452,7 +462,9 @@ static inline uint8_t mavlink_msg_uavionix_adsb_out_dynamic_get_gpsFix(const mav
  */
 static inline uint8_t mavlink_msg_uavionix_adsb_out_dynamic_get_numSats(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  39);
+    if (msg->len > 39)
+        return _MAV_RETURN_uint8_t(msg,  39);
+    return (uint8_t) 0;
 }
 
 /**
@@ -462,7 +474,9 @@ static inline uint8_t mavlink_msg_uavionix_adsb_out_dynamic_get_numSats(const ma
  */
 static inline int32_t mavlink_msg_uavionix_adsb_out_dynamic_get_baroAltMSL(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
@@ -472,7 +486,9 @@ static inline int32_t mavlink_msg_uavionix_adsb_out_dynamic_get_baroAltMSL(const
  */
 static inline uint32_t mavlink_msg_uavionix_adsb_out_dynamic_get_accuracyHor(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint32_t(msg,  20);
+    return (uint32_t) 0;
 }
 
 /**
@@ -482,7 +498,9 @@ static inline uint32_t mavlink_msg_uavionix_adsb_out_dynamic_get_accuracyHor(con
  */
 static inline uint16_t mavlink_msg_uavionix_adsb_out_dynamic_get_accuracyVert(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -492,7 +510,9 @@ static inline uint16_t mavlink_msg_uavionix_adsb_out_dynamic_get_accuracyVert(co
  */
 static inline uint16_t mavlink_msg_uavionix_adsb_out_dynamic_get_accuracyVel(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint16_t(msg,  26);
+    return (uint16_t) 0;
 }
 
 /**
@@ -502,7 +522,9 @@ static inline uint16_t mavlink_msg_uavionix_adsb_out_dynamic_get_accuracyVel(con
  */
 static inline int16_t mavlink_msg_uavionix_adsb_out_dynamic_get_velVert(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_int16_t(msg,  28);
+    return (int16_t) 0;
 }
 
 /**
@@ -512,7 +534,9 @@ static inline int16_t mavlink_msg_uavionix_adsb_out_dynamic_get_velVert(const ma
  */
 static inline int16_t mavlink_msg_uavionix_adsb_out_dynamic_get_velNS(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_int16_t(msg,  30);
+    return (int16_t) 0;
 }
 
 /**
@@ -522,7 +546,9 @@ static inline int16_t mavlink_msg_uavionix_adsb_out_dynamic_get_velNS(const mavl
  */
 static inline int16_t mavlink_msg_uavionix_adsb_out_dynamic_get_VelEW(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_int16_t(msg,  32);
+    return (int16_t) 0;
 }
 
 /**
@@ -532,7 +558,9 @@ static inline int16_t mavlink_msg_uavionix_adsb_out_dynamic_get_VelEW(const mavl
  */
 static inline uint8_t mavlink_msg_uavionix_adsb_out_dynamic_get_emergencyStatus(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t(msg,  40);
+    return (uint8_t) 0;
 }
 
 /**
@@ -542,7 +570,9 @@ static inline uint8_t mavlink_msg_uavionix_adsb_out_dynamic_get_emergencyStatus(
  */
 static inline uint16_t mavlink_msg_uavionix_adsb_out_dynamic_get_state(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint16_t(msg,  34);
+    return (uint16_t) 0;
 }
 
 /**
@@ -552,7 +582,9 @@ static inline uint16_t mavlink_msg_uavionix_adsb_out_dynamic_get_state(const mav
  */
 static inline uint16_t mavlink_msg_uavionix_adsb_out_dynamic_get_squawk(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint16_t(msg,  36);
+    return (uint16_t) 0;
 }
 
 /**

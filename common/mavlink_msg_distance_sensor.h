@@ -338,7 +338,9 @@ static inline void mavlink_msg_distance_sensor_send_buf(mavlink_message_t *msgbu
  */
 static inline uint32_t mavlink_msg_distance_sensor_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -348,7 +350,9 @@ static inline uint32_t mavlink_msg_distance_sensor_get_time_boot_ms(const mavlin
  */
 static inline uint16_t mavlink_msg_distance_sensor_get_min_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -358,7 +362,9 @@ static inline uint16_t mavlink_msg_distance_sensor_get_min_distance(const mavlin
  */
 static inline uint16_t mavlink_msg_distance_sensor_get_max_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint16_t(msg,  6);
+    return (uint16_t) 0;
 }
 
 /**
@@ -368,7 +374,9 @@ static inline uint16_t mavlink_msg_distance_sensor_get_max_distance(const mavlin
  */
 static inline uint16_t mavlink_msg_distance_sensor_get_current_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -378,7 +386,9 @@ static inline uint16_t mavlink_msg_distance_sensor_get_current_distance(const ma
  */
 static inline uint8_t mavlink_msg_distance_sensor_get_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint8_t(msg,  10);
+    return (uint8_t) 0;
 }
 
 /**
@@ -388,7 +398,9 @@ static inline uint8_t mavlink_msg_distance_sensor_get_type(const mavlink_message
  */
 static inline uint8_t mavlink_msg_distance_sensor_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  11);
+    if (msg->len > 11)
+        return _MAV_RETURN_uint8_t(msg,  11);
+    return (uint8_t) 0;
 }
 
 /**
@@ -398,7 +410,9 @@ static inline uint8_t mavlink_msg_distance_sensor_get_id(const mavlink_message_t
  */
 static inline uint8_t mavlink_msg_distance_sensor_get_orientation(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -408,7 +422,9 @@ static inline uint8_t mavlink_msg_distance_sensor_get_orientation(const mavlink_
  */
 static inline uint8_t mavlink_msg_distance_sensor_get_covariance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  13);
+    if (msg->len > 13)
+        return _MAV_RETURN_uint8_t(msg,  13);
+    return (uint8_t) 0;
 }
 
 /**
@@ -418,7 +434,9 @@ static inline uint8_t mavlink_msg_distance_sensor_get_covariance(const mavlink_m
  */
 static inline float mavlink_msg_distance_sensor_get_horizontal_fov(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_float(msg,  14);
+    return (float) 0;
 }
 
 /**
@@ -428,7 +446,9 @@ static inline float mavlink_msg_distance_sensor_get_horizontal_fov(const mavlink
  */
 static inline float mavlink_msg_distance_sensor_get_vertical_fov(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_float(msg,  18);
+    return (float) 0;
 }
 
 /**
@@ -438,7 +458,9 @@ static inline float mavlink_msg_distance_sensor_get_vertical_fov(const mavlink_m
  */
 static inline uint16_t mavlink_msg_distance_sensor_get_quaternion(const mavlink_message_t* msg, float *quaternion)
 {
-    return _MAV_RETURN_float_array(msg, quaternion, 4,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_float_array(msg, quaternion, 4,  22);
+    return (uint16_t) 0;
 }
 
 /**
@@ -448,7 +470,9 @@ static inline uint16_t mavlink_msg_distance_sensor_get_quaternion(const mavlink_
  */
 static inline uint8_t mavlink_msg_distance_sensor_get_signal_quality(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  38);
+    if (msg->len > 38)
+        return _MAV_RETURN_uint8_t(msg,  38);
+    return (uint8_t) 0;
 }
 
 /**

@@ -234,7 +234,9 @@ static inline void mavlink_msg_sens_power_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline float mavlink_msg_sens_power_get_adc121_vspb_volt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline float mavlink_msg_sens_power_get_adc121_vspb_volt(const mavlink_me
  */
 static inline float mavlink_msg_sens_power_get_adc121_cspb_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline float mavlink_msg_sens_power_get_adc121_cspb_amp(const mavlink_mes
  */
 static inline float mavlink_msg_sens_power_get_adc121_cs1_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline float mavlink_msg_sens_power_get_adc121_cs1_amp(const mavlink_mess
  */
 static inline float mavlink_msg_sens_power_get_adc121_cs2_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**

@@ -220,7 +220,9 @@ static inline void mavlink_msg_aoa_ssa_send_buf(mavlink_message_t *msgbuf, mavli
  */
 static inline uint64_t mavlink_msg_aoa_ssa_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -230,7 +232,9 @@ static inline uint64_t mavlink_msg_aoa_ssa_get_time_usec(const mavlink_message_t
  */
 static inline float mavlink_msg_aoa_ssa_get_AOA(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -240,7 +244,9 @@ static inline float mavlink_msg_aoa_ssa_get_AOA(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_aoa_ssa_get_SSA(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**

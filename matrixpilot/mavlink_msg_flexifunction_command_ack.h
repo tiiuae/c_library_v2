@@ -206,7 +206,9 @@ static inline void mavlink_msg_flexifunction_command_ack_send_buf(mavlink_messag
  */
 static inline uint16_t mavlink_msg_flexifunction_command_ack_get_command_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline uint16_t mavlink_msg_flexifunction_command_ack_get_command_type(co
  */
 static inline uint16_t mavlink_msg_flexifunction_command_ack_get_result(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint16_t(msg,  2);
+    return (uint16_t) 0;
 }
 
 /**

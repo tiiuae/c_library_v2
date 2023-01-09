@@ -206,7 +206,9 @@ static inline void mavlink_msg_system_time_send_buf(mavlink_message_t *msgbuf, m
  */
 static inline uint64_t mavlink_msg_system_time_get_time_unix_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline uint64_t mavlink_msg_system_time_get_time_unix_usec(const mavlink_
  */
 static inline uint32_t mavlink_msg_system_time_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**

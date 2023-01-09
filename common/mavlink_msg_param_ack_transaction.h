@@ -254,7 +254,9 @@ static inline void mavlink_msg_param_ack_transaction_send_buf(mavlink_message_t 
  */
 static inline uint8_t mavlink_msg_param_ack_transaction_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -264,7 +266,9 @@ static inline uint8_t mavlink_msg_param_ack_transaction_get_target_system(const 
  */
 static inline uint8_t mavlink_msg_param_ack_transaction_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -274,7 +278,9 @@ static inline uint8_t mavlink_msg_param_ack_transaction_get_target_component(con
  */
 static inline uint16_t mavlink_msg_param_ack_transaction_get_param_id(const mavlink_message_t* msg, char *param_id)
 {
-    return _MAV_RETURN_char_array(msg, param_id, 16,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_char_array(msg, param_id, 16,  6);
+    return (uint16_t) 0;
 }
 
 /**
@@ -284,7 +290,9 @@ static inline uint16_t mavlink_msg_param_ack_transaction_get_param_id(const mavl
  */
 static inline float mavlink_msg_param_ack_transaction_get_param_value(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -294,7 +302,9 @@ static inline float mavlink_msg_param_ack_transaction_get_param_value(const mavl
  */
 static inline uint8_t mavlink_msg_param_ack_transaction_get_param_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_uint8_t(msg,  22);
+    return (uint8_t) 0;
 }
 
 /**
@@ -304,7 +314,9 @@ static inline uint8_t mavlink_msg_param_ack_transaction_get_param_type(const mav
  */
 static inline uint8_t mavlink_msg_param_ack_transaction_get_param_result(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  23);
+    if (msg->len > 23)
+        return _MAV_RETURN_uint8_t(msg,  23);
+    return (uint8_t) 0;
 }
 
 /**

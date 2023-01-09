@@ -463,7 +463,9 @@ static inline void mavlink_msg_onboard_computer_status_send_buf(mavlink_message_
  */
 static inline uint64_t mavlink_msg_onboard_computer_status_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -473,7 +475,9 @@ static inline uint64_t mavlink_msg_onboard_computer_status_get_time_usec(const m
  */
 static inline uint32_t mavlink_msg_onboard_computer_status_get_uptime(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -483,7 +487,9 @@ static inline uint32_t mavlink_msg_onboard_computer_status_get_uptime(const mavl
  */
 static inline uint8_t mavlink_msg_onboard_computer_status_get_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  196);
+    if (msg->len > 196)
+        return _MAV_RETURN_uint8_t(msg,  196);
+    return (uint8_t) 0;
 }
 
 /**
@@ -493,7 +499,9 @@ static inline uint8_t mavlink_msg_onboard_computer_status_get_type(const mavlink
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_cpu_cores(const mavlink_message_t* msg, uint8_t *cpu_cores)
 {
-    return _MAV_RETURN_uint8_t_array(msg, cpu_cores, 8,  197);
+    if (msg->len > 197)
+        return _MAV_RETURN_uint8_t_array(msg, cpu_cores, 8,  197);
+    return (uint16_t) 0;
 }
 
 /**
@@ -503,7 +511,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_cpu_cores(const m
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_cpu_combined(const mavlink_message_t* msg, uint8_t *cpu_combined)
 {
-    return _MAV_RETURN_uint8_t_array(msg, cpu_combined, 10,  205);
+    if (msg->len > 205)
+        return _MAV_RETURN_uint8_t_array(msg, cpu_combined, 10,  205);
+    return (uint16_t) 0;
 }
 
 /**
@@ -513,7 +523,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_cpu_combined(cons
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_gpu_cores(const mavlink_message_t* msg, uint8_t *gpu_cores)
 {
-    return _MAV_RETURN_uint8_t_array(msg, gpu_cores, 4,  215);
+    if (msg->len > 215)
+        return _MAV_RETURN_uint8_t_array(msg, gpu_cores, 4,  215);
+    return (uint16_t) 0;
 }
 
 /**
@@ -523,7 +535,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_gpu_cores(const m
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_gpu_combined(const mavlink_message_t* msg, uint8_t *gpu_combined)
 {
-    return _MAV_RETURN_uint8_t_array(msg, gpu_combined, 10,  219);
+    if (msg->len > 219)
+        return _MAV_RETURN_uint8_t_array(msg, gpu_combined, 10,  219);
+    return (uint16_t) 0;
 }
 
 /**
@@ -533,7 +547,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_gpu_combined(cons
  */
 static inline int8_t mavlink_msg_onboard_computer_status_get_temperature_board(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  229);
+    if (msg->len > 229)
+        return _MAV_RETURN_int8_t(msg,  229);
+    return (int8_t) 0;
 }
 
 /**
@@ -543,7 +559,9 @@ static inline int8_t mavlink_msg_onboard_computer_status_get_temperature_board(c
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_temperature_core(const mavlink_message_t* msg, int8_t *temperature_core)
 {
-    return _MAV_RETURN_int8_t_array(msg, temperature_core, 8,  230);
+    if (msg->len > 230)
+        return _MAV_RETURN_int8_t_array(msg, temperature_core, 8,  230);
+    return (uint16_t) 0;
 }
 
 /**
@@ -553,7 +571,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_temperature_core(
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_fan_speed(const mavlink_message_t* msg, int16_t *fan_speed)
 {
-    return _MAV_RETURN_int16_t_array(msg, fan_speed, 4,  188);
+    if (msg->len > 188)
+        return _MAV_RETURN_int16_t_array(msg, fan_speed, 4,  188);
+    return (uint16_t) 0;
 }
 
 /**
@@ -563,7 +583,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_fan_speed(const m
  */
 static inline uint32_t mavlink_msg_onboard_computer_status_get_ram_usage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint32_t(msg,  12);
+    return (uint32_t) 0;
 }
 
 /**
@@ -573,7 +595,9 @@ static inline uint32_t mavlink_msg_onboard_computer_status_get_ram_usage(const m
  */
 static inline uint32_t mavlink_msg_onboard_computer_status_get_ram_total(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint32_t(msg,  16);
+    return (uint32_t) 0;
 }
 
 /**
@@ -583,7 +607,9 @@ static inline uint32_t mavlink_msg_onboard_computer_status_get_ram_total(const m
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_type(const mavlink_message_t* msg, uint32_t *storage_type)
 {
-    return _MAV_RETURN_uint32_t_array(msg, storage_type, 4,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint32_t_array(msg, storage_type, 4,  20);
+    return (uint16_t) 0;
 }
 
 /**
@@ -593,7 +619,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_type(cons
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_usage(const mavlink_message_t* msg, uint32_t *storage_usage)
 {
-    return _MAV_RETURN_uint32_t_array(msg, storage_usage, 4,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint32_t_array(msg, storage_usage, 4,  36);
+    return (uint16_t) 0;
 }
 
 /**
@@ -603,7 +631,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_usage(con
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_total(const mavlink_message_t* msg, uint32_t *storage_total)
 {
-    return _MAV_RETURN_uint32_t_array(msg, storage_total, 4,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_uint32_t_array(msg, storage_total, 4,  52);
+    return (uint16_t) 0;
 }
 
 /**
@@ -613,7 +643,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_total(con
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_type(const mavlink_message_t* msg, uint32_t *link_type)
 {
-    return _MAV_RETURN_uint32_t_array(msg, link_type, 6,  68);
+    if (msg->len > 68)
+        return _MAV_RETURN_uint32_t_array(msg, link_type, 6,  68);
+    return (uint16_t) 0;
 }
 
 /**
@@ -623,7 +655,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_link_type(const m
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_tx_rate(const mavlink_message_t* msg, uint32_t *link_tx_rate)
 {
-    return _MAV_RETURN_uint32_t_array(msg, link_tx_rate, 6,  92);
+    if (msg->len > 92)
+        return _MAV_RETURN_uint32_t_array(msg, link_tx_rate, 6,  92);
+    return (uint16_t) 0;
 }
 
 /**
@@ -633,7 +667,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_link_tx_rate(cons
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_rx_rate(const mavlink_message_t* msg, uint32_t *link_rx_rate)
 {
-    return _MAV_RETURN_uint32_t_array(msg, link_rx_rate, 6,  116);
+    if (msg->len > 116)
+        return _MAV_RETURN_uint32_t_array(msg, link_rx_rate, 6,  116);
+    return (uint16_t) 0;
 }
 
 /**
@@ -643,7 +679,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_link_rx_rate(cons
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_tx_max(const mavlink_message_t* msg, uint32_t *link_tx_max)
 {
-    return _MAV_RETURN_uint32_t_array(msg, link_tx_max, 6,  140);
+    if (msg->len > 140)
+        return _MAV_RETURN_uint32_t_array(msg, link_tx_max, 6,  140);
+    return (uint16_t) 0;
 }
 
 /**
@@ -653,7 +691,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_link_tx_max(const
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_rx_max(const mavlink_message_t* msg, uint32_t *link_rx_max)
 {
-    return _MAV_RETURN_uint32_t_array(msg, link_rx_max, 6,  164);
+    if (msg->len > 164)
+        return _MAV_RETURN_uint32_t_array(msg, link_rx_max, 6,  164);
+    return (uint16_t) 0;
 }
 
 /**

@@ -248,7 +248,9 @@ static inline void mavlink_msg_serial_udb_extra_f18_send_buf(mavlink_message_t *
  */
 static inline float mavlink_msg_serial_udb_extra_f18_get_angle_of_attack_normal(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline float mavlink_msg_serial_udb_extra_f18_get_angle_of_attack_normal(
  */
 static inline float mavlink_msg_serial_udb_extra_f18_get_angle_of_attack_inverted(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline float mavlink_msg_serial_udb_extra_f18_get_angle_of_attack_inverte
  */
 static inline float mavlink_msg_serial_udb_extra_f18_get_elevator_trim_normal(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline float mavlink_msg_serial_udb_extra_f18_get_elevator_trim_normal(co
  */
 static inline float mavlink_msg_serial_udb_extra_f18_get_elevator_trim_inverted(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline float mavlink_msg_serial_udb_extra_f18_get_elevator_trim_inverted(
  */
 static inline float mavlink_msg_serial_udb_extra_f18_get_reference_speed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**

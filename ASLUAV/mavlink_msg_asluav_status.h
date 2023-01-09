@@ -226,7 +226,9 @@ static inline void mavlink_msg_asluav_status_send_buf(mavlink_message_t *msgbuf,
  */
 static inline uint8_t mavlink_msg_asluav_status_get_LED_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -236,7 +238,9 @@ static inline uint8_t mavlink_msg_asluav_status_get_LED_status(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_asluav_status_get_SATCOM_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -246,7 +250,9 @@ static inline uint8_t mavlink_msg_asluav_status_get_SATCOM_status(const mavlink_
  */
 static inline uint16_t mavlink_msg_asluav_status_get_Servo_status(const mavlink_message_t* msg, uint8_t *Servo_status)
 {
-    return _MAV_RETURN_uint8_t_array(msg, Servo_status, 8,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t_array(msg, Servo_status, 8,  6);
+    return (uint16_t) 0;
 }
 
 /**
@@ -256,7 +262,9 @@ static inline uint16_t mavlink_msg_asluav_status_get_Servo_status(const mavlink_
  */
 static inline float mavlink_msg_asluav_status_get_Motor_rpm(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**

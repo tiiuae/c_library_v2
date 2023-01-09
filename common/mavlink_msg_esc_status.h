@@ -242,7 +242,9 @@ static inline void mavlink_msg_esc_status_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline uint8_t mavlink_msg_esc_status_get_index(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  56);
+    if (msg->len > 56)
+        return _MAV_RETURN_uint8_t(msg,  56);
+    return (uint8_t) 0;
 }
 
 /**
@@ -252,7 +254,9 @@ static inline uint8_t mavlink_msg_esc_status_get_index(const mavlink_message_t* 
  */
 static inline uint64_t mavlink_msg_esc_status_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -262,7 +266,9 @@ static inline uint64_t mavlink_msg_esc_status_get_time_usec(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_esc_status_get_rpm(const mavlink_message_t* msg, int32_t *rpm)
 {
-    return _MAV_RETURN_int32_t_array(msg, rpm, 4,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t_array(msg, rpm, 4,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -272,7 +278,9 @@ static inline uint16_t mavlink_msg_esc_status_get_rpm(const mavlink_message_t* m
  */
 static inline uint16_t mavlink_msg_esc_status_get_voltage(const mavlink_message_t* msg, float *voltage)
 {
-    return _MAV_RETURN_float_array(msg, voltage, 4,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float_array(msg, voltage, 4,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -282,7 +290,9 @@ static inline uint16_t mavlink_msg_esc_status_get_voltage(const mavlink_message_
  */
 static inline uint16_t mavlink_msg_esc_status_get_current(const mavlink_message_t* msg, float *current)
 {
-    return _MAV_RETURN_float_array(msg, current, 4,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_float_array(msg, current, 4,  40);
+    return (uint16_t) 0;
 }
 
 /**

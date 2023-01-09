@@ -206,7 +206,9 @@ static inline void mavlink_msg_battery2_send_buf(mavlink_message_t *msgbuf, mavl
  */
 static inline uint16_t mavlink_msg_battery2_get_voltage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline uint16_t mavlink_msg_battery2_get_voltage(const mavlink_message_t*
  */
 static inline int16_t mavlink_msg_battery2_get_current_battery(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_int16_t(msg,  2);
+    return (int16_t) 0;
 }
 
 /**

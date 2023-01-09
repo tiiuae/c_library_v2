@@ -226,7 +226,9 @@ static inline void mavlink_msg_file_transfer_protocol_send_buf(mavlink_message_t
  */
 static inline uint8_t mavlink_msg_file_transfer_protocol_get_target_network(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -236,7 +238,9 @@ static inline uint8_t mavlink_msg_file_transfer_protocol_get_target_network(cons
  */
 static inline uint8_t mavlink_msg_file_transfer_protocol_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**
@@ -246,7 +250,9 @@ static inline uint8_t mavlink_msg_file_transfer_protocol_get_target_system(const
  */
 static inline uint8_t mavlink_msg_file_transfer_protocol_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint8_t(msg,  2);
+    return (uint8_t) 0;
 }
 
 /**
@@ -256,7 +262,9 @@ static inline uint8_t mavlink_msg_file_transfer_protocol_get_target_component(co
  */
 static inline uint16_t mavlink_msg_file_transfer_protocol_get_payload(const mavlink_message_t* msg, uint8_t *payload)
 {
-    return _MAV_RETURN_uint8_t_array(msg, payload, 251,  3);
+    if (msg->len > 3)
+        return _MAV_RETURN_uint8_t_array(msg, payload, 251,  3);
+    return (uint16_t) 0;
 }
 
 /**

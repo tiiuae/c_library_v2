@@ -352,7 +352,9 @@ static inline void mavlink_msg_adsb_vehicle_send_buf(mavlink_message_t *msgbuf, 
  */
 static inline uint32_t mavlink_msg_adsb_vehicle_get_ICAO_address(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -362,7 +364,9 @@ static inline uint32_t mavlink_msg_adsb_vehicle_get_ICAO_address(const mavlink_m
  */
 static inline int32_t mavlink_msg_adsb_vehicle_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -372,7 +376,9 @@ static inline int32_t mavlink_msg_adsb_vehicle_get_lat(const mavlink_message_t* 
  */
 static inline int32_t mavlink_msg_adsb_vehicle_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -382,7 +388,9 @@ static inline int32_t mavlink_msg_adsb_vehicle_get_lon(const mavlink_message_t* 
  */
 static inline uint8_t mavlink_msg_adsb_vehicle_get_altitude_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint8_t(msg,  26);
+    return (uint8_t) 0;
 }
 
 /**
@@ -392,7 +400,9 @@ static inline uint8_t mavlink_msg_adsb_vehicle_get_altitude_type(const mavlink_m
  */
 static inline int32_t mavlink_msg_adsb_vehicle_get_altitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -402,7 +412,9 @@ static inline int32_t mavlink_msg_adsb_vehicle_get_altitude(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_get_heading(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -412,7 +424,9 @@ static inline uint16_t mavlink_msg_adsb_vehicle_get_heading(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_get_hor_velocity(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint16_t(msg,  18);
+    return (uint16_t) 0;
 }
 
 /**
@@ -422,7 +436,9 @@ static inline uint16_t mavlink_msg_adsb_vehicle_get_hor_velocity(const mavlink_m
  */
 static inline int16_t mavlink_msg_adsb_vehicle_get_ver_velocity(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_int16_t(msg,  20);
+    return (int16_t) 0;
 }
 
 /**
@@ -432,7 +448,9 @@ static inline int16_t mavlink_msg_adsb_vehicle_get_ver_velocity(const mavlink_me
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_get_callsign(const mavlink_message_t* msg, char *callsign)
 {
-    return _MAV_RETURN_char_array(msg, callsign, 9,  27);
+    if (msg->len > 27)
+        return _MAV_RETURN_char_array(msg, callsign, 9,  27);
+    return (uint16_t) 0;
 }
 
 /**
@@ -442,7 +460,9 @@ static inline uint16_t mavlink_msg_adsb_vehicle_get_callsign(const mavlink_messa
  */
 static inline uint8_t mavlink_msg_adsb_vehicle_get_emitter_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint8_t(msg,  36);
+    return (uint8_t) 0;
 }
 
 /**
@@ -452,7 +472,9 @@ static inline uint8_t mavlink_msg_adsb_vehicle_get_emitter_type(const mavlink_me
  */
 static inline uint8_t mavlink_msg_adsb_vehicle_get_tslc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  37);
+    if (msg->len > 37)
+        return _MAV_RETURN_uint8_t(msg,  37);
+    return (uint8_t) 0;
 }
 
 /**
@@ -462,7 +484,9 @@ static inline uint8_t mavlink_msg_adsb_vehicle_get_tslc(const mavlink_message_t*
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_uint16_t(msg,  22);
+    return (uint16_t) 0;
 }
 
 /**
@@ -472,7 +496,9 @@ static inline uint16_t mavlink_msg_adsb_vehicle_get_flags(const mavlink_message_
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_get_squawk(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**

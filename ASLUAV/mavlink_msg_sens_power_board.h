@@ -346,7 +346,9 @@ static inline void mavlink_msg_sens_power_board_send_buf(mavlink_message_t *msgb
  */
 static inline uint64_t mavlink_msg_sens_power_board_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -356,7 +358,9 @@ static inline uint64_t mavlink_msg_sens_power_board_get_timestamp(const mavlink_
  */
 static inline uint8_t mavlink_msg_sens_power_board_get_pwr_brd_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_uint8_t(msg,  44);
+    return (uint8_t) 0;
 }
 
 /**
@@ -366,7 +370,9 @@ static inline uint8_t mavlink_msg_sens_power_board_get_pwr_brd_status(const mavl
  */
 static inline uint8_t mavlink_msg_sens_power_board_get_pwr_brd_led_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  45);
+    if (msg->len > 45)
+        return _MAV_RETURN_uint8_t(msg,  45);
+    return (uint8_t) 0;
 }
 
 /**
@@ -376,7 +382,9 @@ static inline uint8_t mavlink_msg_sens_power_board_get_pwr_brd_led_status(const 
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_system_volt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -386,7 +394,9 @@ static inline float mavlink_msg_sens_power_board_get_pwr_brd_system_volt(const m
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_servo_volt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -396,7 +406,9 @@ static inline float mavlink_msg_sens_power_board_get_pwr_brd_servo_volt(const ma
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_digital_volt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -406,7 +418,9 @@ static inline float mavlink_msg_sens_power_board_get_pwr_brd_digital_volt(const 
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_mot_l_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -416,7 +430,9 @@ static inline float mavlink_msg_sens_power_board_get_pwr_brd_mot_l_amp(const mav
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_mot_r_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -426,7 +442,9 @@ static inline float mavlink_msg_sens_power_board_get_pwr_brd_mot_r_amp(const mav
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_analog_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -436,7 +454,9 @@ static inline float mavlink_msg_sens_power_board_get_pwr_brd_analog_amp(const ma
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_digital_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -446,7 +466,9 @@ static inline float mavlink_msg_sens_power_board_get_pwr_brd_digital_amp(const m
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_ext_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float(msg,  36);
+    return (float) 0;
 }
 
 /**
@@ -456,7 +478,9 @@ static inline float mavlink_msg_sens_power_board_get_pwr_brd_ext_amp(const mavli
  */
 static inline float mavlink_msg_sens_power_board_get_pwr_brd_aux_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_float(msg,  40);
+    return (float) 0;
 }
 
 /**

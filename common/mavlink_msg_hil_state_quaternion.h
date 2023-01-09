@@ -394,7 +394,9 @@ static inline void mavlink_msg_hil_state_quaternion_send_buf(mavlink_message_t *
  */
 static inline uint64_t mavlink_msg_hil_state_quaternion_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -404,7 +406,9 @@ static inline uint64_t mavlink_msg_hil_state_quaternion_get_time_usec(const mavl
  */
 static inline uint16_t mavlink_msg_hil_state_quaternion_get_attitude_quaternion(const mavlink_message_t* msg, float *attitude_quaternion)
 {
-    return _MAV_RETURN_float_array(msg, attitude_quaternion, 4,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float_array(msg, attitude_quaternion, 4,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -414,7 +418,9 @@ static inline uint16_t mavlink_msg_hil_state_quaternion_get_attitude_quaternion(
  */
 static inline float mavlink_msg_hil_state_quaternion_get_rollspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -424,7 +430,9 @@ static inline float mavlink_msg_hil_state_quaternion_get_rollspeed(const mavlink
  */
 static inline float mavlink_msg_hil_state_quaternion_get_pitchspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -434,7 +442,9 @@ static inline float mavlink_msg_hil_state_quaternion_get_pitchspeed(const mavlin
  */
 static inline float mavlink_msg_hil_state_quaternion_get_yawspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -444,7 +454,9 @@ static inline float mavlink_msg_hil_state_quaternion_get_yawspeed(const mavlink_
  */
 static inline int32_t mavlink_msg_hil_state_quaternion_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_int32_t(msg,  36);
+    return (int32_t) 0;
 }
 
 /**
@@ -454,7 +466,9 @@ static inline int32_t mavlink_msg_hil_state_quaternion_get_lat(const mavlink_mes
  */
 static inline int32_t mavlink_msg_hil_state_quaternion_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_int32_t(msg,  40);
+    return (int32_t) 0;
 }
 
 /**
@@ -464,7 +478,9 @@ static inline int32_t mavlink_msg_hil_state_quaternion_get_lon(const mavlink_mes
  */
 static inline int32_t mavlink_msg_hil_state_quaternion_get_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_int32_t(msg,  44);
+    return (int32_t) 0;
 }
 
 /**
@@ -474,7 +490,9 @@ static inline int32_t mavlink_msg_hil_state_quaternion_get_alt(const mavlink_mes
  */
 static inline int16_t mavlink_msg_hil_state_quaternion_get_vx(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_int16_t(msg,  48);
+    return (int16_t) 0;
 }
 
 /**
@@ -484,7 +502,9 @@ static inline int16_t mavlink_msg_hil_state_quaternion_get_vx(const mavlink_mess
  */
 static inline int16_t mavlink_msg_hil_state_quaternion_get_vy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  50);
+    if (msg->len > 50)
+        return _MAV_RETURN_int16_t(msg,  50);
+    return (int16_t) 0;
 }
 
 /**
@@ -494,7 +514,9 @@ static inline int16_t mavlink_msg_hil_state_quaternion_get_vy(const mavlink_mess
  */
 static inline int16_t mavlink_msg_hil_state_quaternion_get_vz(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_int16_t(msg,  52);
+    return (int16_t) 0;
 }
 
 /**
@@ -504,7 +526,9 @@ static inline int16_t mavlink_msg_hil_state_quaternion_get_vz(const mavlink_mess
  */
 static inline uint16_t mavlink_msg_hil_state_quaternion_get_ind_airspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  54);
+    if (msg->len > 54)
+        return _MAV_RETURN_uint16_t(msg,  54);
+    return (uint16_t) 0;
 }
 
 /**
@@ -514,7 +538,9 @@ static inline uint16_t mavlink_msg_hil_state_quaternion_get_ind_airspeed(const m
  */
 static inline uint16_t mavlink_msg_hil_state_quaternion_get_true_airspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  56);
+    if (msg->len > 56)
+        return _MAV_RETURN_uint16_t(msg,  56);
+    return (uint16_t) 0;
 }
 
 /**
@@ -524,7 +550,9 @@ static inline uint16_t mavlink_msg_hil_state_quaternion_get_true_airspeed(const 
  */
 static inline int16_t mavlink_msg_hil_state_quaternion_get_xacc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  58);
+    if (msg->len > 58)
+        return _MAV_RETURN_int16_t(msg,  58);
+    return (int16_t) 0;
 }
 
 /**
@@ -534,7 +562,9 @@ static inline int16_t mavlink_msg_hil_state_quaternion_get_xacc(const mavlink_me
  */
 static inline int16_t mavlink_msg_hil_state_quaternion_get_yacc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  60);
+    if (msg->len > 60)
+        return _MAV_RETURN_int16_t(msg,  60);
+    return (int16_t) 0;
 }
 
 /**
@@ -544,7 +574,9 @@ static inline int16_t mavlink_msg_hil_state_quaternion_get_yacc(const mavlink_me
  */
 static inline int16_t mavlink_msg_hil_state_quaternion_get_zacc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  62);
+    if (msg->len > 62)
+        return _MAV_RETURN_int16_t(msg,  62);
+    return (int16_t) 0;
 }
 
 /**

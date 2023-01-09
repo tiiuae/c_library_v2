@@ -332,7 +332,9 @@ static inline void mavlink_msg_rc_channels_raw_send_buf(mavlink_message_t *msgbu
  */
 static inline uint32_t mavlink_msg_rc_channels_raw_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -342,7 +344,9 @@ static inline uint32_t mavlink_msg_rc_channels_raw_get_time_boot_ms(const mavlin
  */
 static inline uint8_t mavlink_msg_rc_channels_raw_get_port(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint8_t(msg,  20);
+    return (uint8_t) 0;
 }
 
 /**
@@ -352,7 +356,9 @@ static inline uint8_t mavlink_msg_rc_channels_raw_get_port(const mavlink_message
  */
 static inline uint16_t mavlink_msg_rc_channels_raw_get_chan1_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -362,7 +368,9 @@ static inline uint16_t mavlink_msg_rc_channels_raw_get_chan1_raw(const mavlink_m
  */
 static inline uint16_t mavlink_msg_rc_channels_raw_get_chan2_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint16_t(msg,  6);
+    return (uint16_t) 0;
 }
 
 /**
@@ -372,7 +380,9 @@ static inline uint16_t mavlink_msg_rc_channels_raw_get_chan2_raw(const mavlink_m
  */
 static inline uint16_t mavlink_msg_rc_channels_raw_get_chan3_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -382,7 +392,9 @@ static inline uint16_t mavlink_msg_rc_channels_raw_get_chan3_raw(const mavlink_m
  */
 static inline uint16_t mavlink_msg_rc_channels_raw_get_chan4_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint16_t(msg,  10);
+    return (uint16_t) 0;
 }
 
 /**
@@ -392,7 +404,9 @@ static inline uint16_t mavlink_msg_rc_channels_raw_get_chan4_raw(const mavlink_m
  */
 static inline uint16_t mavlink_msg_rc_channels_raw_get_chan5_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint16_t(msg,  12);
+    return (uint16_t) 0;
 }
 
 /**
@@ -402,7 +416,9 @@ static inline uint16_t mavlink_msg_rc_channels_raw_get_chan5_raw(const mavlink_m
  */
 static inline uint16_t mavlink_msg_rc_channels_raw_get_chan6_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint16_t(msg,  14);
+    return (uint16_t) 0;
 }
 
 /**
@@ -412,7 +428,9 @@ static inline uint16_t mavlink_msg_rc_channels_raw_get_chan6_raw(const mavlink_m
  */
 static inline uint16_t mavlink_msg_rc_channels_raw_get_chan7_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -422,7 +440,9 @@ static inline uint16_t mavlink_msg_rc_channels_raw_get_chan7_raw(const mavlink_m
  */
 static inline uint16_t mavlink_msg_rc_channels_raw_get_chan8_raw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint16_t(msg,  18);
+    return (uint16_t) 0;
 }
 
 /**
@@ -432,7 +452,9 @@ static inline uint16_t mavlink_msg_rc_channels_raw_get_chan8_raw(const mavlink_m
  */
 static inline uint8_t mavlink_msg_rc_channels_raw_get_rssi(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  21);
+    if (msg->len > 21)
+        return _MAV_RETURN_uint8_t(msg,  21);
+    return (uint8_t) 0;
 }
 
 /**

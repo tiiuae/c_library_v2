@@ -410,7 +410,9 @@ static inline void mavlink_msg_smart_battery_info_send_buf(mavlink_message_t *ms
  */
 static inline uint8_t mavlink_msg_smart_battery_info_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint8_t(msg,  18);
+    return (uint8_t) 0;
 }
 
 /**
@@ -420,7 +422,9 @@ static inline uint8_t mavlink_msg_smart_battery_info_get_id(const mavlink_messag
  */
 static inline uint8_t mavlink_msg_smart_battery_info_get_battery_function(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  19);
+    if (msg->len > 19)
+        return _MAV_RETURN_uint8_t(msg,  19);
+    return (uint8_t) 0;
 }
 
 /**
@@ -430,7 +434,9 @@ static inline uint8_t mavlink_msg_smart_battery_info_get_battery_function(const 
  */
 static inline uint8_t mavlink_msg_smart_battery_info_get_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint8_t(msg,  20);
+    return (uint8_t) 0;
 }
 
 /**
@@ -440,7 +446,9 @@ static inline uint8_t mavlink_msg_smart_battery_info_get_type(const mavlink_mess
  */
 static inline int32_t mavlink_msg_smart_battery_info_get_capacity_full_specification(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -450,7 +458,9 @@ static inline int32_t mavlink_msg_smart_battery_info_get_capacity_full_specifica
  */
 static inline int32_t mavlink_msg_smart_battery_info_get_capacity_full(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -460,7 +470,9 @@ static inline int32_t mavlink_msg_smart_battery_info_get_capacity_full(const mav
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_cycle_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -470,7 +482,9 @@ static inline uint16_t mavlink_msg_smart_battery_info_get_cycle_count(const mavl
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_serial_number(const mavlink_message_t* msg, char *serial_number)
 {
-    return _MAV_RETURN_char_array(msg, serial_number, 16,  21);
+    if (msg->len > 21)
+        return _MAV_RETURN_char_array(msg, serial_number, 16,  21);
+    return (uint16_t) 0;
 }
 
 /**
@@ -480,7 +494,9 @@ static inline uint16_t mavlink_msg_smart_battery_info_get_serial_number(const ma
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_device_name(const mavlink_message_t* msg, char *device_name)
 {
-    return _MAV_RETURN_char_array(msg, device_name, 50,  37);
+    if (msg->len > 37)
+        return _MAV_RETURN_char_array(msg, device_name, 50,  37);
+    return (uint16_t) 0;
 }
 
 /**
@@ -490,7 +506,9 @@ static inline uint16_t mavlink_msg_smart_battery_info_get_device_name(const mavl
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_weight(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint16_t(msg,  10);
+    return (uint16_t) 0;
 }
 
 /**
@@ -500,7 +518,9 @@ static inline uint16_t mavlink_msg_smart_battery_info_get_weight(const mavlink_m
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_discharge_minimum_voltage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint16_t(msg,  12);
+    return (uint16_t) 0;
 }
 
 /**
@@ -510,7 +530,9 @@ static inline uint16_t mavlink_msg_smart_battery_info_get_discharge_minimum_volt
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_charging_minimum_voltage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint16_t(msg,  14);
+    return (uint16_t) 0;
 }
 
 /**
@@ -520,7 +542,9 @@ static inline uint16_t mavlink_msg_smart_battery_info_get_charging_minimum_volta
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_resting_minimum_voltage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -530,7 +554,9 @@ static inline uint16_t mavlink_msg_smart_battery_info_get_resting_minimum_voltag
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_charging_maximum_voltage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  87);
+    if (msg->len > 87)
+        return _MAV_RETURN_uint16_t(msg,  87);
+    return (uint16_t) 0;
 }
 
 /**
@@ -540,7 +566,9 @@ static inline uint16_t mavlink_msg_smart_battery_info_get_charging_maximum_volta
  */
 static inline uint8_t mavlink_msg_smart_battery_info_get_cells_in_series(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  89);
+    if (msg->len > 89)
+        return _MAV_RETURN_uint8_t(msg,  89);
+    return (uint8_t) 0;
 }
 
 /**
@@ -550,7 +578,9 @@ static inline uint8_t mavlink_msg_smart_battery_info_get_cells_in_series(const m
  */
 static inline uint32_t mavlink_msg_smart_battery_info_get_discharge_maximum_current(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  90);
+    if (msg->len > 90)
+        return _MAV_RETURN_uint32_t(msg,  90);
+    return (uint32_t) 0;
 }
 
 /**
@@ -560,7 +590,9 @@ static inline uint32_t mavlink_msg_smart_battery_info_get_discharge_maximum_curr
  */
 static inline uint32_t mavlink_msg_smart_battery_info_get_discharge_maximum_burst_current(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  94);
+    if (msg->len > 94)
+        return _MAV_RETURN_uint32_t(msg,  94);
+    return (uint32_t) 0;
 }
 
 /**
@@ -570,7 +602,9 @@ static inline uint32_t mavlink_msg_smart_battery_info_get_discharge_maximum_burs
  */
 static inline uint16_t mavlink_msg_smart_battery_info_get_manufacture_date(const mavlink_message_t* msg, char *manufacture_date)
 {
-    return _MAV_RETURN_char_array(msg, manufacture_date, 11,  98);
+    if (msg->len > 98)
+        return _MAV_RETURN_char_array(msg, manufacture_date, 11,  98);
+    return (uint16_t) 0;
 }
 
 /**

@@ -296,7 +296,9 @@ static inline void mavlink_msg_obstacle_distance_send_buf(mavlink_message_t *msg
  */
 static inline uint64_t mavlink_msg_obstacle_distance_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -306,7 +308,9 @@ static inline uint64_t mavlink_msg_obstacle_distance_get_time_usec(const mavlink
  */
 static inline uint8_t mavlink_msg_obstacle_distance_get_sensor_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  156);
+    if (msg->len > 156)
+        return _MAV_RETURN_uint8_t(msg,  156);
+    return (uint8_t) 0;
 }
 
 /**
@@ -316,7 +320,9 @@ static inline uint8_t mavlink_msg_obstacle_distance_get_sensor_type(const mavlin
  */
 static inline uint16_t mavlink_msg_obstacle_distance_get_distances(const mavlink_message_t* msg, uint16_t *distances)
 {
-    return _MAV_RETURN_uint16_t_array(msg, distances, 72,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t_array(msg, distances, 72,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -326,7 +332,9 @@ static inline uint16_t mavlink_msg_obstacle_distance_get_distances(const mavlink
  */
 static inline uint8_t mavlink_msg_obstacle_distance_get_increment(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  157);
+    if (msg->len > 157)
+        return _MAV_RETURN_uint8_t(msg,  157);
+    return (uint8_t) 0;
 }
 
 /**
@@ -336,7 +344,9 @@ static inline uint8_t mavlink_msg_obstacle_distance_get_increment(const mavlink_
  */
 static inline uint16_t mavlink_msg_obstacle_distance_get_min_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  152);
+    if (msg->len > 152)
+        return _MAV_RETURN_uint16_t(msg,  152);
+    return (uint16_t) 0;
 }
 
 /**
@@ -346,7 +356,9 @@ static inline uint16_t mavlink_msg_obstacle_distance_get_min_distance(const mavl
  */
 static inline uint16_t mavlink_msg_obstacle_distance_get_max_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  154);
+    if (msg->len > 154)
+        return _MAV_RETURN_uint16_t(msg,  154);
+    return (uint16_t) 0;
 }
 
 /**
@@ -356,7 +368,9 @@ static inline uint16_t mavlink_msg_obstacle_distance_get_max_distance(const mavl
  */
 static inline float mavlink_msg_obstacle_distance_get_increment_f(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  158);
+    if (msg->len > 158)
+        return _MAV_RETURN_float(msg,  158);
+    return (float) 0;
 }
 
 /**
@@ -366,7 +380,9 @@ static inline float mavlink_msg_obstacle_distance_get_increment_f(const mavlink_
  */
 static inline float mavlink_msg_obstacle_distance_get_angle_offset(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  162);
+    if (msg->len > 162)
+        return _MAV_RETURN_float(msg,  162);
+    return (float) 0;
 }
 
 /**
@@ -376,7 +392,9 @@ static inline float mavlink_msg_obstacle_distance_get_angle_offset(const mavlink
  */
 static inline uint8_t mavlink_msg_obstacle_distance_get_frame(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  166);
+    if (msg->len > 166)
+        return _MAV_RETURN_uint8_t(msg,  166);
+    return (uint8_t) 0;
 }
 
 /**

@@ -430,7 +430,9 @@ static inline void mavlink_msg_gps2_raw_send_buf(mavlink_message_t *msgbuf, mavl
  */
 static inline uint64_t mavlink_msg_gps2_raw_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -440,7 +442,9 @@ static inline uint64_t mavlink_msg_gps2_raw_get_time_usec(const mavlink_message_
  */
 static inline uint8_t mavlink_msg_gps2_raw_get_fix_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_uint8_t(msg,  32);
+    return (uint8_t) 0;
 }
 
 /**
@@ -450,7 +454,9 @@ static inline uint8_t mavlink_msg_gps2_raw_get_fix_type(const mavlink_message_t*
  */
 static inline int32_t mavlink_msg_gps2_raw_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -460,7 +466,9 @@ static inline int32_t mavlink_msg_gps2_raw_get_lat(const mavlink_message_t* msg)
  */
 static inline int32_t mavlink_msg_gps2_raw_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -470,7 +478,9 @@ static inline int32_t mavlink_msg_gps2_raw_get_lon(const mavlink_message_t* msg)
  */
 static inline int32_t mavlink_msg_gps2_raw_get_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
@@ -480,7 +490,9 @@ static inline int32_t mavlink_msg_gps2_raw_get_alt(const mavlink_message_t* msg)
  */
 static inline uint16_t mavlink_msg_gps2_raw_get_eph(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -490,7 +502,9 @@ static inline uint16_t mavlink_msg_gps2_raw_get_eph(const mavlink_message_t* msg
  */
 static inline uint16_t mavlink_msg_gps2_raw_get_epv(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint16_t(msg,  26);
+    return (uint16_t) 0;
 }
 
 /**
@@ -500,7 +514,9 @@ static inline uint16_t mavlink_msg_gps2_raw_get_epv(const mavlink_message_t* msg
  */
 static inline uint16_t mavlink_msg_gps2_raw_get_vel(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint16_t(msg,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -510,7 +526,9 @@ static inline uint16_t mavlink_msg_gps2_raw_get_vel(const mavlink_message_t* msg
  */
 static inline uint16_t mavlink_msg_gps2_raw_get_cog(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_uint16_t(msg,  30);
+    return (uint16_t) 0;
 }
 
 /**
@@ -520,7 +538,9 @@ static inline uint16_t mavlink_msg_gps2_raw_get_cog(const mavlink_message_t* msg
  */
 static inline uint8_t mavlink_msg_gps2_raw_get_satellites_visible(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  33);
+    if (msg->len > 33)
+        return _MAV_RETURN_uint8_t(msg,  33);
+    return (uint8_t) 0;
 }
 
 /**
@@ -530,7 +550,9 @@ static inline uint8_t mavlink_msg_gps2_raw_get_satellites_visible(const mavlink_
  */
 static inline uint8_t mavlink_msg_gps2_raw_get_dgps_numch(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint8_t(msg,  34);
+    return (uint8_t) 0;
 }
 
 /**
@@ -540,7 +562,9 @@ static inline uint8_t mavlink_msg_gps2_raw_get_dgps_numch(const mavlink_message_
  */
 static inline uint32_t mavlink_msg_gps2_raw_get_dgps_age(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint32_t(msg,  20);
+    return (uint32_t) 0;
 }
 
 /**
@@ -550,7 +574,9 @@ static inline uint32_t mavlink_msg_gps2_raw_get_dgps_age(const mavlink_message_t
  */
 static inline uint16_t mavlink_msg_gps2_raw_get_yaw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  35);
+    if (msg->len > 35)
+        return _MAV_RETURN_uint16_t(msg,  35);
+    return (uint16_t) 0;
 }
 
 /**
@@ -560,7 +586,9 @@ static inline uint16_t mavlink_msg_gps2_raw_get_yaw(const mavlink_message_t* msg
  */
 static inline int32_t mavlink_msg_gps2_raw_get_alt_ellipsoid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  37);
+    if (msg->len > 37)
+        return _MAV_RETURN_int32_t(msg,  37);
+    return (int32_t) 0;
 }
 
 /**
@@ -570,7 +598,9 @@ static inline int32_t mavlink_msg_gps2_raw_get_alt_ellipsoid(const mavlink_messa
  */
 static inline uint32_t mavlink_msg_gps2_raw_get_h_acc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  41);
+    if (msg->len > 41)
+        return _MAV_RETURN_uint32_t(msg,  41);
+    return (uint32_t) 0;
 }
 
 /**
@@ -580,7 +610,9 @@ static inline uint32_t mavlink_msg_gps2_raw_get_h_acc(const mavlink_message_t* m
  */
 static inline uint32_t mavlink_msg_gps2_raw_get_v_acc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  45);
+    if (msg->len > 45)
+        return _MAV_RETURN_uint32_t(msg,  45);
+    return (uint32_t) 0;
 }
 
 /**
@@ -590,7 +622,9 @@ static inline uint32_t mavlink_msg_gps2_raw_get_v_acc(const mavlink_message_t* m
  */
 static inline uint32_t mavlink_msg_gps2_raw_get_vel_acc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  49);
+    if (msg->len > 49)
+        return _MAV_RETURN_uint32_t(msg,  49);
+    return (uint32_t) 0;
 }
 
 /**
@@ -600,7 +634,9 @@ static inline uint32_t mavlink_msg_gps2_raw_get_vel_acc(const mavlink_message_t*
  */
 static inline uint32_t mavlink_msg_gps2_raw_get_hdg_acc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  53);
+    if (msg->len > 53)
+        return _MAV_RETURN_uint32_t(msg,  53);
+    return (uint32_t) 0;
 }
 
 /**

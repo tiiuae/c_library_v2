@@ -212,7 +212,9 @@ static inline void mavlink_msg_actuator_output_status_send_buf(mavlink_message_t
  */
 static inline uint64_t mavlink_msg_actuator_output_status_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -222,7 +224,9 @@ static inline uint64_t mavlink_msg_actuator_output_status_get_time_usec(const ma
  */
 static inline uint32_t mavlink_msg_actuator_output_status_get_active(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -232,7 +236,9 @@ static inline uint32_t mavlink_msg_actuator_output_status_get_active(const mavli
  */
 static inline uint16_t mavlink_msg_actuator_output_status_get_actuator(const mavlink_message_t* msg, float *actuator)
 {
-    return _MAV_RETURN_float_array(msg, actuator, 32,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float_array(msg, actuator, 32,  12);
+    return (uint16_t) 0;
 }
 
 /**

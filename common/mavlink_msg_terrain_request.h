@@ -234,7 +234,9 @@ static inline void mavlink_msg_terrain_request_send_buf(mavlink_message_t *msgbu
  */
 static inline int32_t mavlink_msg_terrain_request_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline int32_t mavlink_msg_terrain_request_get_lat(const mavlink_message_
  */
 static inline int32_t mavlink_msg_terrain_request_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline int32_t mavlink_msg_terrain_request_get_lon(const mavlink_message_
  */
 static inline uint16_t mavlink_msg_terrain_request_get_grid_spacing(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline uint16_t mavlink_msg_terrain_request_get_grid_spacing(const mavlin
  */
 static inline uint64_t mavlink_msg_terrain_request_get_mask(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**

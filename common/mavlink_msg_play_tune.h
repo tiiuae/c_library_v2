@@ -227,7 +227,9 @@ static inline void mavlink_msg_play_tune_send_buf(mavlink_message_t *msgbuf, mav
  */
 static inline uint8_t mavlink_msg_play_tune_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -237,7 +239,9 @@ static inline uint8_t mavlink_msg_play_tune_get_target_system(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_play_tune_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**
@@ -247,7 +251,9 @@ static inline uint8_t mavlink_msg_play_tune_get_target_component(const mavlink_m
  */
 static inline uint16_t mavlink_msg_play_tune_get_tune(const mavlink_message_t* msg, char *tune)
 {
-    return _MAV_RETURN_char_array(msg, tune, 30,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_char_array(msg, tune, 30,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -257,7 +263,9 @@ static inline uint16_t mavlink_msg_play_tune_get_tune(const mavlink_message_t* m
  */
 static inline uint16_t mavlink_msg_play_tune_get_tune2(const mavlink_message_t* msg, char *tune2)
 {
-    return _MAV_RETURN_char_array(msg, tune2, 200,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_char_array(msg, tune2, 200,  32);
+    return (uint16_t) 0;
 }
 
 /**

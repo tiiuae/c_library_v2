@@ -276,7 +276,9 @@ static inline void mavlink_msg_vibration_send_buf(mavlink_message_t *msgbuf, mav
  */
 static inline uint64_t mavlink_msg_vibration_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint64_t mavlink_msg_vibration_get_time_usec(const mavlink_message
  */
 static inline float mavlink_msg_vibration_get_vibration_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline float mavlink_msg_vibration_get_vibration_x(const mavlink_message_
  */
 static inline float mavlink_msg_vibration_get_vibration_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline float mavlink_msg_vibration_get_vibration_y(const mavlink_message_
  */
 static inline float mavlink_msg_vibration_get_vibration_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline float mavlink_msg_vibration_get_vibration_z(const mavlink_message_
  */
 static inline uint32_t mavlink_msg_vibration_get_clipping_0(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint32_t(msg,  20);
+    return (uint32_t) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline uint32_t mavlink_msg_vibration_get_clipping_0(const mavlink_messag
  */
 static inline uint32_t mavlink_msg_vibration_get_clipping_1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint32_t(msg,  24);
+    return (uint32_t) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline uint32_t mavlink_msg_vibration_get_clipping_1(const mavlink_messag
  */
 static inline uint32_t mavlink_msg_vibration_get_clipping_2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint32_t(msg,  28);
+    return (uint32_t) 0;
 }
 
 /**

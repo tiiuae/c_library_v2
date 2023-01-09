@@ -878,7 +878,9 @@ static inline void mavlink_msg_serial_udb_extra_f2_b_send_buf(mavlink_message_t 
  */
 static inline uint32_t mavlink_msg_serial_udb_extra_f2_b_get_sue_time(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -888,7 +890,9 @@ static inline uint32_t mavlink_msg_serial_udb_extra_f2_b_get_sue_time(const mavl
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int16_t(msg,  16);
+    return (int16_t) 0;
 }
 
 /**
@@ -898,7 +902,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_1(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_int16_t(msg,  18);
+    return (int16_t) 0;
 }
 
 /**
@@ -908,7 +914,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_2(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_3(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_int16_t(msg,  20);
+    return (int16_t) 0;
 }
 
 /**
@@ -918,7 +926,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_3(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_4(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_int16_t(msg,  22);
+    return (int16_t) 0;
 }
 
 /**
@@ -928,7 +938,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_4(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_5(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_int16_t(msg,  24);
+    return (int16_t) 0;
 }
 
 /**
@@ -938,7 +950,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_5(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_6(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_int16_t(msg,  26);
+    return (int16_t) 0;
 }
 
 /**
@@ -948,7 +962,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_6(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_7(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_int16_t(msg,  28);
+    return (int16_t) 0;
 }
 
 /**
@@ -958,7 +974,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_7(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_8(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_int16_t(msg,  30);
+    return (int16_t) 0;
 }
 
 /**
@@ -968,7 +986,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_8(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_9(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_int16_t(msg,  32);
+    return (int16_t) 0;
 }
 
 /**
@@ -978,7 +998,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_9(cons
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_10(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_int16_t(msg,  34);
+    return (int16_t) 0;
 }
 
 /**
@@ -988,7 +1010,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_10(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_11(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_int16_t(msg,  36);
+    return (int16_t) 0;
 }
 
 /**
@@ -998,7 +1022,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_11(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_12(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  38);
+    if (msg->len > 38)
+        return _MAV_RETURN_int16_t(msg,  38);
+    return (int16_t) 0;
 }
 
 /**
@@ -1008,7 +1034,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_input_12(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_int16_t(msg,  40);
+    return (int16_t) 0;
 }
 
 /**
@@ -1018,7 +1046,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_1(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  42);
+    if (msg->len > 42)
+        return _MAV_RETURN_int16_t(msg,  42);
+    return (int16_t) 0;
 }
 
 /**
@@ -1028,7 +1058,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_2(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_3(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_int16_t(msg,  44);
+    return (int16_t) 0;
 }
 
 /**
@@ -1038,7 +1070,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_3(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_4(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  46);
+    if (msg->len > 46)
+        return _MAV_RETURN_int16_t(msg,  46);
+    return (int16_t) 0;
 }
 
 /**
@@ -1048,7 +1082,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_4(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_5(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_int16_t(msg,  48);
+    return (int16_t) 0;
 }
 
 /**
@@ -1058,7 +1094,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_5(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_6(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  50);
+    if (msg->len > 50)
+        return _MAV_RETURN_int16_t(msg,  50);
+    return (int16_t) 0;
 }
 
 /**
@@ -1068,7 +1106,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_6(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_7(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_int16_t(msg,  52);
+    return (int16_t) 0;
 }
 
 /**
@@ -1078,7 +1118,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_7(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_8(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  54);
+    if (msg->len > 54)
+        return _MAV_RETURN_int16_t(msg,  54);
+    return (int16_t) 0;
 }
 
 /**
@@ -1088,7 +1130,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_8(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_9(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  56);
+    if (msg->len > 56)
+        return _MAV_RETURN_int16_t(msg,  56);
+    return (int16_t) 0;
 }
 
 /**
@@ -1098,7 +1142,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_9(con
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_10(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  58);
+    if (msg->len > 58)
+        return _MAV_RETURN_int16_t(msg,  58);
+    return (int16_t) 0;
 }
 
 /**
@@ -1108,7 +1154,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_10(co
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_11(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  60);
+    if (msg->len > 60)
+        return _MAV_RETURN_int16_t(msg,  60);
+    return (int16_t) 0;
 }
 
 /**
@@ -1118,7 +1166,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_11(co
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_12(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  62);
+    if (msg->len > 62)
+        return _MAV_RETURN_int16_t(msg,  62);
+    return (int16_t) 0;
 }
 
 /**
@@ -1128,7 +1178,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_pwm_output_12(co
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_location_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  64);
+    if (msg->len > 64)
+        return _MAV_RETURN_int16_t(msg,  64);
+    return (int16_t) 0;
 }
 
 /**
@@ -1138,7 +1190,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_location_x(c
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_location_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  66);
+    if (msg->len > 66)
+        return _MAV_RETURN_int16_t(msg,  66);
+    return (int16_t) 0;
 }
 
 /**
@@ -1148,7 +1202,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_location_y(c
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_location_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  68);
+    if (msg->len > 68)
+        return _MAV_RETURN_int16_t(msg,  68);
+    return (int16_t) 0;
 }
 
 /**
@@ -1158,7 +1214,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_location_z(c
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_location_error_earth_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  70);
+    if (msg->len > 70)
+        return _MAV_RETURN_int16_t(msg,  70);
+    return (int16_t) 0;
 }
 
 /**
@@ -1168,7 +1226,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_location_error_e
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_location_error_earth_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  72);
+    if (msg->len > 72)
+        return _MAV_RETURN_int16_t(msg,  72);
+    return (int16_t) 0;
 }
 
 /**
@@ -1178,7 +1238,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_location_error_e
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_location_error_earth_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  74);
+    if (msg->len > 74)
+        return _MAV_RETURN_int16_t(msg,  74);
+    return (int16_t) 0;
 }
 
 /**
@@ -1188,7 +1250,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_location_error_e
  */
 static inline uint32_t mavlink_msg_serial_udb_extra_f2_b_get_sue_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -1198,7 +1262,9 @@ static inline uint32_t mavlink_msg_serial_udb_extra_f2_b_get_sue_flags(const mav
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_osc_fails(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  76);
+    if (msg->len > 76)
+        return _MAV_RETURN_int16_t(msg,  76);
+    return (int16_t) 0;
 }
 
 /**
@@ -1208,7 +1274,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_osc_fails(const 
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_velocity_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  78);
+    if (msg->len > 78)
+        return _MAV_RETURN_int16_t(msg,  78);
+    return (int16_t) 0;
 }
 
 /**
@@ -1218,7 +1286,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_velocity_x(c
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_velocity_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  80);
+    if (msg->len > 80)
+        return _MAV_RETURN_int16_t(msg,  80);
+    return (int16_t) 0;
 }
 
 /**
@@ -1228,7 +1298,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_velocity_y(c
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_velocity_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  82);
+    if (msg->len > 82)
+        return _MAV_RETURN_int16_t(msg,  82);
+    return (int16_t) 0;
 }
 
 /**
@@ -1238,7 +1310,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_imu_velocity_z(c
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_waypoint_goal_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  84);
+    if (msg->len > 84)
+        return _MAV_RETURN_int16_t(msg,  84);
+    return (int16_t) 0;
 }
 
 /**
@@ -1248,7 +1322,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_waypoint_goal_x(
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_waypoint_goal_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  86);
+    if (msg->len > 86)
+        return _MAV_RETURN_int16_t(msg,  86);
+    return (int16_t) 0;
 }
 
 /**
@@ -1258,7 +1334,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_waypoint_goal_y(
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_waypoint_goal_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  88);
+    if (msg->len > 88)
+        return _MAV_RETURN_int16_t(msg,  88);
+    return (int16_t) 0;
 }
 
 /**
@@ -1268,7 +1346,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_waypoint_goal_z(
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_aero_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  90);
+    if (msg->len > 90)
+        return _MAV_RETURN_int16_t(msg,  90);
+    return (int16_t) 0;
 }
 
 /**
@@ -1278,7 +1358,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_aero_x(const mav
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_aero_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  92);
+    if (msg->len > 92)
+        return _MAV_RETURN_int16_t(msg,  92);
+    return (int16_t) 0;
 }
 
 /**
@@ -1288,7 +1370,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_aero_y(const mav
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_aero_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  94);
+    if (msg->len > 94)
+        return _MAV_RETURN_int16_t(msg,  94);
+    return (int16_t) 0;
 }
 
 /**
@@ -1298,7 +1382,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_aero_z(const mav
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_barom_temp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  96);
+    if (msg->len > 96)
+        return _MAV_RETURN_int16_t(msg,  96);
+    return (int16_t) 0;
 }
 
 /**
@@ -1308,7 +1394,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_barom_temp(const
  */
 static inline int32_t mavlink_msg_serial_udb_extra_f2_b_get_sue_barom_press(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -1318,7 +1406,9 @@ static inline int32_t mavlink_msg_serial_udb_extra_f2_b_get_sue_barom_press(cons
  */
 static inline int32_t mavlink_msg_serial_udb_extra_f2_b_get_sue_barom_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -1328,7 +1418,9 @@ static inline int32_t mavlink_msg_serial_udb_extra_f2_b_get_sue_barom_alt(const 
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_bat_volt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  98);
+    if (msg->len > 98)
+        return _MAV_RETURN_int16_t(msg,  98);
+    return (int16_t) 0;
 }
 
 /**
@@ -1338,7 +1430,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_bat_volt(const m
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_bat_amp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  100);
+    if (msg->len > 100)
+        return _MAV_RETURN_int16_t(msg,  100);
+    return (int16_t) 0;
 }
 
 /**
@@ -1348,7 +1442,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_bat_amp(const ma
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_bat_amp_hours(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  102);
+    if (msg->len > 102)
+        return _MAV_RETURN_int16_t(msg,  102);
+    return (int16_t) 0;
 }
 
 /**
@@ -1358,7 +1454,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_bat_amp_hours(co
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_desired_height(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  104);
+    if (msg->len > 104)
+        return _MAV_RETURN_int16_t(msg,  104);
+    return (int16_t) 0;
 }
 
 /**
@@ -1368,7 +1466,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_desired_height(c
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f2_b_get_sue_memory_stack_free(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  106);
+    if (msg->len > 106)
+        return _MAV_RETURN_int16_t(msg,  106);
+    return (int16_t) 0;
 }
 
 /**

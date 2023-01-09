@@ -248,7 +248,9 @@ static inline void mavlink_msg_serial_udb_extra_f6_send_buf(mavlink_message_t *m
  */
 static inline float mavlink_msg_serial_udb_extra_f6_get_sue_PITCHGAIN(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline float mavlink_msg_serial_udb_extra_f6_get_sue_PITCHGAIN(const mavl
  */
 static inline float mavlink_msg_serial_udb_extra_f6_get_sue_PITCHKD(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline float mavlink_msg_serial_udb_extra_f6_get_sue_PITCHKD(const mavlin
  */
 static inline float mavlink_msg_serial_udb_extra_f6_get_sue_RUDDER_ELEV_MIX(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline float mavlink_msg_serial_udb_extra_f6_get_sue_RUDDER_ELEV_MIX(cons
  */
 static inline float mavlink_msg_serial_udb_extra_f6_get_sue_ROLL_ELEV_MIX(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline float mavlink_msg_serial_udb_extra_f6_get_sue_ROLL_ELEV_MIX(const 
  */
 static inline float mavlink_msg_serial_udb_extra_f6_get_sue_ELEVATOR_BOOST(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**

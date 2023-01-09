@@ -192,7 +192,9 @@ static inline void mavlink_msg_auth_key_send_buf(mavlink_message_t *msgbuf, mavl
  */
 static inline uint16_t mavlink_msg_auth_key_get_key(const mavlink_message_t* msg, char *key)
 {
-    return _MAV_RETURN_char_array(msg, key, 32,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_char_array(msg, key, 32,  0);
+    return (uint16_t) 0;
 }
 
 /**

@@ -276,7 +276,9 @@ static inline void mavlink_msg_collision_send_buf(mavlink_message_t *msgbuf, mav
  */
 static inline uint8_t mavlink_msg_collision_get_src(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint8_t(msg,  16);
+    return (uint8_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint8_t mavlink_msg_collision_get_src(const mavlink_message_t* msg
  */
 static inline uint32_t mavlink_msg_collision_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline uint32_t mavlink_msg_collision_get_id(const mavlink_message_t* msg
  */
 static inline uint8_t mavlink_msg_collision_get_action(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  17);
+    if (msg->len > 17)
+        return _MAV_RETURN_uint8_t(msg,  17);
+    return (uint8_t) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline uint8_t mavlink_msg_collision_get_action(const mavlink_message_t* 
  */
 static inline uint8_t mavlink_msg_collision_get_threat_level(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint8_t(msg,  18);
+    return (uint8_t) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline uint8_t mavlink_msg_collision_get_threat_level(const mavlink_messa
  */
 static inline float mavlink_msg_collision_get_time_to_minimum_delta(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline float mavlink_msg_collision_get_time_to_minimum_delta(const mavlin
  */
 static inline float mavlink_msg_collision_get_altitude_minimum_delta(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline float mavlink_msg_collision_get_altitude_minimum_delta(const mavli
  */
 static inline float mavlink_msg_collision_get_horizontal_minimum_delta(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**

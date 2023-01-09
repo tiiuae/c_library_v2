@@ -276,7 +276,9 @@ static inline void mavlink_msg_cellular_status_send_buf(mavlink_message_t *msgbu
  */
 static inline uint8_t mavlink_msg_cellular_status_get_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t(msg,  6);
+    return (uint8_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint8_t mavlink_msg_cellular_status_get_status(const mavlink_messa
  */
 static inline uint8_t mavlink_msg_cellular_status_get_failure_reason(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  7);
+    if (msg->len > 7)
+        return _MAV_RETURN_uint8_t(msg,  7);
+    return (uint8_t) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline uint8_t mavlink_msg_cellular_status_get_failure_reason(const mavli
  */
 static inline uint8_t mavlink_msg_cellular_status_get_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline uint8_t mavlink_msg_cellular_status_get_type(const mavlink_message
  */
 static inline uint8_t mavlink_msg_cellular_status_get_quality(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  9);
+    if (msg->len > 9)
+        return _MAV_RETURN_uint8_t(msg,  9);
+    return (uint8_t) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline uint8_t mavlink_msg_cellular_status_get_quality(const mavlink_mess
  */
 static inline uint16_t mavlink_msg_cellular_status_get_mcc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline uint16_t mavlink_msg_cellular_status_get_mcc(const mavlink_message
  */
 static inline uint16_t mavlink_msg_cellular_status_get_mnc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint16_t(msg,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline uint16_t mavlink_msg_cellular_status_get_mnc(const mavlink_message
  */
 static inline uint16_t mavlink_msg_cellular_status_get_lac(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**

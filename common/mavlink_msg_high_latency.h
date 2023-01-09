@@ -514,7 +514,9 @@ static inline void mavlink_msg_high_latency_send_buf(mavlink_message_t *msgbuf, 
  */
 static inline uint8_t mavlink_msg_high_latency_get_base_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint8_t(msg,  26);
+    return (uint8_t) 0;
 }
 
 /**
@@ -524,7 +526,9 @@ static inline uint8_t mavlink_msg_high_latency_get_base_mode(const mavlink_messa
  */
 static inline uint32_t mavlink_msg_high_latency_get_custom_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -534,7 +538,9 @@ static inline uint32_t mavlink_msg_high_latency_get_custom_mode(const mavlink_me
  */
 static inline uint8_t mavlink_msg_high_latency_get_landed_state(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  27);
+    if (msg->len > 27)
+        return _MAV_RETURN_uint8_t(msg,  27);
+    return (uint8_t) 0;
 }
 
 /**
@@ -544,7 +550,9 @@ static inline uint8_t mavlink_msg_high_latency_get_landed_state(const mavlink_me
  */
 static inline int16_t mavlink_msg_high_latency_get_roll(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int16_t(msg,  12);
+    return (int16_t) 0;
 }
 
 /**
@@ -554,7 +562,9 @@ static inline int16_t mavlink_msg_high_latency_get_roll(const mavlink_message_t*
  */
 static inline int16_t mavlink_msg_high_latency_get_pitch(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_int16_t(msg,  14);
+    return (int16_t) 0;
 }
 
 /**
@@ -564,7 +574,9 @@ static inline int16_t mavlink_msg_high_latency_get_pitch(const mavlink_message_t
  */
 static inline uint16_t mavlink_msg_high_latency_get_heading(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -574,7 +586,9 @@ static inline uint16_t mavlink_msg_high_latency_get_heading(const mavlink_messag
  */
 static inline int8_t mavlink_msg_high_latency_get_throttle(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_int8_t(msg,  28);
+    return (int8_t) 0;
 }
 
 /**
@@ -584,7 +598,9 @@ static inline int8_t mavlink_msg_high_latency_get_throttle(const mavlink_message
  */
 static inline int16_t mavlink_msg_high_latency_get_heading_sp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_int16_t(msg,  18);
+    return (int16_t) 0;
 }
 
 /**
@@ -594,7 +610,9 @@ static inline int16_t mavlink_msg_high_latency_get_heading_sp(const mavlink_mess
  */
 static inline int32_t mavlink_msg_high_latency_get_latitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -604,7 +622,9 @@ static inline int32_t mavlink_msg_high_latency_get_latitude(const mavlink_messag
  */
 static inline int32_t mavlink_msg_high_latency_get_longitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -614,7 +634,9 @@ static inline int32_t mavlink_msg_high_latency_get_longitude(const mavlink_messa
  */
 static inline int16_t mavlink_msg_high_latency_get_altitude_amsl(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_int16_t(msg,  20);
+    return (int16_t) 0;
 }
 
 /**
@@ -624,7 +646,9 @@ static inline int16_t mavlink_msg_high_latency_get_altitude_amsl(const mavlink_m
  */
 static inline int16_t mavlink_msg_high_latency_get_altitude_sp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_int16_t(msg,  22);
+    return (int16_t) 0;
 }
 
 /**
@@ -634,7 +658,9 @@ static inline int16_t mavlink_msg_high_latency_get_altitude_sp(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_high_latency_get_airspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  29);
+    if (msg->len > 29)
+        return _MAV_RETURN_uint8_t(msg,  29);
+    return (uint8_t) 0;
 }
 
 /**
@@ -644,7 +670,9 @@ static inline uint8_t mavlink_msg_high_latency_get_airspeed(const mavlink_messag
  */
 static inline uint8_t mavlink_msg_high_latency_get_airspeed_sp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_uint8_t(msg,  30);
+    return (uint8_t) 0;
 }
 
 /**
@@ -654,7 +682,9 @@ static inline uint8_t mavlink_msg_high_latency_get_airspeed_sp(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_high_latency_get_groundspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  31);
+    if (msg->len > 31)
+        return _MAV_RETURN_uint8_t(msg,  31);
+    return (uint8_t) 0;
 }
 
 /**
@@ -664,7 +694,9 @@ static inline uint8_t mavlink_msg_high_latency_get_groundspeed(const mavlink_mes
  */
 static inline int8_t mavlink_msg_high_latency_get_climb_rate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_int8_t(msg,  32);
+    return (int8_t) 0;
 }
 
 /**
@@ -674,7 +706,9 @@ static inline int8_t mavlink_msg_high_latency_get_climb_rate(const mavlink_messa
  */
 static inline uint8_t mavlink_msg_high_latency_get_gps_nsat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  33);
+    if (msg->len > 33)
+        return _MAV_RETURN_uint8_t(msg,  33);
+    return (uint8_t) 0;
 }
 
 /**
@@ -684,7 +718,9 @@ static inline uint8_t mavlink_msg_high_latency_get_gps_nsat(const mavlink_messag
  */
 static inline uint8_t mavlink_msg_high_latency_get_gps_fix_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint8_t(msg,  34);
+    return (uint8_t) 0;
 }
 
 /**
@@ -694,7 +730,9 @@ static inline uint8_t mavlink_msg_high_latency_get_gps_fix_type(const mavlink_me
  */
 static inline uint8_t mavlink_msg_high_latency_get_battery_remaining(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  35);
+    if (msg->len > 35)
+        return _MAV_RETURN_uint8_t(msg,  35);
+    return (uint8_t) 0;
 }
 
 /**
@@ -704,7 +742,9 @@ static inline uint8_t mavlink_msg_high_latency_get_battery_remaining(const mavli
  */
 static inline int8_t mavlink_msg_high_latency_get_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_int8_t(msg,  36);
+    return (int8_t) 0;
 }
 
 /**
@@ -714,7 +754,9 @@ static inline int8_t mavlink_msg_high_latency_get_temperature(const mavlink_mess
  */
 static inline int8_t mavlink_msg_high_latency_get_temperature_air(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int8_t(msg,  37);
+    if (msg->len > 37)
+        return _MAV_RETURN_int8_t(msg,  37);
+    return (int8_t) 0;
 }
 
 /**
@@ -724,7 +766,9 @@ static inline int8_t mavlink_msg_high_latency_get_temperature_air(const mavlink_
  */
 static inline uint8_t mavlink_msg_high_latency_get_failsafe(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  38);
+    if (msg->len > 38)
+        return _MAV_RETURN_uint8_t(msg,  38);
+    return (uint8_t) 0;
 }
 
 /**
@@ -734,7 +778,9 @@ static inline uint8_t mavlink_msg_high_latency_get_failsafe(const mavlink_messag
  */
 static inline uint8_t mavlink_msg_high_latency_get_wp_num(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  39);
+    if (msg->len > 39)
+        return _MAV_RETURN_uint8_t(msg,  39);
+    return (uint8_t) 0;
 }
 
 /**
@@ -744,7 +790,9 @@ static inline uint8_t mavlink_msg_high_latency_get_wp_num(const mavlink_message_
  */
 static inline uint16_t mavlink_msg_high_latency_get_wp_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**

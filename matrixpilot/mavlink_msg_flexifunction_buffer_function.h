@@ -268,7 +268,9 @@ static inline void mavlink_msg_flexifunction_buffer_function_send_buf(mavlink_me
  */
 static inline uint8_t mavlink_msg_flexifunction_buffer_function_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint8_t(msg,  8);
+    return (uint8_t) 0;
 }
 
 /**
@@ -278,7 +280,9 @@ static inline uint8_t mavlink_msg_flexifunction_buffer_function_get_target_syste
  */
 static inline uint8_t mavlink_msg_flexifunction_buffer_function_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  9);
+    if (msg->len > 9)
+        return _MAV_RETURN_uint8_t(msg,  9);
+    return (uint8_t) 0;
 }
 
 /**
@@ -288,7 +292,9 @@ static inline uint8_t mavlink_msg_flexifunction_buffer_function_get_target_compo
  */
 static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_func_index(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint16_t(msg,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -298,7 +304,9 @@ static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_func_index(
  */
 static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_func_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_uint16_t(msg,  2);
+    return (uint16_t) 0;
 }
 
 /**
@@ -308,7 +316,9 @@ static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_func_count(
  */
 static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_data_address(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint16_t(msg,  4);
+    return (uint16_t) 0;
 }
 
 /**
@@ -318,7 +328,9 @@ static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_data_addres
  */
 static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_data_size(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint16_t(msg,  6);
+    return (uint16_t) 0;
 }
 
 /**
@@ -328,7 +340,9 @@ static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_data_size(c
  */
 static inline uint16_t mavlink_msg_flexifunction_buffer_function_get_data(const mavlink_message_t* msg, int8_t *data)
 {
-    return _MAV_RETURN_int8_t_array(msg, data, 48,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_int8_t_array(msg, data, 48,  10);
+    return (uint16_t) 0;
 }
 
 /**

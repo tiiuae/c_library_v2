@@ -324,7 +324,9 @@ static inline void mavlink_msg_home_position_send_buf(mavlink_message_t *msgbuf,
  */
 static inline int32_t mavlink_msg_home_position_get_latitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -334,7 +336,9 @@ static inline int32_t mavlink_msg_home_position_get_latitude(const mavlink_messa
  */
 static inline int32_t mavlink_msg_home_position_get_longitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -344,7 +348,9 @@ static inline int32_t mavlink_msg_home_position_get_longitude(const mavlink_mess
  */
 static inline int32_t mavlink_msg_home_position_get_altitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -354,7 +360,9 @@ static inline int32_t mavlink_msg_home_position_get_altitude(const mavlink_messa
  */
 static inline float mavlink_msg_home_position_get_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -364,7 +372,9 @@ static inline float mavlink_msg_home_position_get_x(const mavlink_message_t* msg
  */
 static inline float mavlink_msg_home_position_get_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -374,7 +384,9 @@ static inline float mavlink_msg_home_position_get_y(const mavlink_message_t* msg
  */
 static inline float mavlink_msg_home_position_get_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -384,7 +396,9 @@ static inline float mavlink_msg_home_position_get_z(const mavlink_message_t* msg
  */
 static inline uint16_t mavlink_msg_home_position_get_q(const mavlink_message_t* msg, float *q)
 {
-    return _MAV_RETURN_float_array(msg, q, 4,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float_array(msg, q, 4,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -394,7 +408,9 @@ static inline uint16_t mavlink_msg_home_position_get_q(const mavlink_message_t* 
  */
 static inline float mavlink_msg_home_position_get_approach_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_float(msg,  40);
+    return (float) 0;
 }
 
 /**
@@ -404,7 +420,9 @@ static inline float mavlink_msg_home_position_get_approach_x(const mavlink_messa
  */
 static inline float mavlink_msg_home_position_get_approach_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_float(msg,  44);
+    return (float) 0;
 }
 
 /**
@@ -414,7 +432,9 @@ static inline float mavlink_msg_home_position_get_approach_y(const mavlink_messa
  */
 static inline float mavlink_msg_home_position_get_approach_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_float(msg,  48);
+    return (float) 0;
 }
 
 /**
@@ -424,7 +444,9 @@ static inline float mavlink_msg_home_position_get_approach_z(const mavlink_messa
  */
 static inline uint64_t mavlink_msg_home_position_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_uint64_t(msg,  52);
+    return (uint64_t) 0;
 }
 
 /**

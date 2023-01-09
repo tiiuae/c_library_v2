@@ -234,7 +234,9 @@ static inline void mavlink_msg_serial_udb_extra_f13_send_buf(mavlink_message_t *
  */
 static inline int16_t mavlink_msg_serial_udb_extra_f13_get_sue_week_no(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int16_t(msg,  12);
+    return (int16_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline int16_t mavlink_msg_serial_udb_extra_f13_get_sue_week_no(const mav
  */
 static inline int32_t mavlink_msg_serial_udb_extra_f13_get_sue_lat_origin(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline int32_t mavlink_msg_serial_udb_extra_f13_get_sue_lat_origin(const 
  */
 static inline int32_t mavlink_msg_serial_udb_extra_f13_get_sue_lon_origin(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline int32_t mavlink_msg_serial_udb_extra_f13_get_sue_lon_origin(const 
  */
 static inline int32_t mavlink_msg_serial_udb_extra_f13_get_sue_alt_origin(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**

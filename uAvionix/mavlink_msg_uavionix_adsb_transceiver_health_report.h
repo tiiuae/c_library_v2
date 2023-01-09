@@ -192,7 +192,9 @@ static inline void mavlink_msg_uavionix_adsb_transceiver_health_report_send_buf(
  */
 static inline uint8_t mavlink_msg_uavionix_adsb_transceiver_health_report_get_rfHealth(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**

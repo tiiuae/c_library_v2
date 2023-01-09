@@ -262,7 +262,9 @@ static inline void mavlink_msg_orbit_execution_status_send_buf(mavlink_message_t
  */
 static inline uint64_t mavlink_msg_orbit_execution_status_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -272,7 +274,9 @@ static inline uint64_t mavlink_msg_orbit_execution_status_get_time_usec(const ma
  */
 static inline float mavlink_msg_orbit_execution_status_get_radius(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -282,7 +286,9 @@ static inline float mavlink_msg_orbit_execution_status_get_radius(const mavlink_
  */
 static inline uint8_t mavlink_msg_orbit_execution_status_get_frame(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint8_t(msg,  24);
+    return (uint8_t) 0;
 }
 
 /**
@@ -292,7 +298,9 @@ static inline uint8_t mavlink_msg_orbit_execution_status_get_frame(const mavlink
  */
 static inline int32_t mavlink_msg_orbit_execution_status_get_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -302,7 +310,9 @@ static inline int32_t mavlink_msg_orbit_execution_status_get_x(const mavlink_mes
  */
 static inline int32_t mavlink_msg_orbit_execution_status_get_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
@@ -312,7 +322,9 @@ static inline int32_t mavlink_msg_orbit_execution_status_get_y(const mavlink_mes
  */
 static inline float mavlink_msg_orbit_execution_status_get_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**

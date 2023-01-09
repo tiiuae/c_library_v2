@@ -268,7 +268,9 @@ static inline void mavlink_msg_event_send_buf(mavlink_message_t *msgbuf, mavlink
  */
 static inline uint8_t mavlink_msg_event_get_destination_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint8_t(msg,  10);
+    return (uint8_t) 0;
 }
 
 /**
@@ -278,7 +280,9 @@ static inline uint8_t mavlink_msg_event_get_destination_component(const mavlink_
  */
 static inline uint8_t mavlink_msg_event_get_destination_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  11);
+    if (msg->len > 11)
+        return _MAV_RETURN_uint8_t(msg,  11);
+    return (uint8_t) 0;
 }
 
 /**
@@ -288,7 +292,9 @@ static inline uint8_t mavlink_msg_event_get_destination_system(const mavlink_mes
  */
 static inline uint32_t mavlink_msg_event_get_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -298,7 +304,9 @@ static inline uint32_t mavlink_msg_event_get_id(const mavlink_message_t* msg)
  */
 static inline uint32_t mavlink_msg_event_get_event_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -308,7 +316,9 @@ static inline uint32_t mavlink_msg_event_get_event_time_boot_ms(const mavlink_me
  */
 static inline uint16_t mavlink_msg_event_get_sequence(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -318,7 +328,9 @@ static inline uint16_t mavlink_msg_event_get_sequence(const mavlink_message_t* m
  */
 static inline uint8_t mavlink_msg_event_get_log_levels(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -328,7 +340,9 @@ static inline uint8_t mavlink_msg_event_get_log_levels(const mavlink_message_t* 
  */
 static inline uint16_t mavlink_msg_event_get_arguments(const mavlink_message_t* msg, uint8_t *arguments)
 {
-    return _MAV_RETURN_uint8_t_array(msg, arguments, 40,  13);
+    if (msg->len > 13)
+        return _MAV_RETURN_uint8_t_array(msg, arguments, 40,  13);
+    return (uint16_t) 0;
 }
 
 /**

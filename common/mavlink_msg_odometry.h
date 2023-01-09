@@ -410,7 +410,9 @@ static inline void mavlink_msg_odometry_send_buf(mavlink_message_t *msgbuf, mavl
  */
 static inline uint64_t mavlink_msg_odometry_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -420,7 +422,9 @@ static inline uint64_t mavlink_msg_odometry_get_time_usec(const mavlink_message_
  */
 static inline uint8_t mavlink_msg_odometry_get_frame_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  228);
+    if (msg->len > 228)
+        return _MAV_RETURN_uint8_t(msg,  228);
+    return (uint8_t) 0;
 }
 
 /**
@@ -430,7 +434,9 @@ static inline uint8_t mavlink_msg_odometry_get_frame_id(const mavlink_message_t*
  */
 static inline uint8_t mavlink_msg_odometry_get_child_frame_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  229);
+    if (msg->len > 229)
+        return _MAV_RETURN_uint8_t(msg,  229);
+    return (uint8_t) 0;
 }
 
 /**
@@ -440,7 +446,9 @@ static inline uint8_t mavlink_msg_odometry_get_child_frame_id(const mavlink_mess
  */
 static inline float mavlink_msg_odometry_get_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -450,7 +458,9 @@ static inline float mavlink_msg_odometry_get_x(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_odometry_get_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -460,7 +470,9 @@ static inline float mavlink_msg_odometry_get_y(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_odometry_get_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -470,7 +482,9 @@ static inline float mavlink_msg_odometry_get_z(const mavlink_message_t* msg)
  */
 static inline uint16_t mavlink_msg_odometry_get_q(const mavlink_message_t* msg, float *q)
 {
-    return _MAV_RETURN_float_array(msg, q, 4,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float_array(msg, q, 4,  20);
+    return (uint16_t) 0;
 }
 
 /**
@@ -480,7 +494,9 @@ static inline uint16_t mavlink_msg_odometry_get_q(const mavlink_message_t* msg, 
  */
 static inline float mavlink_msg_odometry_get_vx(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float(msg,  36);
+    return (float) 0;
 }
 
 /**
@@ -490,7 +506,9 @@ static inline float mavlink_msg_odometry_get_vx(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_odometry_get_vy(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_float(msg,  40);
+    return (float) 0;
 }
 
 /**
@@ -500,7 +518,9 @@ static inline float mavlink_msg_odometry_get_vy(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_odometry_get_vz(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  44);
+    if (msg->len > 44)
+        return _MAV_RETURN_float(msg,  44);
+    return (float) 0;
 }
 
 /**
@@ -510,7 +530,9 @@ static inline float mavlink_msg_odometry_get_vz(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_odometry_get_rollspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  48);
+    if (msg->len > 48)
+        return _MAV_RETURN_float(msg,  48);
+    return (float) 0;
 }
 
 /**
@@ -520,7 +542,9 @@ static inline float mavlink_msg_odometry_get_rollspeed(const mavlink_message_t* 
  */
 static inline float mavlink_msg_odometry_get_pitchspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  52);
+    if (msg->len > 52)
+        return _MAV_RETURN_float(msg,  52);
+    return (float) 0;
 }
 
 /**
@@ -530,7 +554,9 @@ static inline float mavlink_msg_odometry_get_pitchspeed(const mavlink_message_t*
  */
 static inline float mavlink_msg_odometry_get_yawspeed(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  56);
+    if (msg->len > 56)
+        return _MAV_RETURN_float(msg,  56);
+    return (float) 0;
 }
 
 /**
@@ -540,7 +566,9 @@ static inline float mavlink_msg_odometry_get_yawspeed(const mavlink_message_t* m
  */
 static inline uint16_t mavlink_msg_odometry_get_pose_covariance(const mavlink_message_t* msg, float *pose_covariance)
 {
-    return _MAV_RETURN_float_array(msg, pose_covariance, 21,  60);
+    if (msg->len > 60)
+        return _MAV_RETURN_float_array(msg, pose_covariance, 21,  60);
+    return (uint16_t) 0;
 }
 
 /**
@@ -550,7 +578,9 @@ static inline uint16_t mavlink_msg_odometry_get_pose_covariance(const mavlink_me
  */
 static inline uint16_t mavlink_msg_odometry_get_velocity_covariance(const mavlink_message_t* msg, float *velocity_covariance)
 {
-    return _MAV_RETURN_float_array(msg, velocity_covariance, 21,  144);
+    if (msg->len > 144)
+        return _MAV_RETURN_float_array(msg, velocity_covariance, 21,  144);
+    return (uint16_t) 0;
 }
 
 /**
@@ -560,7 +590,9 @@ static inline uint16_t mavlink_msg_odometry_get_velocity_covariance(const mavlin
  */
 static inline uint8_t mavlink_msg_odometry_get_reset_counter(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  230);
+    if (msg->len > 230)
+        return _MAV_RETURN_uint8_t(msg,  230);
+    return (uint8_t) 0;
 }
 
 /**
@@ -570,7 +602,9 @@ static inline uint8_t mavlink_msg_odometry_get_reset_counter(const mavlink_messa
  */
 static inline uint8_t mavlink_msg_odometry_get_estimator_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  231);
+    if (msg->len > 231)
+        return _MAV_RETURN_uint8_t(msg,  231);
+    return (uint8_t) 0;
 }
 
 /**

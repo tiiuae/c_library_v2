@@ -248,7 +248,9 @@ static inline void mavlink_msg_raw_pressure_send_buf(mavlink_message_t *msgbuf, 
  */
 static inline uint64_t mavlink_msg_raw_pressure_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline uint64_t mavlink_msg_raw_pressure_get_time_usec(const mavlink_mess
  */
 static inline int16_t mavlink_msg_raw_pressure_get_press_abs(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int16_t(msg,  8);
+    return (int16_t) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline int16_t mavlink_msg_raw_pressure_get_press_abs(const mavlink_messa
  */
 static inline int16_t mavlink_msg_raw_pressure_get_press_diff1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_int16_t(msg,  10);
+    return (int16_t) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline int16_t mavlink_msg_raw_pressure_get_press_diff1(const mavlink_mes
  */
 static inline int16_t mavlink_msg_raw_pressure_get_press_diff2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int16_t(msg,  12);
+    return (int16_t) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline int16_t mavlink_msg_raw_pressure_get_press_diff2(const mavlink_mes
  */
 static inline int16_t mavlink_msg_raw_pressure_get_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_int16_t(msg,  14);
+    return (int16_t) 0;
 }
 
 /**

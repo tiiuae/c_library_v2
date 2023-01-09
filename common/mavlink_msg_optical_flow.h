@@ -318,7 +318,9 @@ static inline void mavlink_msg_optical_flow_send_buf(mavlink_message_t *msgbuf, 
  */
 static inline uint64_t mavlink_msg_optical_flow_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -328,7 +330,9 @@ static inline uint64_t mavlink_msg_optical_flow_get_time_usec(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_optical_flow_get_sensor_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint8_t(msg,  24);
+    return (uint8_t) 0;
 }
 
 /**
@@ -338,7 +342,9 @@ static inline uint8_t mavlink_msg_optical_flow_get_sensor_id(const mavlink_messa
  */
 static inline int16_t mavlink_msg_optical_flow_get_flow_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_int16_t(msg,  20);
+    return (int16_t) 0;
 }
 
 /**
@@ -348,7 +354,9 @@ static inline int16_t mavlink_msg_optical_flow_get_flow_x(const mavlink_message_
  */
 static inline int16_t mavlink_msg_optical_flow_get_flow_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_int16_t(msg,  22);
+    return (int16_t) 0;
 }
 
 /**
@@ -358,7 +366,9 @@ static inline int16_t mavlink_msg_optical_flow_get_flow_y(const mavlink_message_
  */
 static inline float mavlink_msg_optical_flow_get_flow_comp_m_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -368,7 +378,9 @@ static inline float mavlink_msg_optical_flow_get_flow_comp_m_x(const mavlink_mes
  */
 static inline float mavlink_msg_optical_flow_get_flow_comp_m_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -378,7 +390,9 @@ static inline float mavlink_msg_optical_flow_get_flow_comp_m_y(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_optical_flow_get_quality(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  25);
+    if (msg->len > 25)
+        return _MAV_RETURN_uint8_t(msg,  25);
+    return (uint8_t) 0;
 }
 
 /**
@@ -388,7 +402,9 @@ static inline uint8_t mavlink_msg_optical_flow_get_quality(const mavlink_message
  */
 static inline float mavlink_msg_optical_flow_get_ground_distance(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -398,7 +414,9 @@ static inline float mavlink_msg_optical_flow_get_ground_distance(const mavlink_m
  */
 static inline float mavlink_msg_optical_flow_get_flow_rate_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_float(msg,  26);
+    return (float) 0;
 }
 
 /**
@@ -408,7 +426,9 @@ static inline float mavlink_msg_optical_flow_get_flow_rate_x(const mavlink_messa
  */
 static inline float mavlink_msg_optical_flow_get_flow_rate_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_float(msg,  30);
+    return (float) 0;
 }
 
 /**

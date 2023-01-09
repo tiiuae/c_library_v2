@@ -318,7 +318,9 @@ static inline void mavlink_msg_rally_point_send_buf(mavlink_message_t *msgbuf, m
  */
 static inline uint8_t mavlink_msg_rally_point_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint8_t(msg,  14);
+    return (uint8_t) 0;
 }
 
 /**
@@ -328,7 +330,9 @@ static inline uint8_t mavlink_msg_rally_point_get_target_system(const mavlink_me
  */
 static inline uint8_t mavlink_msg_rally_point_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  15);
+    if (msg->len > 15)
+        return _MAV_RETURN_uint8_t(msg,  15);
+    return (uint8_t) 0;
 }
 
 /**
@@ -338,7 +342,9 @@ static inline uint8_t mavlink_msg_rally_point_get_target_component(const mavlink
  */
 static inline uint8_t mavlink_msg_rally_point_get_idx(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint8_t(msg,  16);
+    return (uint8_t) 0;
 }
 
 /**
@@ -348,7 +354,9 @@ static inline uint8_t mavlink_msg_rally_point_get_idx(const mavlink_message_t* m
  */
 static inline uint8_t mavlink_msg_rally_point_get_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  17);
+    if (msg->len > 17)
+        return _MAV_RETURN_uint8_t(msg,  17);
+    return (uint8_t) 0;
 }
 
 /**
@@ -358,7 +366,9 @@ static inline uint8_t mavlink_msg_rally_point_get_count(const mavlink_message_t*
  */
 static inline int32_t mavlink_msg_rally_point_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -368,7 +378,9 @@ static inline int32_t mavlink_msg_rally_point_get_lat(const mavlink_message_t* m
  */
 static inline int32_t mavlink_msg_rally_point_get_lng(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -378,7 +390,9 @@ static inline int32_t mavlink_msg_rally_point_get_lng(const mavlink_message_t* m
  */
 static inline int16_t mavlink_msg_rally_point_get_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int16_t(msg,  8);
+    return (int16_t) 0;
 }
 
 /**
@@ -388,7 +402,9 @@ static inline int16_t mavlink_msg_rally_point_get_alt(const mavlink_message_t* m
  */
 static inline int16_t mavlink_msg_rally_point_get_break_alt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_int16_t(msg,  10);
+    return (int16_t) 0;
 }
 
 /**
@@ -398,7 +414,9 @@ static inline int16_t mavlink_msg_rally_point_get_break_alt(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_rally_point_get_land_dir(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint16_t(msg,  12);
+    return (uint16_t) 0;
 }
 
 /**
@@ -408,7 +426,9 @@ static inline uint16_t mavlink_msg_rally_point_get_land_dir(const mavlink_messag
  */
 static inline uint8_t mavlink_msg_rally_point_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint8_t(msg,  18);
+    return (uint8_t) 0;
 }
 
 /**

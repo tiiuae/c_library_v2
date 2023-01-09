@@ -276,7 +276,9 @@ static inline void mavlink_msg_manual_setpoint_send_buf(mavlink_message_t *msgbu
  */
 static inline uint32_t mavlink_msg_manual_setpoint_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint32_t mavlink_msg_manual_setpoint_get_time_boot_ms(const mavlin
  */
 static inline float mavlink_msg_manual_setpoint_get_roll(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline float mavlink_msg_manual_setpoint_get_roll(const mavlink_message_t
  */
 static inline float mavlink_msg_manual_setpoint_get_pitch(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline float mavlink_msg_manual_setpoint_get_pitch(const mavlink_message_
  */
 static inline float mavlink_msg_manual_setpoint_get_yaw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline float mavlink_msg_manual_setpoint_get_yaw(const mavlink_message_t*
  */
 static inline float mavlink_msg_manual_setpoint_get_thrust(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline float mavlink_msg_manual_setpoint_get_thrust(const mavlink_message
  */
 static inline uint8_t mavlink_msg_manual_setpoint_get_mode_switch(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint8_t(msg,  20);
+    return (uint8_t) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline uint8_t mavlink_msg_manual_setpoint_get_mode_switch(const mavlink_
  */
 static inline uint8_t mavlink_msg_manual_setpoint_get_manual_override_switch(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  21);
+    if (msg->len > 21)
+        return _MAV_RETURN_uint8_t(msg,  21);
+    return (uint8_t) 0;
 }
 
 /**

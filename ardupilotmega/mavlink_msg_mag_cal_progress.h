@@ -296,7 +296,9 @@ static inline void mavlink_msg_mag_cal_progress_send_buf(mavlink_message_t *msgb
  */
 static inline uint8_t mavlink_msg_mag_cal_progress_get_compass_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint8_t(msg,  12);
+    return (uint8_t) 0;
 }
 
 /**
@@ -306,7 +308,9 @@ static inline uint8_t mavlink_msg_mag_cal_progress_get_compass_id(const mavlink_
  */
 static inline uint8_t mavlink_msg_mag_cal_progress_get_cal_mask(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  13);
+    if (msg->len > 13)
+        return _MAV_RETURN_uint8_t(msg,  13);
+    return (uint8_t) 0;
 }
 
 /**
@@ -316,7 +320,9 @@ static inline uint8_t mavlink_msg_mag_cal_progress_get_cal_mask(const mavlink_me
  */
 static inline uint8_t mavlink_msg_mag_cal_progress_get_cal_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint8_t(msg,  14);
+    return (uint8_t) 0;
 }
 
 /**
@@ -326,7 +332,9 @@ static inline uint8_t mavlink_msg_mag_cal_progress_get_cal_status(const mavlink_
  */
 static inline uint8_t mavlink_msg_mag_cal_progress_get_attempt(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  15);
+    if (msg->len > 15)
+        return _MAV_RETURN_uint8_t(msg,  15);
+    return (uint8_t) 0;
 }
 
 /**
@@ -336,7 +344,9 @@ static inline uint8_t mavlink_msg_mag_cal_progress_get_attempt(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_mag_cal_progress_get_completion_pct(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint8_t(msg,  16);
+    return (uint8_t) 0;
 }
 
 /**
@@ -346,7 +356,9 @@ static inline uint8_t mavlink_msg_mag_cal_progress_get_completion_pct(const mavl
  */
 static inline uint16_t mavlink_msg_mag_cal_progress_get_completion_mask(const mavlink_message_t* msg, uint8_t *completion_mask)
 {
-    return _MAV_RETURN_uint8_t_array(msg, completion_mask, 10,  17);
+    if (msg->len > 17)
+        return _MAV_RETURN_uint8_t_array(msg, completion_mask, 10,  17);
+    return (uint16_t) 0;
 }
 
 /**
@@ -356,7 +368,9 @@ static inline uint16_t mavlink_msg_mag_cal_progress_get_completion_mask(const ma
  */
 static inline float mavlink_msg_mag_cal_progress_get_direction_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -366,7 +380,9 @@ static inline float mavlink_msg_mag_cal_progress_get_direction_x(const mavlink_m
  */
 static inline float mavlink_msg_mag_cal_progress_get_direction_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -376,7 +392,9 @@ static inline float mavlink_msg_mag_cal_progress_get_direction_y(const mavlink_m
  */
 static inline float mavlink_msg_mag_cal_progress_get_direction_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**

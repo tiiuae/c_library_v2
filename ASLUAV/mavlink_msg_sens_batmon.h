@@ -388,7 +388,9 @@ static inline void mavlink_msg_sens_batmon_send_buf(mavlink_message_t *msgbuf, m
  */
 static inline uint64_t mavlink_msg_sens_batmon_get_batmon_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -398,7 +400,9 @@ static inline uint64_t mavlink_msg_sens_batmon_get_batmon_timestamp(const mavlin
  */
 static inline float mavlink_msg_sens_batmon_get_temperature(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -408,7 +412,9 @@ static inline float mavlink_msg_sens_batmon_get_temperature(const mavlink_messag
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_voltage(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint16_t(msg,  20);
+    return (uint16_t) 0;
 }
 
 /**
@@ -418,7 +424,9 @@ static inline uint16_t mavlink_msg_sens_batmon_get_voltage(const mavlink_message
  */
 static inline int16_t mavlink_msg_sens_batmon_get_current(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_int16_t(msg,  22);
+    return (int16_t) 0;
 }
 
 /**
@@ -428,7 +436,9 @@ static inline int16_t mavlink_msg_sens_batmon_get_current(const mavlink_message_
  */
 static inline uint8_t mavlink_msg_sens_batmon_get_SoC(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t(msg,  40);
+    return (uint8_t) 0;
 }
 
 /**
@@ -438,7 +448,9 @@ static inline uint8_t mavlink_msg_sens_batmon_get_SoC(const mavlink_message_t* m
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_batterystatus(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint16_t(msg,  24);
+    return (uint16_t) 0;
 }
 
 /**
@@ -448,7 +460,9 @@ static inline uint16_t mavlink_msg_sens_batmon_get_batterystatus(const mavlink_m
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_serialnumber(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  26);
+    if (msg->len > 26)
+        return _MAV_RETURN_uint16_t(msg,  26);
+    return (uint16_t) 0;
 }
 
 /**
@@ -458,7 +472,9 @@ static inline uint16_t mavlink_msg_sens_batmon_get_serialnumber(const mavlink_me
  */
 static inline uint32_t mavlink_msg_sens_batmon_get_safetystatus(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint32_t(msg,  12);
+    return (uint32_t) 0;
 }
 
 /**
@@ -468,7 +484,9 @@ static inline uint32_t mavlink_msg_sens_batmon_get_safetystatus(const mavlink_me
  */
 static inline uint32_t mavlink_msg_sens_batmon_get_operationstatus(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint32_t(msg,  16);
+    return (uint32_t) 0;
 }
 
 /**
@@ -478,7 +496,9 @@ static inline uint32_t mavlink_msg_sens_batmon_get_operationstatus(const mavlink
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint16_t(msg,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -488,7 +508,9 @@ static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage1(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_uint16_t(msg,  30);
+    return (uint16_t) 0;
 }
 
 /**
@@ -498,7 +520,9 @@ static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage2(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage3(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_uint16_t(msg,  32);
+    return (uint16_t) 0;
 }
 
 /**
@@ -508,7 +532,9 @@ static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage3(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage4(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  34);
+    if (msg->len > 34)
+        return _MAV_RETURN_uint16_t(msg,  34);
+    return (uint16_t) 0;
 }
 
 /**
@@ -518,7 +544,9 @@ static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage4(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage5(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_uint16_t(msg,  36);
+    return (uint16_t) 0;
 }
 
 /**
@@ -528,7 +556,9 @@ static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage5(const mavlink_me
  */
 static inline uint16_t mavlink_msg_sens_batmon_get_cellvoltage6(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  38);
+    if (msg->len > 38)
+        return _MAV_RETURN_uint16_t(msg,  38);
+    return (uint16_t) 0;
 }
 
 /**

@@ -206,7 +206,9 @@ static inline void mavlink_msg_timesync_send_buf(mavlink_message_t *msgbuf, mavl
  */
 static inline int64_t mavlink_msg_timesync_get_tc1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int64_t(msg,  0);
+    return (int64_t) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline int64_t mavlink_msg_timesync_get_tc1(const mavlink_message_t* msg)
  */
 static inline int64_t mavlink_msg_timesync_get_ts1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int64_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int64_t(msg,  8);
+    return (int64_t) 0;
 }
 
 /**

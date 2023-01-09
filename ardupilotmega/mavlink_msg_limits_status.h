@@ -304,7 +304,9 @@ static inline void mavlink_msg_limits_status_send_buf(mavlink_message_t *msgbuf,
  */
 static inline uint8_t mavlink_msg_limits_status_get_limits_state(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint8_t(msg,  18);
+    return (uint8_t) 0;
 }
 
 /**
@@ -314,7 +316,9 @@ static inline uint8_t mavlink_msg_limits_status_get_limits_state(const mavlink_m
  */
 static inline uint32_t mavlink_msg_limits_status_get_last_trigger(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -324,7 +328,9 @@ static inline uint32_t mavlink_msg_limits_status_get_last_trigger(const mavlink_
  */
 static inline uint32_t mavlink_msg_limits_status_get_last_action(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -334,7 +340,9 @@ static inline uint32_t mavlink_msg_limits_status_get_last_action(const mavlink_m
  */
 static inline uint32_t mavlink_msg_limits_status_get_last_recovery(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -344,7 +352,9 @@ static inline uint32_t mavlink_msg_limits_status_get_last_recovery(const mavlink
  */
 static inline uint32_t mavlink_msg_limits_status_get_last_clear(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint32_t(msg,  12);
+    return (uint32_t) 0;
 }
 
 /**
@@ -354,7 +364,9 @@ static inline uint32_t mavlink_msg_limits_status_get_last_clear(const mavlink_me
  */
 static inline uint16_t mavlink_msg_limits_status_get_breach_count(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -364,7 +376,9 @@ static inline uint16_t mavlink_msg_limits_status_get_breach_count(const mavlink_
  */
 static inline uint8_t mavlink_msg_limits_status_get_mods_enabled(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  19);
+    if (msg->len > 19)
+        return _MAV_RETURN_uint8_t(msg,  19);
+    return (uint8_t) 0;
 }
 
 /**
@@ -374,7 +388,9 @@ static inline uint8_t mavlink_msg_limits_status_get_mods_enabled(const mavlink_m
  */
 static inline uint8_t mavlink_msg_limits_status_get_mods_required(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint8_t(msg,  20);
+    return (uint8_t) 0;
 }
 
 /**
@@ -384,7 +400,9 @@ static inline uint8_t mavlink_msg_limits_status_get_mods_required(const mavlink_
  */
 static inline uint8_t mavlink_msg_limits_status_get_mods_triggered(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  21);
+    if (msg->len > 21)
+        return _MAV_RETURN_uint8_t(msg,  21);
+    return (uint8_t) 0;
 }
 
 /**

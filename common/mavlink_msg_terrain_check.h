@@ -206,7 +206,9 @@ static inline void mavlink_msg_terrain_check_send_buf(mavlink_message_t *msgbuf,
  */
 static inline int32_t mavlink_msg_terrain_check_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline int32_t mavlink_msg_terrain_check_get_lat(const mavlink_message_t*
  */
 static inline int32_t mavlink_msg_terrain_check_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**

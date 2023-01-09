@@ -258,7 +258,9 @@ static inline void mavlink_msg_gps_status_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline uint8_t mavlink_msg_gps_status_get_satellites_visible(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -268,7 +270,9 @@ static inline uint8_t mavlink_msg_gps_status_get_satellites_visible(const mavlin
  */
 static inline uint16_t mavlink_msg_gps_status_get_satellite_prn(const mavlink_message_t* msg, uint8_t *satellite_prn)
 {
-    return _MAV_RETURN_uint8_t_array(msg, satellite_prn, 20,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t_array(msg, satellite_prn, 20,  1);
+    return (uint16_t) 0;
 }
 
 /**
@@ -278,7 +282,9 @@ static inline uint16_t mavlink_msg_gps_status_get_satellite_prn(const mavlink_me
  */
 static inline uint16_t mavlink_msg_gps_status_get_satellite_used(const mavlink_message_t* msg, uint8_t *satellite_used)
 {
-    return _MAV_RETURN_uint8_t_array(msg, satellite_used, 20,  21);
+    if (msg->len > 21)
+        return _MAV_RETURN_uint8_t_array(msg, satellite_used, 20,  21);
+    return (uint16_t) 0;
 }
 
 /**
@@ -288,7 +294,9 @@ static inline uint16_t mavlink_msg_gps_status_get_satellite_used(const mavlink_m
  */
 static inline uint16_t mavlink_msg_gps_status_get_satellite_elevation(const mavlink_message_t* msg, uint8_t *satellite_elevation)
 {
-    return _MAV_RETURN_uint8_t_array(msg, satellite_elevation, 20,  41);
+    if (msg->len > 41)
+        return _MAV_RETURN_uint8_t_array(msg, satellite_elevation, 20,  41);
+    return (uint16_t) 0;
 }
 
 /**
@@ -298,7 +306,9 @@ static inline uint16_t mavlink_msg_gps_status_get_satellite_elevation(const mavl
  */
 static inline uint16_t mavlink_msg_gps_status_get_satellite_azimuth(const mavlink_message_t* msg, uint8_t *satellite_azimuth)
 {
-    return _MAV_RETURN_uint8_t_array(msg, satellite_azimuth, 20,  61);
+    if (msg->len > 61)
+        return _MAV_RETURN_uint8_t_array(msg, satellite_azimuth, 20,  61);
+    return (uint16_t) 0;
 }
 
 /**
@@ -308,7 +318,9 @@ static inline uint16_t mavlink_msg_gps_status_get_satellite_azimuth(const mavlin
  */
 static inline uint16_t mavlink_msg_gps_status_get_satellite_snr(const mavlink_message_t* msg, uint8_t *satellite_snr)
 {
-    return _MAV_RETURN_uint8_t_array(msg, satellite_snr, 20,  81);
+    if (msg->len > 81)
+        return _MAV_RETURN_uint8_t_array(msg, satellite_snr, 20,  81);
+    return (uint16_t) 0;
 }
 
 /**

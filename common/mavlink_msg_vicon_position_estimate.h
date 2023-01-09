@@ -282,7 +282,9 @@ static inline void mavlink_msg_vicon_position_estimate_send_buf(mavlink_message_
  */
 static inline uint64_t mavlink_msg_vicon_position_estimate_get_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -292,7 +294,9 @@ static inline uint64_t mavlink_msg_vicon_position_estimate_get_usec(const mavlin
  */
 static inline float mavlink_msg_vicon_position_estimate_get_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -302,7 +306,9 @@ static inline float mavlink_msg_vicon_position_estimate_get_x(const mavlink_mess
  */
 static inline float mavlink_msg_vicon_position_estimate_get_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -312,7 +318,9 @@ static inline float mavlink_msg_vicon_position_estimate_get_y(const mavlink_mess
  */
 static inline float mavlink_msg_vicon_position_estimate_get_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -322,7 +330,9 @@ static inline float mavlink_msg_vicon_position_estimate_get_z(const mavlink_mess
  */
 static inline float mavlink_msg_vicon_position_estimate_get_roll(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -332,7 +342,9 @@ static inline float mavlink_msg_vicon_position_estimate_get_roll(const mavlink_m
  */
 static inline float mavlink_msg_vicon_position_estimate_get_pitch(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -342,7 +354,9 @@ static inline float mavlink_msg_vicon_position_estimate_get_pitch(const mavlink_
  */
 static inline float mavlink_msg_vicon_position_estimate_get_yaw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -352,7 +366,9 @@ static inline float mavlink_msg_vicon_position_estimate_get_yaw(const mavlink_me
  */
 static inline uint16_t mavlink_msg_vicon_position_estimate_get_covariance(const mavlink_message_t* msg, float *covariance)
 {
-    return _MAV_RETURN_float_array(msg, covariance, 21,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float_array(msg, covariance, 21,  32);
+    return (uint16_t) 0;
 }
 
 /**

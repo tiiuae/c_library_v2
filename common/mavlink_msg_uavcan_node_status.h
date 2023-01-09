@@ -262,7 +262,9 @@ static inline void mavlink_msg_uavcan_node_status_send_buf(mavlink_message_t *ms
  */
 static inline uint64_t mavlink_msg_uavcan_node_status_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -272,7 +274,9 @@ static inline uint64_t mavlink_msg_uavcan_node_status_get_time_usec(const mavlin
  */
 static inline uint32_t mavlink_msg_uavcan_node_status_get_uptime_sec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -282,7 +286,9 @@ static inline uint32_t mavlink_msg_uavcan_node_status_get_uptime_sec(const mavli
  */
 static inline uint8_t mavlink_msg_uavcan_node_status_get_health(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint8_t(msg,  14);
+    return (uint8_t) 0;
 }
 
 /**
@@ -292,7 +298,9 @@ static inline uint8_t mavlink_msg_uavcan_node_status_get_health(const mavlink_me
  */
 static inline uint8_t mavlink_msg_uavcan_node_status_get_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  15);
+    if (msg->len > 15)
+        return _MAV_RETURN_uint8_t(msg,  15);
+    return (uint8_t) 0;
 }
 
 /**
@@ -302,7 +310,9 @@ static inline uint8_t mavlink_msg_uavcan_node_status_get_mode(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_uavcan_node_status_get_sub_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint8_t(msg,  16);
+    return (uint8_t) 0;
 }
 
 /**
@@ -312,7 +322,9 @@ static inline uint8_t mavlink_msg_uavcan_node_status_get_sub_mode(const mavlink_
  */
 static inline uint16_t mavlink_msg_uavcan_node_status_get_vendor_specific_status_code(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint16_t(msg,  12);
+    return (uint16_t) 0;
 }
 
 /**

@@ -290,7 +290,9 @@ static inline void mavlink_msg_isbd_link_status_send_buf(mavlink_message_t *msgb
  */
 static inline uint64_t mavlink_msg_isbd_link_status_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -300,7 +302,9 @@ static inline uint64_t mavlink_msg_isbd_link_status_get_timestamp(const mavlink_
  */
 static inline uint64_t mavlink_msg_isbd_link_status_get_last_heartbeat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint64_t(msg,  8);
+    return (uint64_t) 0;
 }
 
 /**
@@ -310,7 +314,9 @@ static inline uint64_t mavlink_msg_isbd_link_status_get_last_heartbeat(const mav
  */
 static inline uint16_t mavlink_msg_isbd_link_status_get_failed_sessions(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -320,7 +326,9 @@ static inline uint16_t mavlink_msg_isbd_link_status_get_failed_sessions(const ma
  */
 static inline uint16_t mavlink_msg_isbd_link_status_get_successful_sessions(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint16_t(msg,  18);
+    return (uint16_t) 0;
 }
 
 /**
@@ -330,7 +338,9 @@ static inline uint16_t mavlink_msg_isbd_link_status_get_successful_sessions(cons
  */
 static inline uint8_t mavlink_msg_isbd_link_status_get_signal_quality(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_uint8_t(msg,  20);
+    return (uint8_t) 0;
 }
 
 /**
@@ -340,7 +350,9 @@ static inline uint8_t mavlink_msg_isbd_link_status_get_signal_quality(const mavl
  */
 static inline uint8_t mavlink_msg_isbd_link_status_get_ring_pending(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  21);
+    if (msg->len > 21)
+        return _MAV_RETURN_uint8_t(msg,  21);
+    return (uint8_t) 0;
 }
 
 /**
@@ -350,7 +362,9 @@ static inline uint8_t mavlink_msg_isbd_link_status_get_ring_pending(const mavlin
  */
 static inline uint8_t mavlink_msg_isbd_link_status_get_tx_session_pending(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  22);
+    if (msg->len > 22)
+        return _MAV_RETURN_uint8_t(msg,  22);
+    return (uint8_t) 0;
 }
 
 /**
@@ -360,7 +374,9 @@ static inline uint8_t mavlink_msg_isbd_link_status_get_tx_session_pending(const 
  */
 static inline uint8_t mavlink_msg_isbd_link_status_get_rx_session_pending(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  23);
+    if (msg->len > 23)
+        return _MAV_RETURN_uint8_t(msg,  23);
+    return (uint8_t) 0;
 }
 
 /**

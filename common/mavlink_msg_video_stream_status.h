@@ -290,7 +290,9 @@ static inline void mavlink_msg_video_stream_status_send_buf(mavlink_message_t *m
  */
 static inline uint8_t mavlink_msg_video_stream_status_get_stream_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  18);
+    if (msg->len > 18)
+        return _MAV_RETURN_uint8_t(msg,  18);
+    return (uint8_t) 0;
 }
 
 /**
@@ -300,7 +302,9 @@ static inline uint8_t mavlink_msg_video_stream_status_get_stream_id(const mavlin
  */
 static inline uint16_t mavlink_msg_video_stream_status_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -310,7 +314,9 @@ static inline uint16_t mavlink_msg_video_stream_status_get_flags(const mavlink_m
  */
 static inline float mavlink_msg_video_stream_status_get_framerate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -320,7 +326,9 @@ static inline float mavlink_msg_video_stream_status_get_framerate(const mavlink_
  */
 static inline uint16_t mavlink_msg_video_stream_status_get_resolution_h(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_uint16_t(msg,  10);
+    return (uint16_t) 0;
 }
 
 /**
@@ -330,7 +338,9 @@ static inline uint16_t mavlink_msg_video_stream_status_get_resolution_h(const ma
  */
 static inline uint16_t mavlink_msg_video_stream_status_get_resolution_v(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint16_t(msg,  12);
+    return (uint16_t) 0;
 }
 
 /**
@@ -340,7 +350,9 @@ static inline uint16_t mavlink_msg_video_stream_status_get_resolution_v(const ma
  */
 static inline uint32_t mavlink_msg_video_stream_status_get_bitrate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -350,7 +362,9 @@ static inline uint32_t mavlink_msg_video_stream_status_get_bitrate(const mavlink
  */
 static inline uint16_t mavlink_msg_video_stream_status_get_rotation(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  14);
+    if (msg->len > 14)
+        return _MAV_RETURN_uint16_t(msg,  14);
+    return (uint16_t) 0;
 }
 
 /**
@@ -360,7 +374,9 @@ static inline uint16_t mavlink_msg_video_stream_status_get_rotation(const mavlin
  */
 static inline uint16_t mavlink_msg_video_stream_status_get_hfov(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint16_t(msg,  16);
+    return (uint16_t) 0;
 }
 
 /**

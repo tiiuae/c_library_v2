@@ -241,7 +241,9 @@ static inline void mavlink_msg_component_information_send_buf(mavlink_message_t 
  */
 static inline uint32_t mavlink_msg_component_information_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -251,7 +253,9 @@ static inline uint32_t mavlink_msg_component_information_get_time_boot_ms(const 
  */
 static inline uint32_t mavlink_msg_component_information_get_general_metadata_file_crc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint32_t(msg,  4);
+    return (uint32_t) 0;
 }
 
 /**
@@ -261,7 +265,9 @@ static inline uint32_t mavlink_msg_component_information_get_general_metadata_fi
  */
 static inline uint16_t mavlink_msg_component_information_get_general_metadata_uri(const mavlink_message_t* msg, char *general_metadata_uri)
 {
-    return _MAV_RETURN_char_array(msg, general_metadata_uri, 100,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_char_array(msg, general_metadata_uri, 100,  12);
+    return (uint16_t) 0;
 }
 
 /**
@@ -271,7 +277,9 @@ static inline uint16_t mavlink_msg_component_information_get_general_metadata_ur
  */
 static inline uint32_t mavlink_msg_component_information_get_peripherals_metadata_file_crc(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint32_t(msg,  8);
+    return (uint32_t) 0;
 }
 
 /**
@@ -281,7 +289,9 @@ static inline uint32_t mavlink_msg_component_information_get_peripherals_metadat
  */
 static inline uint16_t mavlink_msg_component_information_get_peripherals_metadata_uri(const mavlink_message_t* msg, char *peripherals_metadata_uri)
 {
-    return _MAV_RETURN_char_array(msg, peripherals_metadata_uri, 100,  112);
+    if (msg->len > 112)
+        return _MAV_RETURN_char_array(msg, peripherals_metadata_uri, 100,  112);
+    return (uint16_t) 0;
 }
 
 /**

@@ -212,7 +212,9 @@ static inline void mavlink_msg_named_value_int_send_buf(mavlink_message_t *msgbu
  */
 static inline uint32_t mavlink_msg_named_value_int_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -222,7 +224,9 @@ static inline uint32_t mavlink_msg_named_value_int_get_time_boot_ms(const mavlin
  */
 static inline uint16_t mavlink_msg_named_value_int_get_name(const mavlink_message_t* msg, char *name)
 {
-    return _MAV_RETURN_char_array(msg, name, 10,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_char_array(msg, name, 10,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -232,7 +236,9 @@ static inline uint16_t mavlink_msg_named_value_int_get_name(const mavlink_messag
  */
 static inline int32_t mavlink_msg_named_value_int_get_value(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**

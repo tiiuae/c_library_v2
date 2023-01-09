@@ -220,7 +220,9 @@ static inline void mavlink_msg_serial_udb_extra_f17_send_buf(mavlink_message_t *
  */
 static inline float mavlink_msg_serial_udb_extra_f17_get_sue_feed_forward(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -230,7 +232,9 @@ static inline float mavlink_msg_serial_udb_extra_f17_get_sue_feed_forward(const 
  */
 static inline float mavlink_msg_serial_udb_extra_f17_get_sue_turn_rate_nav(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -240,7 +244,9 @@ static inline float mavlink_msg_serial_udb_extra_f17_get_sue_turn_rate_nav(const
  */
 static inline float mavlink_msg_serial_udb_extra_f17_get_sue_turn_rate_fbw(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**

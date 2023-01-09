@@ -241,7 +241,9 @@ static inline void mavlink_msg_vision_position_delta_send_buf(mavlink_message_t 
  */
 static inline uint64_t mavlink_msg_vision_position_delta_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -251,7 +253,9 @@ static inline uint64_t mavlink_msg_vision_position_delta_get_time_usec(const mav
  */
 static inline uint64_t mavlink_msg_vision_position_delta_get_time_delta_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint64_t(msg,  8);
+    return (uint64_t) 0;
 }
 
 /**
@@ -261,7 +265,9 @@ static inline uint64_t mavlink_msg_vision_position_delta_get_time_delta_usec(con
  */
 static inline uint16_t mavlink_msg_vision_position_delta_get_angle_delta(const mavlink_message_t* msg, float *angle_delta)
 {
-    return _MAV_RETURN_float_array(msg, angle_delta, 3,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float_array(msg, angle_delta, 3,  16);
+    return (uint16_t) 0;
 }
 
 /**
@@ -271,7 +277,9 @@ static inline uint16_t mavlink_msg_vision_position_delta_get_angle_delta(const m
  */
 static inline uint16_t mavlink_msg_vision_position_delta_get_position_delta(const mavlink_message_t* msg, float *position_delta)
 {
-    return _MAV_RETURN_float_array(msg, position_delta, 3,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float_array(msg, position_delta, 3,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -281,7 +289,9 @@ static inline uint16_t mavlink_msg_vision_position_delta_get_position_delta(cons
  */
 static inline float mavlink_msg_vision_position_delta_get_confidence(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_float(msg,  40);
+    return (float) 0;
 }
 
 /**

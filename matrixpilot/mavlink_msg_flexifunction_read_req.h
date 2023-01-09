@@ -234,7 +234,9 @@ static inline void mavlink_msg_flexifunction_read_req_send_buf(mavlink_message_t
  */
 static inline uint8_t mavlink_msg_flexifunction_read_req_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline uint8_t mavlink_msg_flexifunction_read_req_get_target_system(const
  */
 static inline uint8_t mavlink_msg_flexifunction_read_req_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline uint8_t mavlink_msg_flexifunction_read_req_get_target_component(co
  */
 static inline int16_t mavlink_msg_flexifunction_read_req_get_read_req_type(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int16_t(msg,  0);
+    return (int16_t) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline int16_t mavlink_msg_flexifunction_read_req_get_read_req_type(const
  */
 static inline int16_t mavlink_msg_flexifunction_read_req_get_data_index(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int16_t(msg,  2);
+    if (msg->len > 2)
+        return _MAV_RETURN_int16_t(msg,  2);
+    return (int16_t) 0;
 }
 
 /**

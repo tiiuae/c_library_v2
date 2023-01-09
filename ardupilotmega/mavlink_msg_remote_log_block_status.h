@@ -234,7 +234,9 @@ static inline void mavlink_msg_remote_log_block_status_send_buf(mavlink_message_
  */
 static inline uint8_t mavlink_msg_remote_log_block_status_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_uint8_t(msg,  4);
+    return (uint8_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline uint8_t mavlink_msg_remote_log_block_status_get_target_system(cons
  */
 static inline uint8_t mavlink_msg_remote_log_block_status_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  5);
+    if (msg->len > 5)
+        return _MAV_RETURN_uint8_t(msg,  5);
+    return (uint8_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline uint8_t mavlink_msg_remote_log_block_status_get_target_component(c
  */
 static inline uint32_t mavlink_msg_remote_log_block_status_get_seqno(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint32_t(msg,  0);
+    return (uint32_t) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline uint32_t mavlink_msg_remote_log_block_status_get_seqno(const mavli
  */
 static inline uint8_t mavlink_msg_remote_log_block_status_get_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  6);
+    if (msg->len > 6)
+        return _MAV_RETURN_uint8_t(msg,  6);
+    return (uint8_t) 0;
 }
 
 /**

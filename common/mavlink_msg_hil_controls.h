@@ -332,7 +332,9 @@ static inline void mavlink_msg_hil_controls_send_buf(mavlink_message_t *msgbuf, 
  */
 static inline uint64_t mavlink_msg_hil_controls_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -342,7 +344,9 @@ static inline uint64_t mavlink_msg_hil_controls_get_time_usec(const mavlink_mess
  */
 static inline float mavlink_msg_hil_controls_get_roll_ailerons(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -352,7 +356,9 @@ static inline float mavlink_msg_hil_controls_get_roll_ailerons(const mavlink_mes
  */
 static inline float mavlink_msg_hil_controls_get_pitch_elevator(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -362,7 +368,9 @@ static inline float mavlink_msg_hil_controls_get_pitch_elevator(const mavlink_me
  */
 static inline float mavlink_msg_hil_controls_get_yaw_rudder(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -372,7 +380,9 @@ static inline float mavlink_msg_hil_controls_get_yaw_rudder(const mavlink_messag
  */
 static inline float mavlink_msg_hil_controls_get_throttle(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -382,7 +392,9 @@ static inline float mavlink_msg_hil_controls_get_throttle(const mavlink_message_
  */
 static inline float mavlink_msg_hil_controls_get_aux1(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**
@@ -392,7 +404,9 @@ static inline float mavlink_msg_hil_controls_get_aux1(const mavlink_message_t* m
  */
 static inline float mavlink_msg_hil_controls_get_aux2(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_float(msg,  28);
+    return (float) 0;
 }
 
 /**
@@ -402,7 +416,9 @@ static inline float mavlink_msg_hil_controls_get_aux2(const mavlink_message_t* m
  */
 static inline float mavlink_msg_hil_controls_get_aux3(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  32);
+    if (msg->len > 32)
+        return _MAV_RETURN_float(msg,  32);
+    return (float) 0;
 }
 
 /**
@@ -412,7 +428,9 @@ static inline float mavlink_msg_hil_controls_get_aux3(const mavlink_message_t* m
  */
 static inline float mavlink_msg_hil_controls_get_aux4(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  36);
+    if (msg->len > 36)
+        return _MAV_RETURN_float(msg,  36);
+    return (float) 0;
 }
 
 /**
@@ -422,7 +440,9 @@ static inline float mavlink_msg_hil_controls_get_aux4(const mavlink_message_t* m
  */
 static inline uint8_t mavlink_msg_hil_controls_get_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  40);
+    if (msg->len > 40)
+        return _MAV_RETURN_uint8_t(msg,  40);
+    return (uint8_t) 0;
 }
 
 /**
@@ -432,7 +452,9 @@ static inline uint8_t mavlink_msg_hil_controls_get_mode(const mavlink_message_t*
  */
 static inline uint8_t mavlink_msg_hil_controls_get_nav_mode(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  41);
+    if (msg->len > 41)
+        return _MAV_RETURN_uint8_t(msg,  41);
+    return (uint8_t) 0;
 }
 
 /**

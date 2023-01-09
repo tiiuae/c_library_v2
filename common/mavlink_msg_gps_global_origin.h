@@ -234,7 +234,9 @@ static inline void mavlink_msg_gps_global_origin_send_buf(mavlink_message_t *msg
  */
 static inline int32_t mavlink_msg_gps_global_origin_get_latitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -244,7 +246,9 @@ static inline int32_t mavlink_msg_gps_global_origin_get_latitude(const mavlink_m
  */
 static inline int32_t mavlink_msg_gps_global_origin_get_longitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -254,7 +258,9 @@ static inline int32_t mavlink_msg_gps_global_origin_get_longitude(const mavlink_
  */
 static inline int32_t mavlink_msg_gps_global_origin_get_altitude(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -264,7 +270,9 @@ static inline int32_t mavlink_msg_gps_global_origin_get_altitude(const mavlink_m
  */
 static inline uint64_t mavlink_msg_gps_global_origin_get_time_usec(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_uint64_t(msg,  12);
+    return (uint64_t) 0;
 }
 
 /**

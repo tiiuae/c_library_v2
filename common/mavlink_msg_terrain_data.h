@@ -240,7 +240,9 @@ static inline void mavlink_msg_terrain_data_send_buf(mavlink_message_t *msgbuf, 
  */
 static inline int32_t mavlink_msg_terrain_data_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -250,7 +252,9 @@ static inline int32_t mavlink_msg_terrain_data_get_lat(const mavlink_message_t* 
  */
 static inline int32_t mavlink_msg_terrain_data_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -260,7 +264,9 @@ static inline int32_t mavlink_msg_terrain_data_get_lon(const mavlink_message_t* 
  */
 static inline uint16_t mavlink_msg_terrain_data_get_grid_spacing(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_uint16_t(msg,  8);
+    return (uint16_t) 0;
 }
 
 /**
@@ -270,7 +276,9 @@ static inline uint16_t mavlink_msg_terrain_data_get_grid_spacing(const mavlink_m
  */
 static inline uint8_t mavlink_msg_terrain_data_get_gridbit(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  42);
+    if (msg->len > 42)
+        return _MAV_RETURN_uint8_t(msg,  42);
+    return (uint8_t) 0;
 }
 
 /**
@@ -280,7 +288,9 @@ static inline uint8_t mavlink_msg_terrain_data_get_gridbit(const mavlink_message
  */
 static inline uint16_t mavlink_msg_terrain_data_get_data(const mavlink_message_t* msg, int16_t *data)
 {
-    return _MAV_RETURN_int16_t_array(msg, data, 16,  10);
+    if (msg->len > 10)
+        return _MAV_RETURN_int16_t_array(msg, data, 16,  10);
+    return (uint16_t) 0;
 }
 
 /**

@@ -276,7 +276,9 @@ static inline void mavlink_msg_pid_tuning_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline uint8_t mavlink_msg_pid_tuning_get_axis(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_uint8_t(msg,  24);
+    return (uint8_t) 0;
 }
 
 /**
@@ -286,7 +288,9 @@ static inline uint8_t mavlink_msg_pid_tuning_get_axis(const mavlink_message_t* m
  */
 static inline float mavlink_msg_pid_tuning_get_desired(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float(msg,  0);
+    return (float) 0;
 }
 
 /**
@@ -296,7 +300,9 @@ static inline float mavlink_msg_pid_tuning_get_desired(const mavlink_message_t* 
  */
 static inline float mavlink_msg_pid_tuning_get_achieved(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_float(msg,  4);
+    return (float) 0;
 }
 
 /**
@@ -306,7 +312,9 @@ static inline float mavlink_msg_pid_tuning_get_achieved(const mavlink_message_t*
  */
 static inline float mavlink_msg_pid_tuning_get_FF(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -316,7 +324,9 @@ static inline float mavlink_msg_pid_tuning_get_FF(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_pid_tuning_get_P(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -326,7 +336,9 @@ static inline float mavlink_msg_pid_tuning_get_P(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_pid_tuning_get_I(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -336,7 +348,9 @@ static inline float mavlink_msg_pid_tuning_get_I(const mavlink_message_t* msg)
  */
 static inline float mavlink_msg_pid_tuning_get_D(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**

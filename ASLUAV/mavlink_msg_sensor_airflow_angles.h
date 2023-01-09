@@ -248,7 +248,9 @@ static inline void mavlink_msg_sensor_airflow_angles_send_buf(mavlink_message_t 
  */
 static inline uint64_t mavlink_msg_sensor_airflow_angles_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint64_t(msg,  0);
+    return (uint64_t) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline uint64_t mavlink_msg_sensor_airflow_angles_get_timestamp(const mav
  */
 static inline float mavlink_msg_sensor_airflow_angles_get_angleofattack(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_float(msg,  8);
+    return (float) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline float mavlink_msg_sensor_airflow_angles_get_angleofattack(const ma
  */
 static inline uint8_t mavlink_msg_sensor_airflow_angles_get_angleofattack_valid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_uint8_t(msg,  16);
+    return (uint8_t) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline uint8_t mavlink_msg_sensor_airflow_angles_get_angleofattack_valid(
  */
 static inline float mavlink_msg_sensor_airflow_angles_get_sideslip(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_float(msg,  12);
+    return (float) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline float mavlink_msg_sensor_airflow_angles_get_sideslip(const mavlink
  */
 static inline uint8_t mavlink_msg_sensor_airflow_angles_get_sideslip_valid(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  17);
+    if (msg->len > 17)
+        return _MAV_RETURN_uint8_t(msg,  17);
+    return (uint8_t) 0;
 }
 
 /**

@@ -206,7 +206,9 @@ static inline void mavlink_msg_autopilot_version_request_send_buf(mavlink_messag
  */
 static inline uint8_t mavlink_msg_autopilot_version_request_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_uint8_t(msg,  0);
+    return (uint8_t) 0;
 }
 
 /**
@@ -216,7 +218,9 @@ static inline uint8_t mavlink_msg_autopilot_version_request_get_target_system(co
  */
 static inline uint8_t mavlink_msg_autopilot_version_request_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  1);
+    if (msg->len > 1)
+        return _MAV_RETURN_uint8_t(msg,  1);
+    return (uint8_t) 0;
 }
 
 /**

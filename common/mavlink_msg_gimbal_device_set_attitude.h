@@ -268,7 +268,9 @@ static inline void mavlink_msg_gimbal_device_set_attitude_send_buf(mavlink_messa
  */
 static inline uint8_t mavlink_msg_gimbal_device_set_attitude_get_target_system(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  30);
+    if (msg->len > 30)
+        return _MAV_RETURN_uint8_t(msg,  30);
+    return (uint8_t) 0;
 }
 
 /**
@@ -278,7 +280,9 @@ static inline uint8_t mavlink_msg_gimbal_device_set_attitude_get_target_system(c
  */
 static inline uint8_t mavlink_msg_gimbal_device_set_attitude_get_target_component(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  31);
+    if (msg->len > 31)
+        return _MAV_RETURN_uint8_t(msg,  31);
+    return (uint8_t) 0;
 }
 
 /**
@@ -288,7 +292,9 @@ static inline uint8_t mavlink_msg_gimbal_device_set_attitude_get_target_componen
  */
 static inline uint16_t mavlink_msg_gimbal_device_set_attitude_get_flags(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  28);
+    if (msg->len > 28)
+        return _MAV_RETURN_uint16_t(msg,  28);
+    return (uint16_t) 0;
 }
 
 /**
@@ -298,7 +304,9 @@ static inline uint16_t mavlink_msg_gimbal_device_set_attitude_get_flags(const ma
  */
 static inline uint16_t mavlink_msg_gimbal_device_set_attitude_get_q(const mavlink_message_t* msg, float *q)
 {
-    return _MAV_RETURN_float_array(msg, q, 4,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_float_array(msg, q, 4,  0);
+    return (uint16_t) 0;
 }
 
 /**
@@ -308,7 +316,9 @@ static inline uint16_t mavlink_msg_gimbal_device_set_attitude_get_q(const mavlin
  */
 static inline float mavlink_msg_gimbal_device_set_attitude_get_angular_velocity_x(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_float(msg,  16);
+    return (float) 0;
 }
 
 /**
@@ -318,7 +328,9 @@ static inline float mavlink_msg_gimbal_device_set_attitude_get_angular_velocity_
  */
 static inline float mavlink_msg_gimbal_device_set_attitude_get_angular_velocity_y(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  20);
+    if (msg->len > 20)
+        return _MAV_RETURN_float(msg,  20);
+    return (float) 0;
 }
 
 /**
@@ -328,7 +340,9 @@ static inline float mavlink_msg_gimbal_device_set_attitude_get_angular_velocity_
  */
 static inline float mavlink_msg_gimbal_device_set_attitude_get_angular_velocity_z(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  24);
+    if (msg->len > 24)
+        return _MAV_RETURN_float(msg,  24);
+    return (float) 0;
 }
 
 /**

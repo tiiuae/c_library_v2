@@ -248,7 +248,9 @@ static inline void mavlink_msg_time_estimate_to_target_send_buf(mavlink_message_
  */
 static inline int32_t mavlink_msg_time_estimate_to_target_get_safe_return(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    if (msg->len > 0)
+        return _MAV_RETURN_int32_t(msg,  0);
+    return (int32_t) 0;
 }
 
 /**
@@ -258,7 +260,9 @@ static inline int32_t mavlink_msg_time_estimate_to_target_get_safe_return(const 
  */
 static inline int32_t mavlink_msg_time_estimate_to_target_get_land(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    if (msg->len > 4)
+        return _MAV_RETURN_int32_t(msg,  4);
+    return (int32_t) 0;
 }
 
 /**
@@ -268,7 +272,9 @@ static inline int32_t mavlink_msg_time_estimate_to_target_get_land(const mavlink
  */
 static inline int32_t mavlink_msg_time_estimate_to_target_get_mission_next_item(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  8);
+    if (msg->len > 8)
+        return _MAV_RETURN_int32_t(msg,  8);
+    return (int32_t) 0;
 }
 
 /**
@@ -278,7 +284,9 @@ static inline int32_t mavlink_msg_time_estimate_to_target_get_mission_next_item(
  */
 static inline int32_t mavlink_msg_time_estimate_to_target_get_mission_end(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  12);
+    if (msg->len > 12)
+        return _MAV_RETURN_int32_t(msg,  12);
+    return (int32_t) 0;
 }
 
 /**
@@ -288,7 +296,9 @@ static inline int32_t mavlink_msg_time_estimate_to_target_get_mission_end(const 
  */
 static inline int32_t mavlink_msg_time_estimate_to_target_get_commanded_action(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  16);
+    if (msg->len > 16)
+        return _MAV_RETURN_int32_t(msg,  16);
+    return (int32_t) 0;
 }
 
 /**
